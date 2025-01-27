@@ -7,6 +7,12 @@
 
 # Development
 
+First time:
+
+```
+npm install
+```
+
 ```
 npm run dev
 ```
