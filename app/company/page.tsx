@@ -1,3 +1,3 @@
 export default function Home() {
-  return <h1>project page</h1>;
+  return <h1>company page</h1>;
 }
