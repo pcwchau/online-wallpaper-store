@@ -5,6 +5,7 @@ const HomePage = () => {
   return (
     <div>
       <Image src={pic} alt="Picture of the author" />
+      <Image src={pic} alt="Picture of the author" />
     </div>
   );
 };
