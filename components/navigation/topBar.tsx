@@ -1,20 +1,36 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import HamburgerIcon from "@/assets/icons/hamburger";
 
 const TopBar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="bg-gray-600 flex justify-between">
-      <Link href="/" className="border-2 border-gray-500">
-        <Image src="/company-icon.png" width={100} height={100} alt={""} />
-      </Link>
-      <div className="self-center">
-        <Link href="/product">Product</Link>
-        <Link href="/portfolio">Portfolio</Link>
-        <Link href="/inspiration">Inspiration</Link>
-        <Link href="/company">Company</Link>
-        <Link href="/partnership">Partnership</Link>
-        <Link href="/contact">Contact</Link>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black py-4">
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <Link href="/">
+          <Image src="/company-icon.png" width={100} height={100} alt={""} />
+        </Link>
+        <div className="hidden lg:flex">
+          {[
+            { name: "Product", href: "/product" },
+            { name: "Portfolio", href: "/portfolio" },
+            { name: "Inspiration", href: "/inspiration" },
+            { name: "Company", href: "/company" },
+            { name: "Partnership", href: "/partnership" },
+            { name: "Contact", href: "/contact" },
+          ].map((item) => (
+            <Link href={item.href} className="m-4" key={item.name}>
+              {item.name}
+            </Link>
+          ))}
+          {/* <HamburgerIcon /> */}
+        </div>
+        <div className="lg:hidden">
+          <HamburgerIcon />
+        </div>
       </div>
     </nav>
   );
