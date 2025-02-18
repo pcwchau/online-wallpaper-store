@@ -17,15 +17,18 @@ const TopBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-black">
+    <div className="fixed top-0 left-0 w-full z-50 bg-black/80">
       <div className="container mx-auto p-4 flex justify-between items-center">
         <Link href="/">
-          <Image
-            src="/company-icon.png"
-            width={100}
-            height={100}
-            alt={"company icon"}
-          />
+          <div className="h-16 w-auto">
+            <Image
+              src="/company-icon.png"
+              alt="Company Icon"
+              width={624}
+              height={400}
+              className="h-full w-auto"
+            />
+          </div>
         </Link>
         <div className="hidden lg:flex">
           {pages.map((item) => (
