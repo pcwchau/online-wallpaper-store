@@ -23,7 +23,7 @@ const TopBar: React.FC = () => {
           <div className="h-16 w-auto">
             <Image
               src="/company-icon.png"
-              alt="Company Icon"
+              alt="Be Shine Textile"
               width={624}
               height={400}
               className="h-full w-auto"

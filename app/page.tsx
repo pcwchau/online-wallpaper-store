@@ -1,41 +1,64 @@
+import Image from "next/image";
+
 const HomePage = () => {
   return (
-    <div className="h-screen overflow-x-hidden overflow-y-auto">
-      {/* Parallax Section 1 */}
-      <div className="relative h-screen flex items-center justify-center text-white text-4xl font-bold">
-        <div
-          className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/parallax1.jpg')" }}
-        ></div>
-        <h1 className="relative z-10">Welcome to Section 1</h1>
+    <div>
+      {/* First picture */}
+      <div className="h-screen w-full relative">
+        <Image
+          src="/home-black-feather.jpg"
+          fill
+          alt="wall coverings black feather"
+          className="object-cover"
+        />
       </div>
 
-      {/* Content Section */}
-      <div className="h-64 flex items-center justify-center text-xl">
-        <p>Scroll down for more...</p>
+      {/* Content */}
+      <div className="h-screen w-full relative bg-white"></div>
+
+      {/* Parallax Section 1 */}
+      <div className="relative h-screen flex items-center justify-start">
+        <div
+          className="absolute inset-0 bg-fixed bg-center bg-cover"
+          style={{ backgroundImage: "url('/home-who-we-are.jpg')" }}
+        />
+        <div className="relative w-[600px] h-full bg-black/20 justify-center items-center">
+          <div className="text-6xl">WHO WE ARE</div>
+          <div>
+            Be Shine Textile Inc. is a premium leader of custom wallcoverings,
+            offering tailored solutions that transform spaces with style and
+            creativity. We cater to both commercial and residential clients,
+            bringing their unique visions to life through our expertise in
+            artistic design and professional installation.
+          </div>
+        </div>
       </div>
 
       {/* Parallax Section 2 */}
-      <div className="relative h-screen flex items-center justify-center text-white text-4xl font-bold">
+      <div className="relative h-screen flex items-center justify-end text-4xl font-bold">
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/parallax2.jpg')" }}
-        ></div>
-        <h1 className="relative z-10">Explore the View</h1>
-      </div>
-
-      {/* Content Section */}
-      <div className="h-64 flex items-center justify-center text-xl">
-        <p>Keep scrolling...</p>
+          style={{ backgroundImage: "url('/home-what-we-do.jpg')" }}
+        />
+        <div className="relative w-1/3 bg-black">hihi</div>
       </div>
 
       {/* Parallax Section 3 */}
-      <div className="relative h-screen flex items-center justify-center text-white text-4xl font-bold">
+      <div className="relative h-screen flex items-center justify-start text-4xl font-bold">
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/parallax3.jpg')" }}
-        ></div>
-        <h1 className="relative z-10">Enjoy the Experience</h1>
+          style={{ backgroundImage: "url('/home-based-in-toronto.jpg')" }}
+        />
+        <div className="relative w-1/3 bg-black">hihi</div>
+      </div>
+
+      {/* Parallax Section 4 */}
+      <div className="relative h-screen flex items-center justify-end text-4xl font-bold">
+        <div
+          className="absolute inset-0 bg-fixed bg-center bg-cover"
+          style={{ backgroundImage: "url('/home-quality-assurance.jpg')" }}
+        />
+        <div className="relative w-1/3 bg-black">hihi</div>
       </div>
     </div>
   );
