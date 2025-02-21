@@ -1,9 +1,16 @@
 export default function Home() {
   return (
-    <div className="flex">
-      <h1 className="border">contact page</h1>
-      <h1>contact page</h1>
-      <h1>contact page</h1>
+    <div>
+      <div className="h-80 bg-slate-600" />
+      <div className="relative h-screen">
+        <div
+          // className="h-full absolute inset-0 "
+          className="h-full bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url('/home-who-we-are.jpg')" }}
+          // style={{ backgroundImage: "url('/company-icon.png')" }}
+        />
+      </div>
+      <div className="h-80 bg-slate-600" />
     </div>
   );
 }
