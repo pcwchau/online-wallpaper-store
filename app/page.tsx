@@ -1,3 +1,11 @@
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
+
 const parallax = [
   {
     title: "WHO WE ARE",
@@ -29,6 +37,27 @@ const parallax = [
   },
 ];
 
+const images = [
+  "/image/banner/3.png",
+  "/image/banner/4.png",
+  "/image/banner/5.png",
+  "/image/banner/6.png",
+  "/image/banner/9.png",
+  "/image/banner/10.png",
+  "/image/banner/11.png",
+];
+
+const clients = [
+  "/image/clients/1.jpg",
+  "/image/clients/2.png",
+  "/image/clients/3.png",
+  "/image/clients/4.png",
+  "/image/clients/6.png",
+  "/image/clients/7.png",
+  "/image/clients/8.png",
+  "/image/clients/10.png",
+];
+
 const HomePage = () => {
   return (
     <div>
@@ -44,6 +73,33 @@ const HomePage = () => {
       <div className="h-[80vh] bg-white flex justify-center items-center text-4xl text-center text-black">
         Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
         Eccentric • Fun
+      </div>
+
+      {/* Image slider */}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={10}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        className="h-[80vh]"
+      >
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={src}
+              alt={`Slide ${index + 1}`}
+              layout="fill"
+              objectFit="cover"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Content */}
+      <div className="h-[80vh] bg-white flex justify-center items-center text-4xl text-center text-black">
+        Be Shine Textile Inc. – Canada’s premier leader of customized
+        wallcoverings, offering ideas and inspiration to transform your space.
       </div>
 
       {/* Parallax Section */}
