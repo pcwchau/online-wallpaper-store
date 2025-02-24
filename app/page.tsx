@@ -103,7 +103,7 @@ const HomePage = () => {
       </div>
 
       {/* Parallax Section */}
-      {parallax.map((item) => {
+      {parallax.map((item, index) => {
         return (
           <div
             className="h-[80vh] bg-fixed bg-cover flex"
@@ -111,7 +111,7 @@ const HomePage = () => {
               backgroundImage: "url('" + item.image + "')",
               justifyContent: item.align === "left" ? "flex-start" : "flex-end",
             }}
-            key={item.title}
+            key={index}
           >
             <div
               className="h-full w-[35rem] flex flex-col justify-center"
@@ -131,6 +131,32 @@ const HomePage = () => {
           </div>
         );
       })}
+
+      {/* Our Clients */}
+      <div className="h-[80vh] flex flex-col bg-white justify-center items-center">
+        <div className="text-4xl text-black">OUR CLIENTS</div>
+        <div className="container mx-auto px-6">
+          <h2 className="text-center text-2xl font-semibold mb-6">
+            Our Clients
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+            {clients.map((src, index) => (
+              <div
+                key={index}
+                className="w-24 h-24 flex items-center justify-center"
+              >
+                <Image
+                  src={src}
+                  alt={`Client ${index + 1}`}
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
