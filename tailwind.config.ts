@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontSize: {
+      "custom-small-title": "2rem",
+    },
   },
   plugins: [],
 } satisfies Config;

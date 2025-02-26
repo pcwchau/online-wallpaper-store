@@ -64,7 +64,7 @@ const HomePage = () => {
     <div>
       {/* First picture */}
       <div
-        className="bg-cover flex justify-center items-center text-4xl text-center"
+        className="bg-cover flex justify-center items-center text-custom-small-title text-center"
         style={{
           backgroundImage: "url('/image/home/feather.jpg')",
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
@@ -74,7 +74,7 @@ const HomePage = () => {
       </div>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center text-4xl text-center text-black">
+      <div className="h-[80vh] bg-white flex justify-center items-center text-custom-small-title text-center text-black">
         Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
         Eccentric • Fun
       </div>
@@ -102,7 +102,7 @@ const HomePage = () => {
       </Swiper>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center text-4xl text-center text-black">
+      <div className="h-[80vh] bg-white flex justify-center items-center text-custom-small-title text-center text-black">
         Be Shine Textile Inc. – Canada’s premier leader of customized
         wallcoverings, offering ideas and inspiration to transform your space.
       </div>
@@ -139,7 +139,7 @@ const HomePage = () => {
 
       {/* Our Clients */}
       <div className="h-[80vh] flex flex-col bg-white justify-center items-center">
-        <div className="text-4xl text-black">OUR CLIENTS</div>
+        <div className="text-custom-small-title text-black">OUR CLIENTS</div>
         <div className="container mx-auto px-6">
           <h2 className="text-center text-2xl font-semibold mb-6">
             Our Clients
