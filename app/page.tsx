@@ -1,10 +1,11 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
+import { TOP_BAR_HEIGHT } from "@/config/constant";
 
 const parallax = [
   {
@@ -63,8 +64,11 @@ const HomePage = () => {
     <div>
       {/* First picture */}
       <div
-        className="h-screen bg-cover flex justify-center items-center text-4xl text-center"
-        style={{ backgroundImage: "url('/image/home/feather.jpg')" }}
+        className="bg-cover flex justify-center items-center text-4xl text-center"
+        style={{
+          backgroundImage: "url('/image/home/feather.jpg')",
+          height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
+        }}
       >
         Transforming Spaces with Artistic Precision and Perfect Wallcovering
       </div>
@@ -75,22 +79,23 @@ const HomePage = () => {
         Eccentric • Fun
       </div>
 
-      {/* Image slider */}
+      {/* Image swiper, all images must be 1920 x 900 */}
       <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={10}
+        modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
+        loop
         navigation
         pagination={{ clickable: true }}
-        className="h-[80vh]"
+        autoplay={{ delay: 4000 }}
+        style={{ maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT})` }}
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
             <Image
               src={src}
               alt={`Slide ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
+              width={1920}
+              height={900}
             />
           </SwiperSlide>
         ))}
