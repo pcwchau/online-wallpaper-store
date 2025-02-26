@@ -12,9 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-    },
-    fontSize: {
-      "custom-small-title": "2rem",
+      fontSize: {
+        "custom-small-title": ["2rem", { lineHeight: "2.5rem" }],
+        "custom-medium-title": ["4rem", { lineHeight: "4.5rem" }],
+      },
     },
   },
   plugins: [],
