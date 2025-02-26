@@ -111,7 +111,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Parallax Section */}
+      {/* Parallax Section, all images should be 16:9 */}
       {parallax.map((item, index) => {
         return (
           <div
@@ -123,19 +123,25 @@ const HomePage = () => {
             key={index}
           >
             <div
-              className="h-full w-[35rem] flex flex-col justify-center"
-              style={{
-                background:
-                  item.align === "left"
-                    ? "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))"
-                    : "linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
-                alignItems: item.align === "left" ? "flex-end" : "flex-start",
-              }}
+              className="h-full max-w-[35rem] flex flex-col justify-center border-white border-2"
+              style={
+                item.align === "left"
+                  ? {
+                      background:
+                        "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+                      alignItems: "flex-end",
+                    }
+                  : {
+                      background:
+                        "linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+                      alignItems: "flex-start",
+                    }
+              }
             >
               <div className="text-custom-medium-title w-[26rem] text-center mb-[2rem]">
                 {item.title}
               </div>
-              <div className="w-[26rem] text-center">{item.content}</div>
+              <div className=" text-center">{item.content}</div>
             </div>
           </div>
         );
