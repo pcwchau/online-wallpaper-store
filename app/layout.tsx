@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/navigation/topBar";
+import { TOP_BAR_HEIGHT } from "@/config/constant";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TopBar />
-        <main>{children}</main>
+        <main style={{ paddingTop: TOP_BAR_HEIGHT }}>{children}</main>
       </body>
     </html>
   );

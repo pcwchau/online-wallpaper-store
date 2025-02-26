@@ -13,6 +13,7 @@ const pages = [
   { name: "Contact", href: "/contact" },
 ];
 
+// Please update the constant TOP_BAR_HEIGHT if the height changes
 const TopBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
