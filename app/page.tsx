@@ -75,8 +75,10 @@ const HomePage = () => {
 
       {/* Content */}
       <div className="h-[80vh] bg-white flex justify-center items-center text-custom-small-title text-center text-black">
-        Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
-        Eccentric • Fun
+        <div className="max-w-[40rem]">
+          Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
+          Eccentric • Fun
+        </div>
       </div>
 
       {/* Image swiper, all images must be 1920 x 900 */}
@@ -87,7 +89,6 @@ const HomePage = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000 }}
-        style={{ maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT})` }}
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
@@ -96,6 +97,7 @@ const HomePage = () => {
               alt={`Slide ${index + 1}`}
               width={1920}
               height={900}
+              className="animate-enlargeSmallIn4s"
             />
           </SwiperSlide>
         ))}
@@ -103,8 +105,10 @@ const HomePage = () => {
 
       {/* Content */}
       <div className="h-[80vh] bg-white flex justify-center items-center text-custom-small-title text-center text-black">
-        Be Shine Textile Inc. – Canada’s premier leader of customized
-        wallcoverings, offering ideas and inspiration to transform your space.
+        <div className="max-w-[40rem]">
+          Be Shine Textile Inc. – Canada’s premier leader of customized
+          wallcoverings, offering ideas and inspiration to transform your space.
+        </div>
       </div>
 
       {/* Parallax Section */}
@@ -128,7 +132,7 @@ const HomePage = () => {
                 alignItems: item.align === "left" ? "flex-end" : "flex-start",
               }}
             >
-              <div className="text-7xl w-[26rem] text-center mb-[2rem]">
+              <div className="text-custom-medium-title w-[26rem] text-center mb-[2rem]">
                 {item.title}
               </div>
               <div className="w-[26rem] text-center">{item.content}</div>
