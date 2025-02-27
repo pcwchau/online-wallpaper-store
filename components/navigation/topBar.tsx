@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import HamburgerMenu from "@/assets/icons/hamburgerMenu";
+import HamburgerMenuIcon from "@/assets/icons/hamburgerMenuIcon";
 
 const pages = [
   { name: "Product", href: "/product" },
@@ -40,7 +40,7 @@ const TopBar: React.FC = () => {
         </div>
         <div className="lg:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <HamburgerMenu height="2em" width="2em" />
+            <HamburgerMenuIcon height="2em" width="2em" />
           </button>
         </div>
       </div>

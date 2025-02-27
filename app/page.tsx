@@ -6,6 +6,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
+import PhoneIcon from "@/assets/icons/phoneIcon";
+import EmailIcon from "@/assets/icons/emailIcon";
+import LocationIcon from "@/assets/icons/locationIcon";
 
 const parallax = [
   {
@@ -64,7 +67,7 @@ const HomePage = () => {
     <div>
       {/* First picture */}
       <div
-        className="bg-cover flex justify-center items-center"
+        className="bg-cover flex justify-center items-center px-4"
         style={{
           backgroundImage: "url('/image/home/feather.jpg')",
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
@@ -76,7 +79,7 @@ const HomePage = () => {
       </div>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center">
+      <div className="h-[80vh] bg-white flex justify-center items-center px-4">
         <div className="max-w-[40rem] text-custom-small-title text-center text-black">
           Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
           Eccentric • Fun
@@ -106,7 +109,7 @@ const HomePage = () => {
       </Swiper>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center">
+      <div className="h-[80vh] bg-white flex justify-center items-center px-4">
         <div className="max-w-[40rem] text-custom-small-title text-center text-black">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
@@ -125,7 +128,7 @@ const HomePage = () => {
             key={index}
           >
             <div
-              className="h-full flex flex-col justify-center items-center"
+              className="h-full flex flex-col justify-center items-center px-4"
               style={
                 item.align === "left"
                   ? {
@@ -149,7 +152,9 @@ const HomePage = () => {
 
       {/* Our Clients */}
       <div className="h-[80vh] flex flex-col bg-white justify-center items-center">
-        <div className="text-custom-small-title text-black">OUR CLIENTS</div>
+        <div className="text-custom-small-title text-black mb-4">
+          OUR CLIENTS
+        </div>
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
             {clients.map((src, index) => (
@@ -167,6 +172,23 @@ const HomePage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Contact */}
+      <div className="h-[80vh] flex flex-col justify-center items-center">
+        <div className="text-custom-small-title mb-8">CONTACT</div>
+        <div className="p-2 flex items-center">
+          <PhoneIcon />
+          <div className="ml-2">(647) 498-7999</div>
+        </div>
+        <div className="p-2 flex items-center">
+          <EmailIcon />
+          <div className="ml-2">sales@beshinetextile.com</div>
+        </div>
+        <div className="p-2 flex items-center">
+          <LocationIcon />
+          <div className="ml-2">2710 14th Ave, Markham, ON L3R 0J1</div>
         </div>
       </div>
     </div>

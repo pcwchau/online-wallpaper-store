@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SVGProps } from "react";
 
-const HamburgerMenu = (props: SVGProps<SVGSVGElement>) => (
+const HamburgerMenuIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -18,4 +18,4 @@ const HamburgerMenu = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default HamburgerMenu;
+export default HamburgerMenuIcon;
