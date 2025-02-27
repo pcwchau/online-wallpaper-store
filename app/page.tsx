@@ -64,18 +64,20 @@ const HomePage = () => {
     <div>
       {/* First picture */}
       <div
-        className="bg-cover flex justify-center items-center text-custom-small-title text-center"
+        className="bg-cover flex justify-center items-center"
         style={{
           backgroundImage: "url('/image/home/feather.jpg')",
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
         }}
       >
-        Transforming Spaces with Artistic Precision and Perfect Wallcovering
+        <div className="max-w-[40rem] text-custom-small-title text-center">
+          Transforming Spaces with Artistic Precision and Perfect Wallcovering
+        </div>
       </div>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center text-custom-small-title text-center text-black">
-        <div className="max-w-[40rem]">
+      <div className="h-[80vh] bg-white flex justify-center items-center">
+        <div className="max-w-[40rem] text-custom-small-title text-center text-black">
           Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
           Eccentric • Fun
         </div>
@@ -104,8 +106,8 @@ const HomePage = () => {
       </Swiper>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center text-custom-small-title text-center text-black">
-        <div className="max-w-[40rem]">
+      <div className="h-[80vh] bg-white flex justify-center items-center">
+        <div className="max-w-[40rem] text-custom-small-title text-center text-black">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
         </div>
@@ -123,25 +125,23 @@ const HomePage = () => {
             key={index}
           >
             <div
-              className="h-full max-w-[35rem] flex flex-col justify-center border-white border-2"
+              className="h-full flex flex-col justify-center items-center"
               style={
                 item.align === "left"
                   ? {
                       background:
                         "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
-                      alignItems: "flex-end",
                     }
                   : {
                       background:
                         "linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
-                      alignItems: "flex-start",
                     }
               }
             >
-              <div className="text-custom-medium-title w-[26rem] text-center mb-[2rem]">
+              <div className="text-custom-small-title lg:text-custom-medium-title max-w-[35rem] text-center mb-[2rem]">
                 {item.title}
               </div>
-              <div className=" text-center">{item.content}</div>
+              <div className="text-center max-w-[35rem]">{item.content}</div>
             </div>
           </div>
         );
@@ -151,9 +151,6 @@ const HomePage = () => {
       <div className="h-[80vh] flex flex-col bg-white justify-center items-center">
         <div className="text-custom-small-title text-black">OUR CLIENTS</div>
         <div className="container mx-auto px-6">
-          <h2 className="text-center text-2xl font-semibold mb-6">
-            Our Clients
-          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
             {clients.map((src, index) => (
               <div
