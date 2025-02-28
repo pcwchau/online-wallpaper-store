@@ -79,8 +79,8 @@ const HomePage = () => {
       </div>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-custom-small-title text-center text-black">
+      <div className="h-[80vh] bg-secondary flex justify-center items-center px-4">
+        <div className="max-w-[40rem] text-custom-small-title text-center text-secondary-text">
           Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
           Eccentric • Fun
         </div>
@@ -109,8 +109,8 @@ const HomePage = () => {
       </Swiper>
 
       {/* Content */}
-      <div className="h-[80vh] bg-white flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-custom-small-title text-center text-black">
+      <div className="h-[80vh] bg-secondary flex justify-center items-center px-4">
+        <div className="max-w-[40rem] text-custom-small-title text-center text-secondary-text">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
         </div>
@@ -151,7 +151,7 @@ const HomePage = () => {
       })}
 
       {/* Video */}
-      <div className="py-12 bg-white flex justify-center items-center">
+      <div className="py-12 bg-secondary flex justify-center items-center">
         <iframe
           width="560"
           height="315"
@@ -164,8 +164,8 @@ const HomePage = () => {
       </div>
 
       {/* Our Clients */}
-      <div className="py-12 bg-white flex flex-col justify-center items-center">
-        <div className="text-custom-small-title text-black mb-4">
+      <div className="py-12 bg-secondary flex flex-col justify-center items-center">
+        <div className="text-custom-small-title text-secondary-text mb-4">
           OUR CLIENTS
         </div>
         <div className="container">
@@ -206,7 +206,7 @@ const HomePage = () => {
       </div>
 
       {/* Copyright */}
-      <div className="bg-black text-center py-4">
+      <div className="text-center py-4">
         © 2025 Be Shine Textile Inc. All Rights Reserved.
       </div>
     </div>

@@ -18,10 +18,10 @@ const TopBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-black/80">
+    <div className="fixed top-0 left-0 w-full z-50 bg-primary">
       <div className="container py-4 flex justify-between items-center">
         <Link href="/">
-          <div className="h-16 w-auto">
+          <div className="h-16">
             <Image
               src="/company-icon.png"
               alt="Be Shine Textile"

@@ -13,8 +13,10 @@ export default {
     },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "var(--primary-color)",
+        "primary-text": "var(--primary-text-color)",
+        secondary: "var(--secondary-color)",
+        "secondary-text": "var(--secondary-text-color)",
       },
       fontSize: {
         "custom-small-title": ["2rem", { lineHeight: "2.5rem" }],
