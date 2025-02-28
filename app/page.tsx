@@ -150,8 +150,21 @@ const HomePage = () => {
         );
       })}
 
+      {/* Video */}
+      <div className="py-12 bg-white flex justify-center items-center">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/dnfP6uEyJ6A?si=gfflCuFc3dy5nmb4"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
+
       {/* Our Clients */}
-      <div className="py-12 flex flex-col bg-white justify-center items-center">
+      <div className="py-12 bg-white flex flex-col justify-center items-center">
         <div className="text-custom-small-title text-black mb-4">
           OUR CLIENTS
         </div>
