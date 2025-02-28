@@ -19,7 +19,7 @@ const TopBar: React.FC = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-black/80">
-      <div className="container mx-auto p-4 flex justify-between items-center">
+      <div className="container py-4 flex justify-between items-center">
         <Link href="/">
           <div className="h-16 w-auto">
             <Image

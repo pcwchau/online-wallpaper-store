@@ -168,7 +168,7 @@ const HomePage = () => {
         <div className="text-custom-small-title text-black mb-4">
           OUR CLIENTS
         </div>
-        <div className="container mx-auto px-6">
+        <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
             {clientsLogoImages.map((src, index) => (
               <div
