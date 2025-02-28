@@ -45,11 +45,10 @@ const TopBar: React.FC = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="flex flex-col items-center lg:hidden">
+        <div className="flex flex-col items-center lg:hidden space-y-4 py-4">
           {pages.map((item, index) => (
             <Link
               href={item.href}
-              className="m-4"
               key={index}
               onClick={() => setIsMenuOpen(false)}
             >

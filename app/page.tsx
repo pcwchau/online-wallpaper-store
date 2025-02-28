@@ -1,4 +1,4 @@
-"use client";
+"use client"; // for image swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -189,20 +189,25 @@ const HomePage = () => {
       </div>
 
       {/* Contact */}
-      <div className="py-20 flex flex-col justify-center items-center">
-        <div className="text-custom-small-title mb-8">CONTACT</div>
-        <div className="p-2 flex items-center">
+      <div className="py-20 flex flex-col justify-center items-center space-y-4">
+        <div className="text-custom-small-title mb-4">CONTACT</div>
+        <div className="flex items-center space-x-2">
           <PhoneIcon />
-          <div className="ml-2">(647) 498-7999</div>
+          <div>(647) 498-7999</div>
         </div>
-        <div className="p-2 flex items-center">
+        <div className="flex items-center space-x-2">
           <EmailIcon />
-          <div className="ml-2">sales@beshinetextile.com</div>
+          <div>sales@beshinetextile.com</div>
         </div>
-        <div className="p-2 flex items-center">
+        <div className="flex items-center space-x-2">
           <LocationIcon />
-          <div className="ml-2">2710 14th Ave, Markham, ON L3R 0J1</div>
+          <div>2710 14th Ave, Markham, ON L3R 0J1</div>
         </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="bg-black text-center py-4">
+        © 2025 Be Shine Textile Inc. All Rights Reserved.
       </div>
     </div>
   );
