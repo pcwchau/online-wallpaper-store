@@ -41,7 +41,7 @@ const parallax = [
   },
 ];
 
-const images = [
+const swiperImages = [
   "/image/banner/3.png",
   "/image/banner/4.png",
   "/image/banner/5.png",
@@ -51,7 +51,7 @@ const images = [
   "/image/banner/11.png",
 ];
 
-const clients = [
+const clientsLogoImages = [
   "/image/clients/1.jpg",
   "/image/clients/2.png",
   "/image/clients/3.png",
@@ -95,7 +95,7 @@ const HomePage = () => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000 }}
       >
-        {images.map((src, index) => (
+        {swiperImages.map((src, index) => (
           <SwiperSlide key={index}>
             <Image
               src={src}
@@ -151,13 +151,13 @@ const HomePage = () => {
       })}
 
       {/* Our Clients */}
-      <div className="h-[80vh] flex flex-col bg-white justify-center items-center">
+      <div className="py-12 flex flex-col bg-white justify-center items-center">
         <div className="text-custom-small-title text-black mb-4">
           OUR CLIENTS
         </div>
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
-            {clients.map((src, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
+            {clientsLogoImages.map((src, index) => (
               <div
                 key={index}
                 className="w-24 h-24 flex items-center justify-center"
@@ -176,7 +176,7 @@ const HomePage = () => {
       </div>
 
       {/* Contact */}
-      <div className="h-[80vh] flex flex-col justify-center items-center">
+      <div className="py-20 flex flex-col justify-center items-center">
         <div className="text-custom-small-title mb-8">CONTACT</div>
         <div className="p-2 flex items-center">
           <PhoneIcon />
