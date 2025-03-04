@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
+  /* Color */
   --primary-color: #000;
   --primary-text-color: #ffffff;
   --secondary-color: #ffffff;
   --secondary-text-color: #000;
+
+  /* Typography */
+  --primary-font: serif;
 }
 
 body {
   background: var(--primary-color);
   color: var(--primary-text-color);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--primary-font);
 }

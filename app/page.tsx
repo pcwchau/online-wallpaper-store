@@ -73,14 +73,14 @@ const HomePage = () => {
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
         }}
       >
-        <div className="max-w-[40rem] text-custom-small-title text-center">
+        <div className="max-w-[40rem] text-title-sm text-center">
           Transforming Spaces with Artistic Precision and Perfect Wallcovering
         </div>
       </div>
 
       {/* Content */}
       <div className="h-[80vh] bg-secondary flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-custom-small-title text-center text-secondary-text">
+        <div className="max-w-[40rem] text-title-sm text-center text-secondary-text">
           Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
           Eccentric • Fun
         </div>
@@ -102,7 +102,7 @@ const HomePage = () => {
               alt={`Slide ${index + 1}`}
               width={1920}
               height={900}
-              className="animate-enlargeSmallIn4s"
+              className="animate-enlarge-small-in-4s"
             />
           </SwiperSlide>
         ))}
@@ -110,7 +110,7 @@ const HomePage = () => {
 
       {/* Content */}
       <div className="h-[80vh] bg-secondary flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-custom-small-title text-center text-secondary-text">
+        <div className="max-w-[40rem] text-title-sm text-center text-secondary-text">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
         </div>
@@ -141,7 +141,7 @@ const HomePage = () => {
                     }
               }
             >
-              <div className="text-custom-small-title lg:text-custom-medium-title max-w-[35rem] text-center mb-[2rem]">
+              <div className="text-title-sm lg:text-title-md max-w-[35rem] text-center mb-[2rem]">
                 {item.title}
               </div>
               <div className="text-center max-w-[35rem]">{item.content}</div>
@@ -165,7 +165,7 @@ const HomePage = () => {
 
       {/* Our Clients */}
       <div className="py-12 bg-secondary flex flex-col justify-center items-center">
-        <div className="text-custom-small-title text-secondary-text mb-4">
+        <div className="text-title-sm text-secondary-text mb-4">
           OUR CLIENTS
         </div>
         <div className="container">
@@ -190,7 +190,7 @@ const HomePage = () => {
 
       {/* Contact */}
       <div className="py-20 flex flex-col justify-center items-center space-y-4">
-        <div className="text-custom-small-title mb-4">CONTACT</div>
+        <div className="text-title-sm mb-4">CONTACT</div>
         <div className="flex items-center space-x-2">
           <PhoneIcon />
           <div>(647) 498-7999</div>

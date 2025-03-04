@@ -18,9 +18,12 @@ export default {
         secondary: "var(--secondary-color)",
         "secondary-text": "var(--secondary-text-color)",
       },
+      fontFamily: {
+        primary: "var(--primary-font)",
+      },
       fontSize: {
-        "custom-small-title": ["2rem", { lineHeight: "2.5rem" }],
-        "custom-medium-title": ["4rem", { lineHeight: "4.5rem" }],
+        "title-sm": ["2rem", { lineHeight: "2.5rem" }],
+        "title-md": ["4rem", { lineHeight: "4.5rem" }],
       },
       keyframes: {
         enlargeSmall: {
@@ -29,7 +32,7 @@ export default {
         },
       },
       animation: {
-        enlargeSmallIn4s: "enlargeSmall 4s ease-in-out forwards",
+        "enlarge-small-in-4s": "enlargeSmall 4s ease-in-out forwards",
       },
     },
   },
