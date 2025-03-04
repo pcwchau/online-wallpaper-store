@@ -5,12 +5,12 @@ import Image from "next/image";
 import HamburgerMenuIcon from "@/assets/icons/hamburgerMenuIcon";
 
 const pages = [
-  { name: "Product", href: "/product" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Inspiration", href: "/inspiration" },
-  { name: "Company", href: "/company" },
-  { name: "Partnership", href: "/partnership" },
-  { name: "Contact", href: "/contact" },
+  { name: "PRODUCTS", href: "/products" },
+  { name: "PORTFOLIO", href: "/portfolio" },
+  { name: "INSPIRATION", href: "/inspiration" },
+  { name: "COMPANY", href: "/company" },
+  { name: "PARTNERSHIP", href: "/partnership" },
+  { name: "CONTACT", href: "/contact" },
 ];
 
 // Please update the constant TOP_BAR_HEIGHT if the height changes
