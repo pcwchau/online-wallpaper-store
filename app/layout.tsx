@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/navigation/topBar";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
+import BottomContactBar from "@/components/navigation/bottomContactBar";
+import BottomCopyrightBar from "@/components/navigation/bottomCopyrightBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +33,8 @@ export default function RootLayout({
       >
         <TopBar />
         <main style={{ paddingTop: TOP_BAR_HEIGHT }}>{children}</main>
+        <BottomContactBar />
+        <BottomCopyrightBar />
       </body>
     </html>
   );
