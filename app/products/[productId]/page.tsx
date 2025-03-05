@@ -1,3 +1,5 @@
+import { getProduct } from "@/api/api";
+
 const ProductDetailsPage = async ({
   params,
 }: {
@@ -5,10 +7,12 @@ const ProductDetailsPage = async ({
 }) => {
   const { productId } = await params;
 
+  const product = await getProduct(parseInt(productId));
+
   return (
-    <div>
+    <div className="bg-secondary text-secondary-text">
       <h1>Product Details</h1>
-      <p>Product ID: {productId}</p>
+      <p className="h-40">Product ID: {product.id}</p>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const TopBar: React.FC = () => {
         <Link href="/">
           <div className="h-16">
             <Image
-              src="/company-icon.png"
+              src="/company-logo.png"
               alt="Be Shine Textile"
               width={624}
               height={400}
