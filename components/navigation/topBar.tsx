@@ -18,7 +18,7 @@ const TopBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-primary">
+    <div className="fixed top-0 left-0 w-full z-50 bg-secondary/80 text-secondary-text">
       <div className="container py-4 flex justify-between items-center">
         <Link href="/">
           <div className="h-16">

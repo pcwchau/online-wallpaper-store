@@ -4,7 +4,7 @@ import LocationIcon from "@/assets/icons/locationIcon";
 
 const BottomContactBar = () => {
   return (
-    <div className="py-20 flex flex-col justify-center items-center space-y-4">
+    <div className="py-20 flex flex-col justify-center items-center space-y-4 bg-secondary text-secondary-text">
       <div className="text-title-sm mb-4">CONTACT</div>
       <div className="flex items-center space-x-2">
         <PhoneIcon />

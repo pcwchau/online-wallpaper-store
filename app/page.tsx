@@ -70,14 +70,14 @@ const HomePage = () => {
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
         }}
       >
-        <div className="max-w-[40rem] text-title-sm text-center">
+        <div className="max-w-[40rem] text-title-sm text-center text-secondary-text">
           Transforming Spaces with Artistic Precision and Perfect Wallcovering
         </div>
       </div>
 
       {/* Content */}
-      <div className="h-[80vh] bg-secondary flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-title-sm text-center text-secondary-text">
+      <div className="h-[80vh] flex justify-center items-center px-4">
+        <div className="max-w-[40rem] text-title-sm text-center">
           Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
           Eccentric • Fun
         </div>
@@ -106,8 +106,8 @@ const HomePage = () => {
       </Swiper>
 
       {/* Content */}
-      <div className="h-[80vh] bg-secondary flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-title-sm text-center text-secondary-text">
+      <div className="h-[80vh] flex justify-center items-center px-4">
+        <div className="max-w-[40rem] text-title-sm text-center">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
         </div>
@@ -148,7 +148,7 @@ const HomePage = () => {
       })}
 
       {/* Video */}
-      <div className="py-12 bg-secondary flex justify-center items-center">
+      <div className="py-12 flex justify-center items-center">
         <iframe
           width="560"
           height="315"
@@ -161,10 +161,8 @@ const HomePage = () => {
       </div>
 
       {/* Our Clients */}
-      <div className="py-12 bg-secondary flex flex-col justify-center items-center">
-        <div className="text-title-sm text-secondary-text mb-4">
-          OUR CLIENTS
-        </div>
+      <div className="py-12 flex flex-col justify-center items-center">
+        <div className="text-title-sm mb-4">OUR CLIENTS</div>
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
             {clientsLogoImages.map((src, index) => (

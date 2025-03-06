@@ -10,9 +10,9 @@ const ProductDetailsPage = async ({
   const product = await getProduct(parseInt(productId));
 
   return (
-    <div className="bg-secondary text-secondary-text">
+    <div>
       <h1>Product Details</h1>
-      <p className="h-40">Product ID: {product.id}</p>
+      <p className="h-[140rem]">Product ID: {product.id}</p>
     </div>
   );
 };

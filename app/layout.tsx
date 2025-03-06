@@ -29,10 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary text-primary-text font-primary`}
       >
         <TopBar />
-        <main style={{ paddingTop: TOP_BAR_HEIGHT }}>{children}</main>
+        <div className="bg-secondary" style={{ height: TOP_BAR_HEIGHT }} />
+        <main>{children}</main>
         <BottomContactBar />
         <BottomCopyrightBar />
       </body>
