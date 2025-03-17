@@ -1,4 +1,5 @@
 import { getProduct } from "@/api/api";
+import Image from "next/image";
 
 const ProductDetailsPage = async ({
   params,
@@ -13,6 +14,13 @@ const ProductDetailsPage = async ({
     <div>
       <h1>Product Details</h1>
       <p className="h-[140rem]">Product ID: {product.id}</p>
+      <Image
+        src={product.imageUrl[0]}
+        alt={product.name}
+        width={200}
+        height={200}
+      />
+      <p>{product.name}</p>
     </div>
   );
 };

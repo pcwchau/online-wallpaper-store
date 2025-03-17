@@ -16,3 +16,7 @@ npm install
 ```
 npm run dev
 ```
+
+# Deployment
+
+Dev: https://main.d3dt5wuaumew7m.amplifyapp.com/

@@ -99,7 +99,7 @@ const HomePage = () => {
               alt={`Slide ${index + 1}`}
               width={1920}
               height={900}
-              className="animate-enlarge-small-in-4s"
+              // className="animate-enlarge-small-in-4s"
             />
           </SwiperSlide>
         ))}
@@ -117,7 +117,7 @@ const HomePage = () => {
       {parallax.map((item, index) => {
         return (
           <div
-            className="h-[80vh] bg-fixed bg-cover flex"
+            className="h-[80vh] bg-fixed bg-cover flex text-secondary-text"
             style={{
               backgroundImage: "url('" + item.image + "')",
               justifyContent: item.align === "left" ? "flex-start" : "flex-end",
