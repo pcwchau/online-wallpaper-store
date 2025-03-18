@@ -20,3 +20,12 @@ npm run dev
 # Deployment
 
 Dev: https://main.d3dt5wuaumew7m.amplifyapp.com/
+
+# Purpose
+
+To replace the original WordPress website: https://beshinetextile.com/
+
+|                         | Original | New   |
+|-------------------------|----------|-------|
+| First page loading time | 5.96s    | 2.32s |
+| Image                   |
