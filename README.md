@@ -3,7 +3,7 @@
 | Reference | Version |
 |-----------|---------|
 | React     | 19.0.0  |
-| NextJs    | 15.1.3  |
+| NextJs    | 15.2.3  |
 
 # Development
 
