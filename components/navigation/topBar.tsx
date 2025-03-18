@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HamburgerMenuIcon from "@/assets/icons/hamburgerMenuIcon";
+import ArrowDownIcon from "@/assets/icons/arrowDownIcon";
+import ArrowUpIcon from "@/assets/icons/arrowUpIcon";
 
 const pages = [
   {
@@ -30,13 +32,28 @@ const pages = [
 
 // Please update the constant TOP_BAR_HEIGHT if the height changes
 const TopBar: React.FC = () => {
-  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
   const [hoverMenuIndex, setHoverMenuIndex] = useState(-1);
+  const [isSmallScreenMenuOpen, setIsSmallScreenMenuOpen] = useState(false);
+  const [smallScreenMenuExpandIndex, setSmallScreenMenuExpandIndex] =
+    useState(-1);
+
+  const resetSmallScreenMenu = () => {
+    setIsSmallScreenMenuOpen(false);
+    setSmallScreenMenuExpandIndex(-1);
+  };
+
+  const toggleSmallScreenMenuExpandIndex = (index: number) => {
+    if (smallScreenMenuExpandIndex === index) {
+      setSmallScreenMenuExpandIndex(-1);
+    } else {
+      setSmallScreenMenuExpandIndex(index);
+    }
+  };
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-secondary/80 text-secondary-text">
       <div className="container py-4 flex justify-between items-center">
-        <Link href="/" onClick={() => setIsHamburgerMenuOpen(false)}>
+        <Link href="/" onClick={() => resetSmallScreenMenu()}>
           <div className="h-16">
             <Image
               src="/company-logo.png"
@@ -65,7 +82,7 @@ const TopBar: React.FC = () => {
 
               {/* Drop down menu */}
               {hoverMenuIndex === index && item.subPages && (
-                <div className="absolute left-[-1rem] pt-[3rem] px-[1rem] pb-[1rem] bg-secondary/80 flex flex-col space-y-3 w-[16rem]">
+                <div className="absolute left-[-1rem] pt-12 px-4 pb-4 bg-secondary/80 flex flex-col space-y-3 w-[16rem]">
                   {item.subPages.map((subItem, subIndex) => (
                     <Link
                       href={subItem.href}
@@ -82,27 +99,53 @@ const TopBar: React.FC = () => {
         </div>
         {/* For screen width < 1024px */}
         <div className="lg:hidden">
-          <button onClick={() => setIsHamburgerMenuOpen(!isHamburgerMenuOpen)}>
+          <button
+            onClick={() => {
+              setIsSmallScreenMenuOpen(!isSmallScreenMenuOpen);
+              setSmallScreenMenuExpandIndex(-1);
+            }}
+          >
             <HamburgerMenuIcon height="2em" width="2em" />
           </button>
         </div>
       </div>
-      {isHamburgerMenuOpen && (
+      {isSmallScreenMenuOpen && (
         <div className="lg:hidden container flex flex-col space-y-4 py-4">
           {pages.map((item, index) => (
-            <div key={index} className="flex justify-between">
-              {item.href ? (
-                <Link
-                  href={item.href}
-                  key={index}
-                  onClick={() => setIsHamburgerMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                item.name
+            <div key={index} className="flex flex-col space-y-4">
+              <div className="flex justify-between">
+                {item.href ? (
+                  <Link href={item.href} onClick={() => resetSmallScreenMenu()}>
+                    {item.name}
+                  </Link>
+                ) : (
+                  item.name
+                )}
+                {item.subPages && (
+                  <button
+                    onClick={() => toggleSmallScreenMenuExpandIndex(index)}
+                  >
+                    {smallScreenMenuExpandIndex === index ? (
+                      <ArrowUpIcon />
+                    ) : (
+                      <ArrowDownIcon />
+                    )}
+                  </button>
+                )}
+              </div>
+              {item.subPages && smallScreenMenuExpandIndex === index && (
+                <div className="flex flex-col pl-8 space-y-2">
+                  {item.subPages.map((subItem, subIndex) => (
+                    <Link
+                      href={subItem.href}
+                      key={subIndex}
+                      onClick={() => resetSmallScreenMenu()}
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
               )}
-              {item.subPages && <div>vv</div>}
             </div>
           ))}
         </div>
