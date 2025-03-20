@@ -10,13 +10,17 @@ export default {
     // Change default setting of container class
     container: {
       center: true,
-      padding: "4rem",
+      padding: "6rem",
     },
     // Add custom styles
     extend: {
       colors: {
         primary: "#ffffff",
         "primary-text": "#000000",
+        "primary-text-disabled": "#e5e7eb",
+        "primary-border": "#e5e7eb",
+        "primary-border-selected": "#000000",
+        "primary-border-disabled": "#e5e7eb",
         secondary: "#000000",
         "secondary-text": "#ffffff",
       },

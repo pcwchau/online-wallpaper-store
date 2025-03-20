@@ -5,6 +5,7 @@ import Image from "next/image";
 import HamburgerMenuIcon from "@/assets/icons/hamburgerMenuIcon";
 import ArrowDownIcon from "@/assets/icons/arrowDownIcon";
 import ArrowUpIcon from "@/assets/icons/arrowUpIcon";
+import logoPic from "@/assets/images/company-logo.png";
 
 const pages = [
   {
@@ -23,7 +24,7 @@ const pages = [
       },
     ],
   },
-  { name: "PORTFOLIO", href: "/portfolio" },
+  { name: "PROJECTS", href: "/projects" },
   { name: "INSPIRATION", href: "/inspiration" },
   { name: "COMPANY", href: "/company" },
   { name: "PARTNERSHIP", href: "/partnership" },
@@ -53,13 +54,15 @@ const TopBar: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-secondary/80 text-secondary-text">
       <div className="container py-4 flex justify-between items-center">
-        <Link href="/" onClick={() => resetSmallScreenMenu()}>
+        <Link
+          href="/"
+          onClick={() => resetSmallScreenMenu()}
+          title="Be Shine Textile Home"
+        >
           <div className="h-16">
             <Image
-              src="/company-logo.png"
-              alt="Be Shine Textile"
-              width={624}
-              height={400}
+              src={logoPic}
+              alt="Be Shine Textile Logo"
               className="h-full w-auto"
             />
           </div>
