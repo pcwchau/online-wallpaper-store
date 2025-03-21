@@ -10,7 +10,10 @@ export default {
     // Change default setting of container class
     container: {
       center: true,
-      padding: "6rem",
+      padding: {
+        DEFAULT: "1rem",
+        lg: "6rem",
+      },
     },
     // Add custom styles
     extend: {

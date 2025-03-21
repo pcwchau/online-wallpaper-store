@@ -66,22 +66,26 @@ export default function Page() {
   };
 
   return (
-    <div className="flex py-4">
-      <div className="w-1/2">
+    <div className="flex flex-col lg:flex-row lg:items-start py-4">
+      {/* The image should be a square */}
+      <div
+        className="relative aspect-square w-full lg:w-[50%]"
+        style={{
+          maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
+        }}
+      >
         <Image
           src={
             currentTextureIndex !== null
               ? textureArr[currentTextureIndex].url
               : "/temp-image/customized/Custom-printing-scaled.jpg"
           }
-          height={2560}
-          width={2560}
+          fill
           alt="Custom printing"
-          className="w-full"
-          style={{ maxWidth: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)` }}
+          className="object-contain"
         />
       </div>
-      <div className="flex flex-col ml-8">
+      <div className="flex flex-col w-full lg:w-[50%] lg:pl-8">
         <div className="pb-4">SELECT A TEXTURE</div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-2">
           {textureArr.map((item, index) => (
@@ -133,10 +137,19 @@ export default function Page() {
           ))}
         </div>
         <div className="py-4">
-          UNIT PRICE:{" "}
+          UNIT PRICE:{" $ "}
           {currentTextureIndex !== null && currentQualityIndex !== null
-            ? textureArr[currentTextureIndex].price[currentQualityIndex]
+            ? textureArr[currentTextureIndex].price[currentQualityIndex] +
+              " /SF"
             : "-"}
+        </div>
+        <div>
+          ENTER HEIGHT
+          <input />
+        </div>
+        <div>
+          ENTER WIDTH
+          <input />
         </div>
       </div>
     </div>
