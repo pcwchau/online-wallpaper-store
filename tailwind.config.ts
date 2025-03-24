@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -26,13 +25,6 @@ export default {
         "primary-border-disabled": "#e5e7eb",
         secondary: "#000000",
         "secondary-text": "#ffffff",
-      },
-      fontFamily: {
-        primary: "serif",
-      },
-      fontSize: {
-        "title-sm": ["2rem", { lineHeight: "2.5rem" }],
-        "title-md": ["4rem", { lineHeight: "4.5rem" }],
       },
       keyframes: {
         enlargeSmall: {

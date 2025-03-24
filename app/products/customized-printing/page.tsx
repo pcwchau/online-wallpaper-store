@@ -7,42 +7,42 @@ const textureArr = [
   {
     url: "/temp-image/customized/alys_texture_ws-alabaster.jpg",
     name: "one",
-    price: [9, 15],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-breccia.jpg",
     name: "alys_texture_ws-breccia",
-    price: [10, 15],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-coral_reef.jpg",
     name: "alys_texture_ws-coral_reef",
-    price: [9, 9],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-coulee.jpg",
     name: "alys_texture_ws-coulee",
-    price: [9, 9],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-dark_lantern.jpg",
     name: "alys_texture_ws-dark_lantern",
-    price: [9, 9],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-dolomite.jpg",
     name: "alys_texture_ws-dolomite",
-    price: [9, 9],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-limestone.jpg",
     name: "alys_texture_ws-limestone",
-    price: [9, 9],
+    price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-sand_bar.jpg",
     name: "alys_texture_ws-sand_bar",
-    price: [9, 9],
+    price: [15, 21],
   },
 ];
 
@@ -115,7 +115,7 @@ export default function Page() {
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
         {/* Texture */}
         <div className="space-y-4">
-          <div>SELECT A TEXTURE</div>
+          <div className="font-bold">Select a texture</div>
           <div className="flex flex-wrap gap-2">
             {textureArr.map((item, index) => (
               <button
@@ -134,7 +134,7 @@ export default function Page() {
                   alt="Texture"
                   className="h-8 w-8"
                 />
-                <div>{item.name}</div>
+                <div className="text-sm">{item.name}</div>
               </button>
             ))}
           </div>
@@ -142,7 +142,7 @@ export default function Page() {
 
         {/* Quality */}
         <div className="space-y-4">
-          <div>SELECT A QUALITY</div>
+          <div className="font-bold">Select a quality</div>
           <div className="flex flex-wrap gap-2">
             {qaulityArr.map((item, index) =>
               currentTextureIndex === null ||
@@ -160,7 +160,7 @@ export default function Page() {
                     currentQualityIndex === index
                       ? "border-primary-border-selected"
                       : "border-primary-border"
-                  }  border-2 rounded-lg p-1`}
+                  }  border-2 rounded-lg p-1 text-sm`}
                   onClick={() => handleQualityClick(index)}
                   key={index}
                 >
@@ -172,41 +172,41 @@ export default function Page() {
         </div>
 
         {/* Unit price */}
-        <div>
-          UNIT PRICE:{" $ "}
+        <div className="font-bold">
+          Unit price:{" $ "}
           {currentTextureIndex !== null && currentQualityIndex !== null
             ? textureArr[currentTextureIndex].price[currentQualityIndex] +
-              " /SF"
+              "/sq ft"
             : "-"}
         </div>
 
         {/* Input */}
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center font-bold">
           Height:
           <input
             type="number"
             placeholder="Enter Height"
             value={height}
             onChange={handleHeightChange}
-            className="w-32 border border-primary-border-selected rounded p-1"
+            className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
           inches
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center font-bold">
           Width:
           <input
             type="number"
             placeholder="Enter Width"
             value={width}
             onChange={handleWidthChange}
-            className="w-32 border border-primary-border-selected rounded p-1"
+            className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
           inches
         </div>
 
         {/* Total price */}
-        <div>
-          TOTAL PRICE:{" $ "}
+        <div className="font-bold">
+          Total price:{" $ "}
           {calculateTotalPrice()}
         </div>
       </div>
