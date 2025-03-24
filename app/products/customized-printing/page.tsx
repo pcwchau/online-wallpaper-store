@@ -55,6 +55,8 @@ export default function Page() {
   const [currentQualityIndex, setCurrentQualityIndex] = useState<number | null>(
     null
   );
+  const [width, setWidth] = useState<number | "">("");
+  const [height, setHeight] = useState<number | "">("");
 
   const handleTextureClick = (index: number) => {
     setCurrentTextureIndex(index);
@@ -65,8 +67,31 @@ export default function Page() {
     setCurrentQualityIndex(index);
   };
 
+  const handleHeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setHeight(value ? Number(value) : "");
+  };
+
+  const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setWidth(value ? Number(value) : "");
+  };
+
+  const calculateTotalPrice = () => {
+    return currentTextureIndex !== null &&
+      currentQualityIndex !== null &&
+      width &&
+      width > 0 &&
+      height &&
+      height > 0
+      ? textureArr[currentTextureIndex].price[currentQualityIndex] *
+          (width / 12 + 2) *
+          10
+      : "-";
+  };
+
   return (
-    <div className="flex flex-col lg:flex-row lg:items-start py-4">
+    <div className="flex flex-col lg:flex-row lg:items-start py-4 gap-4">
       {/* Square image */}
       <div
         className="relative aspect-square w-full lg:w-[50%]"
@@ -87,7 +112,7 @@ export default function Page() {
       </div>
 
       {/* Input and information */}
-      <div className="flex flex-col w-full lg:w-[50%] lg:pl-8 space-y-4">
+      <div className="flex flex-col w-full lg:w-[50%] space-y-4">
         {/* Texture */}
         <div className="space-y-4">
           <div>SELECT A TEXTURE</div>
@@ -147,7 +172,7 @@ export default function Page() {
         </div>
 
         {/* Unit price */}
-        <div className="">
+        <div>
           UNIT PRICE:{" $ "}
           {currentTextureIndex !== null && currentQualityIndex !== null
             ? textureArr[currentTextureIndex].price[currentQualityIndex] +
@@ -156,16 +181,34 @@ export default function Page() {
         </div>
 
         {/* Input */}
-        <div>
-          ENTER HEIGHT
-          <input />
+        <div className="flex gap-2 items-center">
+          Height:
+          <input
+            type="number"
+            placeholder="Enter Height"
+            value={height}
+            onChange={handleHeightChange}
+            className="w-32 border border-primary-border-selected rounded p-1"
+          />
+          inches
         </div>
-        <div>
-          ENTER WIDTH
-          <input />
+        <div className="flex gap-2 items-center">
+          Width:
+          <input
+            type="number"
+            placeholder="Enter Width"
+            value={width}
+            onChange={handleWidthChange}
+            className="w-32 border border-primary-border-selected rounded p-1"
+          />
+          inches
         </div>
 
         {/* Total price */}
+        <div>
+          TOTAL PRICE:{" $ "}
+          {calculateTotalPrice()}
+        </div>
       </div>
     </div>
   );
