@@ -6,8 +6,8 @@ import { useState } from "react";
 const textureArr = [
   {
     url: "/temp-image/customized/alys_texture_ws-alabaster.jpg",
-    name: "alys_texture_ws-alabaster",
-    price: [9, null],
+    name: "one",
+    price: [9, 15],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-breccia.jpg",
@@ -67,7 +67,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-start py-4">
-      {/* The image should be a square */}
+      {/* Square image */}
       <div
         className="relative aspect-square w-full lg:w-[50%]"
         style={{
@@ -85,39 +85,47 @@ export default function Page() {
           className="object-contain"
         />
       </div>
-      <div className="flex flex-col w-full lg:w-[50%] lg:pl-8">
-        <div className="pb-4">SELECT A TEXTURE</div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-          {textureArr.map((item, index) => (
-            <button
-              key={index}
-              className={`flex space-x-2 items-center ${
-                currentTextureIndex === index
-                  ? "border-primary-border-selected"
-                  : "border-primary-border"
-              } border-2 rounded-lg p-1`}
-              onClick={() => handleTextureClick(index)}
-            >
-              <Image
-                src={item.url}
-                height={64}
-                width={64}
-                alt="Texture"
-                className="h-8 w-8"
-              />
-              <div>{item.name}</div>
-            </button>
-          ))}
+
+      {/* Input and information */}
+      <div className="flex flex-col w-full lg:w-[50%] lg:pl-8 space-y-4">
+        {/* Texture */}
+        <div className="space-y-4">
+          <div>SELECT A TEXTURE</div>
+          <div className="flex flex-wrap gap-2">
+            {textureArr.map((item, index) => (
+              <button
+                key={index}
+                className={`flex gap-x-2 items-center ${
+                  currentTextureIndex === index
+                    ? "border-primary-border-selected"
+                    : "border-primary-border"
+                } border-2 rounded-lg p-1`}
+                onClick={() => handleTextureClick(index)}
+              >
+                <Image
+                  src={item.url}
+                  height={64}
+                  width={64}
+                  alt="Texture"
+                  className="h-8 w-8"
+                />
+                <div>{item.name}</div>
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="py-4">SELECT A QUALITY</div>
-        <div className="space-x-2">
-          {qaulityArr.map((item, index) => (
-            <span key={index}>
-              {currentTextureIndex === null ||
+
+        {/* Quality */}
+        <div className="space-y-4">
+          <div>SELECT A QUALITY</div>
+          <div className="flex flex-wrap gap-2">
+            {qaulityArr.map((item, index) =>
+              currentTextureIndex === null ||
               textureArr[currentTextureIndex].price[index] === null ? (
                 <button
                   className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled"
                   disabled
+                  key={index}
                 >
                   {item}
                 </button>
@@ -129,20 +137,25 @@ export default function Page() {
                       : "border-primary-border"
                   }  border-2 rounded-lg p-1`}
                   onClick={() => handleQualityClick(index)}
+                  key={index}
                 >
                   {item}
                 </button>
-              )}
-            </span>
-          ))}
+              )
+            )}
+          </div>
         </div>
-        <div className="py-4">
+
+        {/* Unit price */}
+        <div className="">
           UNIT PRICE:{" $ "}
           {currentTextureIndex !== null && currentQualityIndex !== null
             ? textureArr[currentTextureIndex].price[currentQualityIndex] +
               " /SF"
             : "-"}
         </div>
+
+        {/* Input */}
         <div>
           ENTER HEIGHT
           <input />
@@ -151,6 +164,8 @@ export default function Page() {
           ENTER WIDTH
           <input />
         </div>
+
+        {/* Total price */}
       </div>
     </div>
   );
