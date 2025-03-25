@@ -16,7 +16,7 @@ const pages = [
         name: "YARN DYED WALL FABRIC",
         href: "/products/yarn-dyed-wall-fabric",
       },
-      { name: "CUSTOMIZED PRINTING", href: "/products/customized-printing" },
+      { name: "CUSTOMIZED WALL FABRIC", href: "/products/customized-printing" },
       { name: "EMBROIDERED", href: "/products/embroidered" },
       {
         name: "VINYL BANNER AND SIGNS",

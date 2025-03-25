@@ -6,42 +6,42 @@ import { useState } from "react";
 const textureArr = [
   {
     url: "/temp-image/customized/alys_texture_ws-alabaster.jpg",
-    name: "one",
+    name: "無紡布 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-breccia.jpg",
-    name: "alys_texture_ws-breccia",
+    name: "豎條 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-coral_reef.jpg",
-    name: "alys_texture_ws-coral_reef",
+    name: "紗線 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-coulee.jpg",
-    name: "alys_texture_ws-coulee",
+    name: "科技皮 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-dark_lantern.jpg",
-    name: "alys_texture_ws-dark_lantern",
+    name: "亮銀 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-dolomite.jpg",
-    name: "alys_texture_ws-dolomite",
+    name: "亮金 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-limestone.jpg",
-    name: "alys_texture_ws-limestone",
+    name: "冠銀 English Name",
     price: [15, 21],
   },
   {
     url: "/temp-image/customized/alys_texture_ws-sand_bar.jpg",
-    name: "alys_texture_ws-sand_bar",
+    name: "粗竹節 English Name",
     price: [15, 21],
   },
 ];
@@ -148,7 +148,7 @@ export default function Page() {
               currentTextureIndex === null ||
               textureArr[currentTextureIndex].price[index] === null ? (
                 <button
-                  className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled"
+                  className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled text-sm"
                   disabled
                   key={index}
                 >
