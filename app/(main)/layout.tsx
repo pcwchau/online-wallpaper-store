@@ -3,5 +3,5 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="container">{children}</div>;
+  return <div className="container py-4">{children}</div>;
 }

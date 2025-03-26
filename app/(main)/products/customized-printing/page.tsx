@@ -91,7 +91,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:items-start py-4 gap-4">
+    <div className="flex flex-col lg:flex-row lg:items-start gap-4">
       {/* Square image */}
       <div
         className="relative aspect-square w-full lg:w-[50%]"

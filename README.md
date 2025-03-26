@@ -29,3 +29,9 @@ To replace the original WordPress website: https://beshinetextile.com/
 |-------------------------|----------|-------|
 | First page loading time | 5.96s    | 2.32s |
 | Image                   |
+
+# Routing
+
+- Home page + layout
+- Route group `(main)` + layout
+  - all other pages
