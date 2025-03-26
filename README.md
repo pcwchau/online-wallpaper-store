@@ -17,7 +17,13 @@ npm install
 npm run dev
 ```
 
+Testing build:
+
+
+
 # Deployment
+
+It will be automatically built and deployed to Amplify for any commit in `main` branch.
 
 Dev: https://main.d3dt5wuaumew7m.amplifyapp.com/
 
