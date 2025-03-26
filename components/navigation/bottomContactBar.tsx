@@ -8,7 +8,7 @@ const BottomContactBar = () => {
 
   return (
     <div className="py-20 flex flex-col justify-center items-center space-y-4 bg-secondary text-secondary-text">
-      <div className="text-title-sm mb-4">CONTACT</div>
+      <div className="text-4xl mb-4">CONTACT</div>
       <div className="flex items-center space-x-2">
         <PhoneIcon />
         <div>(647) 498-7999</div>

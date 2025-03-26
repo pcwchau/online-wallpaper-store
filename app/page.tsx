@@ -70,14 +70,14 @@ const HomePage = () => {
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
         }}
       >
-        <div className="max-w-[40rem] text-title-sm text-center text-secondary-text">
+        <div className="max-w-[40rem] text-4xl text-center text-secondary-text">
           Transforming Spaces with Artistic Precision and Perfect Wallcovering
         </div>
       </div>
 
       {/* Content */}
       <div className="h-[80vh] flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-title-sm text-center">
+        <div className="max-w-[40rem] text-4xl text-center">
           Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
           Eccentric • Fun
         </div>
@@ -107,7 +107,7 @@ const HomePage = () => {
 
       {/* Content */}
       <div className="h-[80vh] flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-title-sm text-center">
+        <div className="max-w-[40rem] text-4xl text-center">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
         </div>
@@ -138,7 +138,7 @@ const HomePage = () => {
                     }
               }
             >
-              <div className="text-title-sm lg:text-title-md max-w-[35rem] text-center mb-[2rem]">
+              <div className="text-4xl lg:text-5xl max-w-[35rem] text-center mb-[2rem]">
                 {item.title}
               </div>
               <div className="text-center max-w-[35rem]">{item.content}</div>
@@ -162,7 +162,7 @@ const HomePage = () => {
 
       {/* Our Clients */}
       <div className="py-12 flex flex-col justify-center items-center">
-        <div className="text-title-sm mb-4">OUR CLIENTS</div>
+        <div className="text-4xl mb-4">OUR CLIENTS</div>
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
             {clientsLogoImages.map((src, index) => (
