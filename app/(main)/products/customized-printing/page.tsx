@@ -5,42 +5,42 @@ import { useState } from "react";
 
 const textureArr = [
   {
-    url: "/temp-image/customized/alys_texture_ws-alabaster.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "無紡布 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-breccia.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "豎條 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-coral_reef.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "紗線 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-coulee.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "科技皮 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-dark_lantern.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "亮銀 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-dolomite.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "亮金 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-limestone.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "冠銀 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-sand_bar.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "粗竹節 English Name",
     price: [15, 21],
   },
@@ -103,7 +103,7 @@ export default function Page() {
           src={
             currentTextureIndex !== null
               ? textureArr[currentTextureIndex].url
-              : "/temp-image/customized/Custom-printing-scaled.jpg"
+              : "/image/products/customized-printing.jpg"
           }
           fill
           alt="Custom printing"
