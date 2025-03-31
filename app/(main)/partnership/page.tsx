@@ -48,6 +48,7 @@ export default function Page() {
                   src={item.imageUrl}
                   alt={item.name}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover"
                 />
               </Link>

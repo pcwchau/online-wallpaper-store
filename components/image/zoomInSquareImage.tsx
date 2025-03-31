@@ -42,6 +42,7 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
         alt={props.alt}
         className="object-contain"
         fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
         ref={imageRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
