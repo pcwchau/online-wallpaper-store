@@ -60,6 +60,8 @@ Auto formatting in VS code: Prettier
 
 # Challenge
 
+- Image optimization (before loading, add blur)
+
 ## File download for zoom-in images
 
 In product page, for the same texture image, it will be downloaded three times:
