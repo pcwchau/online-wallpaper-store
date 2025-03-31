@@ -1,11 +1,13 @@
 "use client";
+import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
 import Image from "next/image";
 import { useState } from "react";
 
 const textureArr = [
   {
-    url: "/temp-image/1200x1200.jpg",
+    // url: "/temp-image/1200x1200.jpg",
+    url: "/temp-image/1920x1080.jpg",
     name: "無紡布 English Name",
     price: [15, 21],
   },
@@ -92,22 +94,19 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-start gap-4">
-      {/* Square image */}
       <div
-        className="relative aspect-square w-full lg:w-[50%]"
+        className="w-full lg:w-[50%] aspect-square relative"
         style={{
           maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
         }}
       >
-        <Image
+        <ZoomInSquareImage
           src={
             currentTextureIndex !== null
               ? textureArr[currentTextureIndex].url
               : "/image/products/customized-printing.jpg"
           }
-          fill
-          alt="Custom printing"
-          className="object-contain"
+          alt={"Customized printing"}
         />
       </div>
 
@@ -132,7 +131,7 @@ export default function Page() {
                   height={64}
                   width={64}
                   alt="Texture"
-                  className="h-8 w-8"
+                  className="h-8 w-8 object-cover rounded-md"
                 />
                 <div className="text-sm">{item.name}</div>
               </button>

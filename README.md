@@ -51,7 +51,7 @@ npm run build
 
 ## Image Size Requirement
 
-| Image                       | Size & Ratio |
-|-----------------------------|--------------|
-| Partnership                 | 1:1          |
-| Customized printing texture | 1:1          |
+| Image                       | Size & Ratio | Exception handling |
+|-----------------------------|--------------|--------------------|
+| Partnership                 | 1:1          | object-cover       |
+| Customized printing texture | 1:1          | object-contain     |

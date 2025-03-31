@@ -6,31 +6,31 @@ const partnerArr = [
     name: "David",
     role: "Designer",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    profileUrl: "https://www.google.com",
+    profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    profileUrl: "https://www.google.com",
+    profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    profileUrl: "https://www.google.com",
+    profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    profileUrl: "https://www.google.com",
+    profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    profileUrl: "https://www.google.com",
+    profileUrl: "https://teddesign.com/",
   },
 ];
 
