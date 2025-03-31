@@ -12,8 +12,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Online Wallpaper Store",
-  description: "Online Wallpaper Store",
+  title: "Wall Fabric | Be Shine Textile Inc.",
+  keywords: ["Wallcovering", "wallpaper", "wall fabric"],
+  description: "Be Shine Textile Inc.",
 };
 
 export default function RootLayout({
