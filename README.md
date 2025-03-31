@@ -5,22 +5,6 @@
 | React     | 19.0.0  |
 | NextJs    | 15.2.3  |
 
-# Development
-
-First time:
-
-```
-npm install
-```
-
-```
-npm run dev
-```
-
-Testing build:
-
-
-
 # Deployment
 
 It will be automatically built and deployed to Amplify for any commit in `main` branch.
@@ -36,8 +20,40 @@ To replace the original WordPress website: https://beshinetextile.com/
 | First page loading time | 5.96s    | 2.32s |
 | Image                   |
 
-# Routing
+# Development
+
+First time:
+
+```
+npm install
+```
+
+```
+npm run dev
+```
+
+Testing build:
+
+```
+npm run build
+```
+
+Auto formatting in VS code: Prettier
+
+## Routing
 
 - Home page + layout
 - Route group `(main)` + layout
   - all other pages
+
+## Tailwind CSS
+
+- Color: customized class
+- Font size: use Tailwind CSS class
+
+## Image Size Requirement
+
+| Image                       | Size & Ratio | Exception handling |
+|-----------------------------|--------------|--------------------|
+| Partnership                 | 1:1          | object-cover       |
+| Customized printing texture | 1:1          | object-contain     |

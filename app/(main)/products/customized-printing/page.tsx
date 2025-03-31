@@ -1,46 +1,47 @@
 "use client";
+import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
 import Image from "next/image";
 import { useState } from "react";
 
 const textureArr = [
   {
-    url: "/temp-image/customized/alys_texture_ws-alabaster.jpg",
+    url: "/temp-image/1200x1200_1.jpg",
     name: "無紡布 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-breccia.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "豎條 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-coral_reef.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "紗線 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-coulee.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "科技皮 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-dark_lantern.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "亮銀 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-dolomite.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "亮金 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-limestone.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "冠銀 English Name",
     price: [15, 21],
   },
   {
-    url: "/temp-image/customized/alys_texture_ws-sand_bar.jpg",
+    url: "/temp-image/1200x1200.jpg",
     name: "粗竹節 English Name",
     price: [15, 21],
   },
@@ -91,24 +92,24 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:items-start gap-4">
-      {/* Square image */}
-      <div
-        className="relative aspect-square w-full lg:w-[50%]"
-        style={{
-          maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
-        }}
-      >
-        <Image
-          src={
-            currentTextureIndex !== null
-              ? textureArr[currentTextureIndex].url
-              : "/temp-image/customized/Custom-printing-scaled.jpg"
-          }
-          fill
-          alt="Custom printing"
-          className="object-contain"
-        />
+    <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+      <div className="w-full lg:w-[50%] flex justify-end">
+        <div
+          className="w-full aspect-square relative"
+          style={{
+            maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
+            maxWidth: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
+          }}
+        >
+          <ZoomInSquareImage
+            src={
+              currentTextureIndex !== null
+                ? textureArr[currentTextureIndex].url
+                : "/image/products/customized-printing.jpg"
+            }
+            alt={"Customized printing"}
+          />
+        </div>
       </div>
 
       {/* Input and information */}
@@ -132,7 +133,7 @@ export default function Page() {
                   height={64}
                   width={64}
                   alt="Texture"
-                  className="h-8 w-8"
+                  className="h-8 w-8 object-cover rounded-md"
                 />
                 <div className="text-sm">{item.name}</div>
               </button>
