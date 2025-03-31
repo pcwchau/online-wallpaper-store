@@ -40,7 +40,7 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
       <Image
         src={props.src}
         alt={props.alt}
-        className="object-contain border border-black"
+        className="object-contain"
         fill
         ref={imageRef}
         onMouseMove={handleMouseMove}
@@ -48,7 +48,7 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
       />
       {zoomPosition.visible && (
         <div
-          className="absolute w-40 h-40 border-2 border-white shadow-lg pointer-events-none"
+          className="absolute w-40 h-40 border-2 border-primary-border shadow-lg pointer-events-none"
           style={{
             top: `${zoomPosition.y}px`,
             left: `${zoomPosition.x}px`,

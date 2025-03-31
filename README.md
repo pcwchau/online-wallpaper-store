@@ -38,6 +38,8 @@ Testing build:
 npm run build
 ```
 
+Auto formatting in VS code: Prettier
+
 ## Routing
 
 - Home page + layout

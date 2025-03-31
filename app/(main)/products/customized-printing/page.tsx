@@ -6,8 +6,7 @@ import { useState } from "react";
 
 const textureArr = [
   {
-    // url: "/temp-image/1200x1200.jpg",
-    url: "/temp-image/1920x1080.jpg",
+    url: "/temp-image/1200x1200_1.jpg",
     name: "無紡布 English Name",
     price: [15, 21],
   },
@@ -93,21 +92,24 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:items-start gap-4">
-      <div
-        className="w-full lg:w-[50%] aspect-square relative"
-        style={{
-          maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
-        }}
-      >
-        <ZoomInSquareImage
-          src={
-            currentTextureIndex !== null
-              ? textureArr[currentTextureIndex].url
-              : "/image/products/customized-printing.jpg"
-          }
-          alt={"Customized printing"}
-        />
+    <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+      <div className="w-full lg:w-[50%] flex justify-end">
+        <div
+          className="w-full aspect-square relative"
+          style={{
+            maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
+            maxWidth: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
+          }}
+        >
+          <ZoomInSquareImage
+            src={
+              currentTextureIndex !== null
+                ? textureArr[currentTextureIndex].url
+                : "/image/products/customized-printing.jpg"
+            }
+            alt={"Customized printing"}
+          />
+        </div>
       </div>
 
       {/* Input and information */}
