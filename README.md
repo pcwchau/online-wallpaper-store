@@ -57,3 +57,15 @@ Auto formatting in VS code: Prettier
 |-----------------------------|--------------|--------------------|
 | Partnership                 | 1:1          | object-cover       |
 | Customized printing texture | 1:1          | object-contain     |
+
+# Challenge
+
+## File download for zoom-in images
+
+In product page, for the same texture image, it will be downloaded three times:
+
+- First loading - Small size for "select a texture".
+- After selecting the texture - Large size for picture on the left.
+- After hovering onto the image - Actual size for zoom-in box.
+
+Apart from the first loading, a blank image flicker will be observed.

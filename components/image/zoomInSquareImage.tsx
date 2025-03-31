@@ -49,7 +49,7 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
       />
       {zoomPosition.visible && (
         <div
-          className="absolute w-40 h-40 border-2 border-primary-border shadow-lg pointer-events-none"
+          className="absolute w-40 h-40 border-2 border-primary-border shadow-lg pointer-events-none z-50"
           style={{
             top: `${zoomPosition.y}px`,
             left: `${zoomPosition.x}px`,
