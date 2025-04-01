@@ -122,7 +122,12 @@ const TopBar: React.FC = () => {
                     {item.name}
                   </Link>
                 ) : (
-                  item.name
+                  <button
+                    onClick={() => toggleSmallScreenMenuExpandIndex(index)}
+                    disabled={!item.subPages}
+                  >
+                    {item.name}
+                  </button>
                 )}
                 {item.subPages && (
                   <button

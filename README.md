@@ -63,20 +63,15 @@ Auto formatting in VS code: Prettier
 
 ## File download for zoom-in images
 
-In product page, one texture image will be downloaded three times as different sizes:
+In product page, one texture image will be downloaded three times as different sizes. For example, the source file is 1200 x 1200 (641 kB),
 
-1. First loading - Small size for "select a texture".
-2. After selecting the texture - Large size for the large image. (optimized URL by Next.js)
-3. After hovering onto the image - Actual size for zoom-in preview box. (direct public URL)
+1. First loading - Small size for "select a texture", 128 x 128 (3.5 kB)
+2. After selecting the texture - Large size for the large image. (optimized URL by Next.js) 1200 x 1200 (480 kB)
+3. After hovering onto the image - Actual size for zoom-in preview box. (direct public URL) 1200 x 1200 (641 kB)
 
 For the first time visiting the website (no cache), after selecting a texture, the large image of that texture will not be immediately displayed. The same thing happens when the zoom-in box appears. Because it needs some time to finish downloading the image files.
 
-For example, the source file is 1200 x 1200 (641 kB),
+Enhancement approach:
 
-1. 128 x 128 (3.5 kB)
-2. 1200 x 1200 (480 kB)
-3. 1200 x 1200 (641 kB)
-
-To avoid waiting the large image: 
-
-To avoid waiting image in the zoom-in box: Both use direct public URL. It is very hard to both use optimized URL by Next.js Image.
+1. Try to use optimized URL (Next.js Image) to do both the large image and zoom-in image. Seems very hard because of CSS.
+2. Try to use direct public URL (source file) to do both the large image and zoom-in image. File size is not optimized.
