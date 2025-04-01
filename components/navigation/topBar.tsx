@@ -59,13 +59,13 @@ const TopBar: React.FC = () => {
           onClick={() => resetSmallScreenMenu()}
           title="Be Shine Textile Home"
         >
-          <div className="h-16">
-            <Image
-              src={logoPic}
-              alt="Be Shine Textile Logo"
-              className="h-full w-auto"
-            />
-          </div>
+          <Image
+            src={logoPic}
+            alt="Be Shine Textile Logo"
+            height={64}
+            width={100}
+            className="h-16 w-auto"
+          />
         </Link>
         {/* For screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">

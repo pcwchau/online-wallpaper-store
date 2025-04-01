@@ -64,14 +64,25 @@ const HomePage = () => {
     <div>
       {/* First picture */}
       <div
-        className="bg-cover flex justify-center items-center px-4"
         style={{
-          backgroundImage: "url('/image/home/feather.jpg')",
+          position: "relative",
           height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
         }}
       >
-        <div className="max-w-[40rem] text-4xl text-center text-secondary-text">
-          Transforming Spaces with Artistic Precision and Perfect Wallcovering
+        <Image
+          src="/image/home/feather.jpg"
+          alt="feather"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+          // blur image is plain image in black
+        />
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="max-w-[40rem] px-4 text-4xl text-center text-secondary-text">
+            Transforming Spaces with Artistic Precision and Perfect Wallcovering
+          </div>
         </div>
       </div>
 

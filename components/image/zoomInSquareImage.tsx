@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface ZoomInSquareImageProps {
   src: string;
   alt: string;
 }
 
+// The parent component must be relative positioned
 export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
+  const [isImageLoading, setIsImageLoading] = useState(true);
   const [zoomPosition, setZoomPosition] = useState({
     x: 0,
     y: 0,
@@ -16,6 +18,10 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
     bgY: 0,
   });
   const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    setIsImageLoading(true);
+  }, [props.src]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!imageRef.current) return;
@@ -42,14 +48,15 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
         alt={props.alt}
         className="object-contain"
         fill
-        sizes="(max-width: 1024px) 100vw, 50vw"
+        unoptimized // to prevent duplicate image loading of zoomed-in image
         ref={imageRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onLoad={() => setIsImageLoading(false)}
       />
       {zoomPosition.visible && (
         <div
-          className="absolute w-40 h-40 border-2 border-primary-border shadow-lg pointer-events-none"
+          className="absolute w-40 h-40 border-2 border-primary-border shadow-lg pointer-events-none z-50"
           style={{
             top: `${zoomPosition.y}px`,
             left: `${zoomPosition.x}px`,
@@ -58,6 +65,11 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
             backgroundPosition: `${zoomPosition.bgX}% ${zoomPosition.bgY}%`,
           }}
         />
+      )}
+      {isImageLoading && (
+        <div className="absolute inset-0 flex justify-center items-center z-50 bg-primary/50">
+          Loading
+        </div>
       )}
     </>
   );
