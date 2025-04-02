@@ -4,6 +4,7 @@ import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
 import Image from "next/image";
 import { useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 const textureArr = [
   {
@@ -99,6 +100,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+      <Tooltip id="my-tooltip" />
       <div className="w-full lg:w-[50%] flex justify-end">
         <div
           className="w-full aspect-square relative"
@@ -206,7 +208,12 @@ export default function Page() {
             className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
           in
-          <QuestionCircleIcon width="1.5em" height="1.5em" />
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content="Hello to you too! Hello to you too! Hello to you too!"
+          >
+            <QuestionCircleIcon width="1.5em" height="1.5em" />
+          </a>
         </div>
         <div className="flex gap-2 items-center font-bold">
           Width:
@@ -218,11 +225,23 @@ export default function Page() {
             className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
           in
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content="Hello to you too haha!"
+          >
+            <QuestionCircleIcon width="1.5em" height="1.5em" />
+          </a>
         </div>
 
         {/* Total price */}
-        <div className="font-bold">
+        <div className="flex gap-2 items-center font-bold">
           {`Estimated price: $ ${calculateTotalPrice()} CAD`}
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content="Hello to you too!"
+          >
+            <QuestionCircleIcon width="1.5em" height="1.5em" />
+          </a>
         </div>
       </div>
     </div>
