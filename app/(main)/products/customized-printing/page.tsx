@@ -114,6 +114,7 @@ export default function Page() {
                 : "/image/products/customized-printing.jpg"
             }
             alt={"Customized printing"}
+            unoptimized
           />
         </div>
       </div>
