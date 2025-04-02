@@ -1,4 +1,5 @@
 "use client";
+import QuestionCircleIcon from "@/assets/icons/questionCircleIcon";
 import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
 import Image from "next/image";
@@ -119,6 +120,9 @@ export default function Page() {
 
       {/* Input and information */}
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
+        <div className="border-b-2 border-b-primary-border font-bold text-xl">
+          Material Selection
+        </div>
         {/* Texture */}
         <div className="space-y-4">
           <div className="font-bold">Select a texture</div>
@@ -177,13 +181,17 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Unit price */}
-        <div className="font-bold">
-          Unit price:{" $ "}
-          {currentTextureIndex !== null && currentQualityIndex !== null
-            ? textureArr[currentTextureIndex].price[currentQualityIndex] +
-              "/sq ft"
-            : "-"}
+        {/* Price */}
+        <div className="font-bold text-lg">
+          {`$ ${
+            currentTextureIndex !== null && currentQualityIndex !== null
+              ? textureArr[currentTextureIndex].price[currentQualityIndex]
+              : "-"
+          } CAD / sq. ft.`}
+        </div>
+
+        <div className="border-b-2 border-b-primary-border font-bold text-xl pt-4">
+          Cost Estimation
         </div>
 
         {/* Input */}
@@ -191,29 +199,29 @@ export default function Page() {
           Height:
           <input
             type="number"
-            placeholder="Enter Height"
+            placeholder="Enter height"
             value={height}
             onChange={handleHeightChange}
             className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
-          inches
+          in
+          <QuestionCircleIcon width="1.5em" height="1.5em" />
         </div>
         <div className="flex gap-2 items-center font-bold">
           Width:
           <input
             type="number"
-            placeholder="Enter Width"
+            placeholder="Enter width"
             value={width}
             onChange={handleWidthChange}
             className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
-          inches
+          in
         </div>
 
         {/* Total price */}
         <div className="font-bold">
-          Total price:{" $ "}
-          {calculateTotalPrice()}
+          {`Estimated price: $ ${calculateTotalPrice()} CAD`}
         </div>
       </div>
     </div>

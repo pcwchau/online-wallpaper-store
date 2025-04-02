@@ -48,7 +48,7 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
         alt={props.alt}
         className="object-contain"
         fill
-        unoptimized // to prevent duplicate image loading of zoomed-in image
+        // unoptimized // to prevent duplicate image loading of zoomed-in image
         ref={imageRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -67,8 +67,8 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
         />
       )}
       {isImageLoading && (
-        <div className="absolute inset-0 flex justify-center items-center z-50 bg-primary/50">
-          Loading
+        <div className="absolute inset-0 flex justify-center items-center z-40 bg-primary/50">
+          Loading ...
         </div>
       )}
     </>
