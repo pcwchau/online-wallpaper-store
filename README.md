@@ -56,6 +56,7 @@ Auto formatting in VS code: Prettier
 |-----------------------------|-------|-----------|--------------------|
 | Partnership                 | 1:1   |           | object-cover       |
 | Customized printing texture | 1:1   | 1200x1200 | object-contain     |
+| Inspiration (thumbnail)     | 1:1   |           | object-cover       |
 
 # Challenge
 
