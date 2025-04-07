@@ -24,11 +24,11 @@ const pages = [
       },
     ],
   },
-  { name: "PROJECTS", href: "/projects" },
+  // { name: "PROJECTS", href: "/projects" },
   { name: "INSPIRATION", href: "/inspiration" },
-  { name: "COMPANY", href: "/company" },
+  // { name: "COMPANY", href: "/company" },
   { name: "PARTNERSHIP", href: "/partnership" },
-  { name: "CONTACT", href: "/contact" },
+  // { name: "CONTACT", href: "/contact" },
 ];
 
 // Please update the constant TOP_BAR_HEIGHT if the height changes

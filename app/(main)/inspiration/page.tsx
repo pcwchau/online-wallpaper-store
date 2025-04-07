@@ -1,7 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSwipeable } from "react-swipeable";
+import ArrowLeftCircleIcon from "@/assets/icons/arrowLeftCircleIcon";
+import ArrowRightCircleIcon from "@/assets/icons/arrowRightCircleIcon";
+import CancelCircleIcon from "@/assets/icons/cancelCircleIcon";
 
 const imageArr = [
   { url: "/temp-image/1200x1200.jpg", name: "無紡布 English Name" },
@@ -15,16 +19,70 @@ const imageArr = [
   { url: "/temp-image/1200x1200_7.jpg", name: "亮金 English Name" },
   { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
   { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1920x1080.jpg", name: "無紡布 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
+  { url: "/temp-image/1200x1200_8.jpg", name: "冠銀 English Name" },
+  { url: "/temp-image/1200x1200_9.jpg", name: "粗竹節 English Name" },
 ];
 
 export default function Page() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const closeLightbox = () => setLightboxIndex(null);
-  const showPrev = () =>
+  const handleLightboxClose = () => setLightboxIndex(null);
+
+  const handlePrevClick = () =>
     setLightboxIndex((prev) => (prev! - 1 + imageArr.length) % imageArr.length);
-  const showNext = () =>
+
+  const handleNextClick = () =>
     setLightboxIndex((prev) => (prev! + 1) % imageArr.length);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (lightboxIndex === null) return;
+      if (e.key === "ArrowRight") handleNextClick();
+      if (e.key === "ArrowLeft") handlePrevClick();
+      if (e.key === "Escape") handleLightboxClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxIndex]);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNextClick,
+    onSwipedRight: handlePrevClick,
+    trackMouse: true,
+  });
 
   return (
     <div>
@@ -46,24 +104,33 @@ export default function Page() {
         ))}
       </div>
 
-      {/* Lightbox Viewer */}
       {lightboxIndex !== null && (
-        <div className="fixed inset-0 bg-secondary/90 z-50 flex items-center justify-center">
+        <div
+          {...swipeHandlers}
+          className="fixed inset-0 bg-secondary/90 z-50 flex flex-col items-center p-2"
+        >
           <button
-            className="absolute top-4 right-4 text-secondary-text text-4xl"
-            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-secondary-text select-none z-50"
+            onClick={handleLightboxClose}
           >
-            &times;
+            <CancelCircleIcon width="1.5em" height="1.5em" opacity={0.6} />
           </button>
 
           <button
-            className="absolute left-4 text-secondary-text text-5xl select-none"
-            onClick={showPrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary-text select-none z-50"
+            onClick={handlePrevClick}
           >
-            &#10094;
+            <ArrowLeftCircleIcon width="2em" height="2em" opacity={0.6} />
           </button>
 
-          <div className="relative w-[90vw] h-[90vh] max-w-5xl max-h-[90vh]">
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-secondary-text select-none z-50"
+            onClick={handleNextClick}
+          >
+            <ArrowRightCircleIcon width="2em" height="2em" opacity={0.6} />
+          </button>
+
+          <div className="relative w-full h-full">
             <Image
               src={imageArr[lightboxIndex].url}
               alt={imageArr[lightboxIndex].name}
@@ -72,12 +139,9 @@ export default function Page() {
             />
           </div>
 
-          <button
-            className="absolute right-4 text-white text-5xl select-none"
-            onClick={showNext}
-          >
-            &#10095;
-          </button>
+          <div className="mt-2 text-secondary-text text-center">
+            {imageArr[lightboxIndex].name}
+          </div>
         </div>
       )}
     </div>
