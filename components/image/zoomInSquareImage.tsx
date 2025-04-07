@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 interface ZoomInSquareImageProps {
   src: string;
   alt: string;
+  unoptimized: boolean;
 }
 
 // The parent component must be relative positioned
 export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
-  const [isImageLoading, setIsImageLoading] = useState(true);
   const [zoomPosition, setZoomPosition] = useState({
     x: 0,
     y: 0,
@@ -18,10 +18,6 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
     bgY: 0,
   });
   const imageRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    setIsImageLoading(true);
-  }, [props.src]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!imageRef.current) return;
@@ -48,11 +44,10 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
         alt={props.alt}
         className="object-contain"
         fill
-        // unoptimized // to prevent duplicate image loading of zoomed-in image
+        unoptimized={props.unoptimized}
         ref={imageRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        onLoad={() => setIsImageLoading(false)}
       />
       {zoomPosition.visible && (
         <div
@@ -65,11 +60,6 @@ export default function ZoomInSquareImage(props: ZoomInSquareImageProps) {
             backgroundPosition: `${zoomPosition.bgX}% ${zoomPosition.bgY}%`,
           }}
         />
-      )}
-      {isImageLoading && (
-        <div className="absolute inset-0 flex justify-center items-center z-40 bg-primary/50">
-          Loading ...
-        </div>
       )}
     </>
   );

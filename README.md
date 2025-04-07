@@ -56,6 +56,7 @@ Auto formatting in VS code: Prettier
 |-----------------------------|-------|-----------|--------------------|
 | Partnership                 | 1:1   |           | object-cover       |
 | Customized printing texture | 1:1   | 1200x1200 | object-contain     |
+| Inspiration (thumbnail)     | 1:1   |           | object-cover       |
 
 # Challenge
 
@@ -73,5 +74,5 @@ For the first time visiting the website (no cache), after selecting a texture, t
 
 Enhancement approach:
 
-1. Try to use optimized URL (Next.js Image) to do both the large image and zoom-in image. Seems very hard because of CSS.
-2. Try to use direct public URL (source file) to do both the large image and zoom-in image. File size is not optimized.
+1. Try to use optimized URL (Next.js Image) to do both the large image and zoom-in image. File size is optimized, but the loading time is longer.
+2. Try to use direct public URL (source file) to do both the large image and zoom-in image.
