@@ -64,6 +64,7 @@ const TopBar: React.FC = () => {
             alt="Be Shine Textile Logo"
             height={64}
             width={100}
+            priority
             className="h-16 w-auto"
           />
         </Link>
