@@ -9,7 +9,7 @@
 
 It will be automatically built and deployed to Amplify for any commit in `main` branch.
 
-Dev: https://main.d3dt5wuaumew7m.amplifyapp.com/
+Dev: https://main.d2a4vrjq32aete.amplifyapp.com/
 
 # Purpose
 
