@@ -5,39 +5,32 @@
 | React     | 19.0.0  |
 | NextJs    | 15.2.3  |
 
+To replace the original WordPress website.
+
+|                         | Original | New   |
+|-------------------------|----------|-------|
+| First page loading time | 5.51s    | 2.2s  |
+
+# Development
+
+```sh
+# Initialize the project for the first time
+npm install
+
+# Start the local web server (.env.development)
+npm run dev
+
+# Test production build before deployment (.env.production)
+npm run build
+```
+
 # Deployment
 
 It will be automatically built and deployed to Amplify for any commit in `main` branch.
 
-Dev: https://main.d2a4vrjq32aete.amplifyapp.com/
+Production: https://main.d2a4vrjq32aete.amplifyapp.com/
 
-# Purpose
-
-To replace the original WordPress website: https://beshinetextile.com/
-
-|                         | Original | New   |
-|-------------------------|----------|-------|
-| First page loading time | 5.51s    | 2.2s |
-
-# Development
-
-First time:
-
-```
-npm install
-```
-
-```
-npm run dev
-```
-
-Testing build:
-
-```
-npm run build
-```
-
-Auto formatting in VS code: Prettier
+# Guidelines
 
 ## Routing
 
