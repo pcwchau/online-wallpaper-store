@@ -64,7 +64,6 @@ export default function Page() {
     null
   );
   const [width, setWidth] = useState<number | "">("");
-  const [height, setHeight] = useState<number | "">("");
 
   const handleTextureClick = (index: number) => {
     setCurrentTextureIndex(index);
@@ -73,11 +72,6 @@ export default function Page() {
 
   const handleQualityClick = (index: number) => {
     setCurrentQualityIndex(index);
-  };
-
-  const handleHeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setHeight(value ? Number(value) : "");
   };
 
   const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,12 +83,12 @@ export default function Page() {
     return currentTextureIndex !== null &&
       currentQualityIndex !== null &&
       width &&
-      width > 0 &&
-      height &&
-      height > 0
-      ? textureArr[currentTextureIndex].price[currentQualityIndex] *
-          (width / 12 + 2) *
-          10
+      width > 0
+      ? Math.round(
+          textureArr[currentTextureIndex].price[currentQualityIndex] *
+            width *
+            1.1
+        )
       : "-";
   };
 
@@ -190,7 +184,7 @@ export default function Page() {
             currentTextureIndex !== null && currentQualityIndex !== null
               ? textureArr[currentTextureIndex].price[currentQualityIndex]
               : "-"
-          } CAD / sq. ft.`}
+          } CAD / in`}
         </div>
 
         <div className="border-b-2 border-b-primary-border font-bold text-xl pt-4">
@@ -199,21 +193,7 @@ export default function Page() {
 
         {/* Input */}
         <div className="flex gap-2 items-center font-bold">
-          Height:
-          <input
-            type="number"
-            placeholder="Enter height"
-            value={height}
-            onChange={handleHeightChange}
-            className="w-32 border border-primary-border-selected rounded p-1 font-medium"
-          />
-          in
-          <a
-            data-tooltip-id="my-tooltip"
-            data-tooltip-content="Hello to you too! Hello to you too! Hello to you too!"
-          >
-            <QuestionCircleIcon width="1.5em" height="1.5em" />
-          </a>
+          Height: 116 in (Please contact us if over 116 in)
         </div>
         <div className="flex gap-2 items-center font-bold">
           Width:

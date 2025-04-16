@@ -24,11 +24,13 @@ npm run dev
 npm run build
 ```
 
+Make sure the backend web server is running, otherwise some pages will fail to load.
+
 # Deployment
 
 It will be automatically built and deployed to Amplify for any commit in `main` branch.
 
-Production: https://main.d2a4vrjq32aete.amplifyapp.com/
+Information such as build script and custom domains can be checked on Amplify.
 
 # Guidelines
 
