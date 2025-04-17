@@ -12,7 +12,7 @@ interface ProductPageProps {
     name: string;
     price: number[];
   }[];
-  qaulityArr: string[];
+  qualityArr: string[];
 }
 
 export default function ProductPage(props: ProductPageProps) {
@@ -110,7 +110,7 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="space-y-4">
           <div className="font-bold">Select a quality</div>
           <div className="flex flex-wrap gap-2">
-            {props.qaulityArr.map((item, index) =>
+            {props.qualityArr.map((item, index) =>
               currentTextureIndex === null ||
               props.textureArr[currentTextureIndex].price[index] === null ? (
                 <button
