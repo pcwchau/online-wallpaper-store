@@ -26,7 +26,7 @@ const pages = [
   },
   // { name: "PROJECTS", href: "/projects" },
   { name: "INSPIRATION", href: "/inspiration" },
-  // { name: "COMPANY", href: "/company" },
+  { name: "ABOUT US", href: "/company" },
   { name: "PARTNERSHIP", href: "/partnership" },
   // { name: "CONTACT", href: "/contact" },
 ];
@@ -81,7 +81,10 @@ const TopBar: React.FC = () => {
               {item.href ? (
                 <Link href={item.href}>{item.name}</Link>
               ) : (
-                item.name
+                <div className="flex cursor-default items-center gap-1">
+                  <div>{item.name}</div>
+                  <ArrowDownIcon />
+                </div>
               )}
 
               {/* Drop down menu */}

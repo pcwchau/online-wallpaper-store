@@ -26,9 +26,9 @@ const GETRequestWithTimeout = async (
     return response;
   } catch (err) {
     if ((err as Error).name === "AbortError") {
-      console.error("Fetch request timed out");
+      console.error("GET request timed out");
     } else {
-      console.error("Error fetching image URLs:", err);
+      console.error("GET request error: ", err);
     }
   }
 };

@@ -24,11 +24,13 @@ npm run dev
 npm run build
 ```
 
+Make sure the backend web server is running, otherwise some pages will fail to load.
+
 # Deployment
 
 It will be automatically built and deployed to Amplify for any commit in `main` branch.
 
-Production: https://main.d2a4vrjq32aete.amplifyapp.com/
+Information such as build script and custom domains can be checked on Amplify.
 
 # Guidelines
 
@@ -47,9 +49,10 @@ Production: https://main.d2a4vrjq32aete.amplifyapp.com/
 
 | Image                       | Ratio | Min Size  | Exception handling |
 |-----------------------------|-------|-----------|--------------------|
-| Partnership                 | 1:1   |           | object-cover       |
+| Yarn dyed - collection      | 1:1   |           | object-cover       |
 | Customized printing texture | 1:1   | 1200x1200 | object-contain     |
 | Inspiration (thumbnail)     | 1:1   |           | object-cover       |
+| Partnership                 | 1:1   |           | object-cover       |
 
 # Challenge
 

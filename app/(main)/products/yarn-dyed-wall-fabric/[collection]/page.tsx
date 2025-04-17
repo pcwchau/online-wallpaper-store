@@ -50,6 +50,17 @@ const textureArr = [
 
 const qualityArr = ["Fire Retardant", "Fire Ratardant and Waterproof"];
 
-export default function Page() {
-  return <ProductPage textureArr={textureArr} qualityArr={qualityArr} />;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ collection: string }>;
+}) {
+  const { collection } = await params;
+
+  return (
+    <div>
+      <h1>{collection}</h1>
+      <ProductPage textureArr={textureArr} qualityArr={qualityArr} />;
+    </div>
+  );
 }
