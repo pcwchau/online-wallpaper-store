@@ -39,10 +39,10 @@ export default function Page() {
     <div className="space-y-8">
       <div className="text-center text-2xl">MEET OUR DESIGNER</div>
       <div className="text-center text-4xl">OUR PROFESSIONAL</div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
+      <div className="grid grid-cols-2 gap-x-16 gap-y-6 md:grid-cols-3 lg:grid-cols-4">
         {partnerArr.map((item, index) => (
           <div key={index}>
-            <div className="border border-black aspect-square relative">
+            <div className="aspect-square relative">
               <Link href={item.profileUrl} target="_blank">
                 <Image
                   src={item.imageUrl}

@@ -95,7 +95,7 @@ export default function Page() {
   return (
     <div className="flex flex-col lg:flex-row lg:items-start gap-8">
       <Tooltip id="my-tooltip" />
-      <div className="w-full lg:w-[50%] flex justify-end">
+      <div className="w-full lg:w-[50%] flex justify-center">
         <div
           className="w-full aspect-square relative"
           style={{

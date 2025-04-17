@@ -49,9 +49,10 @@ Information such as build script and custom domains can be checked on Amplify.
 
 | Image                       | Ratio | Min Size  | Exception handling |
 |-----------------------------|-------|-----------|--------------------|
-| Partnership                 | 1:1   |           | object-cover       |
+| Yarn dyed - collection      | 1:1   |           | object-cover       |
 | Customized printing texture | 1:1   | 1200x1200 | object-contain     |
 | Inspiration (thumbnail)     | 1:1   |           | object-cover       |
+| Partnership                 | 1:1   |           | object-cover       |
 
 # Challenge
 
