@@ -11,20 +11,21 @@ export default {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        lg: "6rem",
+        lg: "8rem",
       },
     },
     // Add custom styles
     extend: {
       colors: {
-        primary: "#ffffff",
-        "primary-text": "#000000",
-        "primary-text-disabled": "#e5e7eb",
-        "primary-border": "#e5e7eb",
-        "primary-border-selected": "#000000",
-        "primary-border-disabled": "#e5e7eb",
-        secondary: "#000000",
-        "secondary-text": "#ffffff",
+        primary: "#ffffff", // white
+        "primary-text": "#1f1a17", // black
+        "primary-text-hover": "#ffc500", // yellow
+        "primary-text-disabled": "#e5e7eb", // gray
+        "primary-border": "#e5e7eb", // gray
+        "primary-border-selected": "#1f1a17", // black
+        "primary-border-disabled": "#e5e7eb", // gray
+        secondary: "#1f1a17", // black
+        "secondary-text": "#ffffff", // white
       },
       keyframes: {
         enlargeSmall: {

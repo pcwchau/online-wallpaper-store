@@ -1,1 +1,1 @@
-export const TOP_BAR_HEIGHT = "6rem";
+export const TOP_BAR_HEIGHT = "7rem";
