@@ -1,55 +1,81 @@
 import ProductPage from "@/components/page/productPage";
+import { QualityType } from "@/types/enum";
 
-const textureArr = [
+const optionArr = [
   {
-    url: "/temp-image/1200x1200.jpg",
     name: "無紡布 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_2.jpg",
     name: "豎條 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_2.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_3.jpg",
     name: "紗線 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_3.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_4.jpg",
     name: "科技皮 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_4.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_5.jpg",
     name: "亮銀 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_5.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_6.jpg",
     name: "亮銀2 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_6.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_7.jpg",
     name: "亮金 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_7.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_8.jpg",
     name: "冠銀 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_8.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
   {
-    url: "/temp-image/1200x1200_9.jpg",
     name: "粗竹節 English Name",
-    price: [15, 21],
+    imageUrl: "/temp-image/1200x1200_9.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardant, price: 165 },
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
   },
 ];
 
-const qualityArr = ["Fire Retardant", "Fire Ratardant and Waterproof"];
-
 export default function Page() {
-  return <ProductPage textureArr={textureArr} qualityArr={qualityArr} />;
+  return <ProductPage optionType="texture" optionArr={optionArr} />;
 }

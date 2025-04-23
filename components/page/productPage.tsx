@@ -2,21 +2,24 @@
 import QuestionCircleIcon from "@/assets/icons/questionCircleIcon";
 import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
+import { QualityType } from "@/types/enum";
 import Image from "next/image";
 import { useState } from "react";
 import { Tooltip } from "react-tooltip";
 
+// optionType: "colour" - Thumbnail images will be shown in the option section
+// optionType: "texture" - Thumbnail images will not be shown in the option section
 interface ProductPageProps {
-  textureArr: {
-    url: string;
+  optionType: "colour" | "texture";
+  optionArr: {
     name: string;
-    price: number[];
+    imageUrl: string;
+    priceByQualityArr: { quality: QualityType; price: number }[];
   }[];
-  qualityArr: string[];
 }
 
 export default function ProductPage(props: ProductPageProps) {
-  const [currentTextureIndex, setCurrentTextureIndex] = useState<number | null>(
+  const [currentOptionIndex, setCurrentOptionIndex] = useState<number | null>(
     null
   );
   const [currentQualityIndex, setCurrentQualityIndex] = useState<number | null>(
@@ -24,9 +27,9 @@ export default function ProductPage(props: ProductPageProps) {
   );
   const [width, setWidth] = useState<number | "">("");
 
-  const handleTextureClick = (index: number) => {
-    setCurrentTextureIndex(index);
-    setCurrentQualityIndex(null);
+  const handleOptionClick = (index: number) => {
+    setCurrentOptionIndex(index);
+    setCurrentQualityIndex(0);
   };
 
   const handleQualityClick = (index: number) => {
@@ -39,14 +42,14 @@ export default function ProductPage(props: ProductPageProps) {
   };
 
   const calculateTotalPrice = () => {
-    return currentTextureIndex !== null &&
+    return currentOptionIndex !== null &&
       currentQualityIndex !== null &&
       width &&
       width > 0
       ? Math.round(
-          props.textureArr[currentTextureIndex].price[currentQualityIndex] *
-            width *
-            1.1
+          props.optionArr[currentOptionIndex].priceByQualityArr[
+            currentQualityIndex
+          ].price * width
         )
       : "-";
   };
@@ -64,8 +67,8 @@ export default function ProductPage(props: ProductPageProps) {
         >
           <ZoomInSquareImage
             src={
-              currentTextureIndex !== null
-                ? props.textureArr[currentTextureIndex].url
+              currentOptionIndex !== null
+                ? props.optionArr[currentOptionIndex].imageUrl
                 : "/image/products/customized-printing.jpg"
             }
             alt={"Customized printing"}
@@ -79,27 +82,29 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="border-b-2 border-b-primary-border font-bold text-xl">
           Material Selection
         </div>
-        {/* Texture */}
+        {/* Options */}
         <div className="space-y-4">
-          <div className="font-bold">Select a texture</div>
+          <div className="font-bold">Select a {props.optionType}</div>
           <div className="flex flex-wrap gap-2">
-            {props.textureArr.map((item, index) => (
+            {props.optionArr.map((item, index) => (
               <button
                 key={index}
                 className={`flex gap-x-2 items-center ${
-                  currentTextureIndex === index
+                  currentOptionIndex === index
                     ? "border-primary-border-selected"
                     : "border-primary-border"
                 } border-2 rounded-lg p-1`}
-                onClick={() => handleTextureClick(index)}
+                onClick={() => handleOptionClick(index)}
               >
-                <Image
-                  src={item.url}
-                  height={64}
-                  width={64}
-                  alt="Texture"
-                  className="h-8 w-8 object-cover rounded-md"
-                />
+                {props.optionType === "colour" && (
+                  <Image
+                    src={item.imageUrl}
+                    height={64}
+                    width={64}
+                    alt="Texture"
+                    className="h-8 w-8 object-cover rounded-md"
+                  />
+                )}
                 <div className="text-sm">{item.name}</div>
               </button>
             ))}
@@ -110,28 +115,28 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="space-y-4">
           <div className="font-bold">Select a quality</div>
           <div className="flex flex-wrap gap-2">
-            {props.qualityArr.map((item, index) =>
-              currentTextureIndex === null ||
-              props.textureArr[currentTextureIndex].price[index] === null ? (
-                <button
-                  className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled text-sm"
-                  disabled
-                  key={index}
-                >
-                  {item}
-                </button>
-              ) : (
-                <button
-                  className={`${
-                    currentQualityIndex === index
-                      ? "border-primary-border-selected"
-                      : "border-primary-border"
-                  }  border-2 rounded-lg p-1 text-sm`}
-                  onClick={() => handleQualityClick(index)}
-                  key={index}
-                >
-                  {item}
-                </button>
+            {currentOptionIndex === null ? (
+              <button
+                className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled text-sm"
+                disabled
+              >
+                You need to select a {props.optionType} first
+              </button>
+            ) : (
+              props.optionArr[currentOptionIndex].priceByQualityArr.map(
+                (item, index) => (
+                  <button
+                    className={`${
+                      currentQualityIndex === index
+                        ? "border-primary-border-selected"
+                        : "border-primary-border"
+                    }  border-2 rounded-lg p-1 text-sm`}
+                    onClick={() => handleQualityClick(index)}
+                    key={index}
+                  >
+                    {item.quality}
+                  </button>
+                )
               )
             )}
           </div>
@@ -140,10 +145,12 @@ export default function ProductPage(props: ProductPageProps) {
         {/* Price */}
         <div className="font-bold text-lg">
           {`$ ${
-            currentTextureIndex !== null && currentQualityIndex !== null
-              ? props.textureArr[currentTextureIndex].price[currentQualityIndex]
+            currentOptionIndex !== null && currentQualityIndex !== null
+              ? props.optionArr[currentOptionIndex].priceByQualityArr[
+                  currentQualityIndex
+                ].price
               : "-"
-          } CAD / in`}
+          } CAD / ft`}
         </div>
 
         <div className="border-b-2 border-b-primary-border font-bold text-xl pt-4">
@@ -163,7 +170,7 @@ export default function ProductPage(props: ProductPageProps) {
             onChange={handleWidthChange}
             className="w-32 border border-primary-border-selected rounded p-1 font-medium"
           />
-          in
+          ft
           <a
             data-tooltip-id="my-tooltip"
             data-tooltip-content="Hello to you too haha!"
