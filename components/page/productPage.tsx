@@ -7,8 +7,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { Tooltip } from "react-tooltip";
 
-// optionType: "colour" - Thumbnail images will be shown in the option section
-// optionType: "texture" - Thumbnail images will not be shown in the option section
+// optionType: "colour" - ONLY thumbnail images will be shown in the option section
+// optionType: "texture" - ONLY name will be shown in the option section
 interface ProductPageProps {
   optionType: "colour" | "texture";
   optionArr: {
@@ -105,7 +105,9 @@ export default function ProductPage(props: ProductPageProps) {
                     className="h-8 w-8 object-cover rounded-md"
                   />
                 )}
-                <div className="text-sm">{item.name}</div>
+                {props.optionType === "texture" && (
+                  <div className="text-sm">{item.name}</div>
+                )}
               </button>
             ))}
           </div>
