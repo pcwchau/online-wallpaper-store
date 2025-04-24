@@ -5,7 +5,7 @@ import BottomContactBar from "@/components/navigation/bottomContactBar";
 import BottomCopyrightBar from "@/components/navigation/bottomCopyrightBar";
 
 const spectral = Spectral({
-  weight: "500",
+  weight: "600",
 });
 
 export const metadata: Metadata = {

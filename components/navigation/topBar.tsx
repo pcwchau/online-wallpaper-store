@@ -69,7 +69,7 @@ const TopBar = (props: TopBarProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 ${
+      className={`fixed top-0 left-0 w-full z-50 text-lg ${
         isScrolled
           ? "bg-primary text-primary-text"
           : props.isHomePage
@@ -115,26 +115,39 @@ const TopBar = (props: TopBarProps) => {
           {pages.map((item, index) => (
             <div
               key={index}
-              className="relative hover:text-primary-text-hover"
+              className="relative"
               onMouseEnter={() => setHoverMenuIndex(index)}
               onMouseLeave={() => setHoverMenuIndex(null)}
             >
-              {/* Link to different pages */}
+              {/* Link to different pages, Products page has unique display */}
               {item.href ? (
                 <Link href={item.href}>{item.name}</Link>
               ) : (
-                <div className="flex cursor-default items-center gap-1 text-primary-text-highlight">
+                <div
+                  className={`flex cursor-default items-center gap-1 ${
+                    item.name === "Products" && "text-primary-text-highlight"
+                  }`}
+                >
                   <div>{item.name}</div>
                   <ArrowDownIcon />
                 </div>
               )}
+              <div
+                className={`border-b-2 transition-all duration-300 ${
+                  hoverMenuIndex === index
+                    ? item.name === "Products"
+                      ? "border-primary-text-highlight w-full"
+                      : "border-primary-border-selected w-full"
+                    : "border-transparent w-0"
+                }`}
+              />
 
               {/* If hover and there are sub pages, show drop-down menu
                *  pointer-events-none: When the dropdown has opacity-0, it's still present in the DOM and can receive mouse events.
                */}
               {item.subPages && (
                 <div
-                  className={`absolute left-[-1rem] px-4 pt-10 pb-4 
+                  className={`absolute left-[-1rem] px-4 pt-10 pb-4
                     bg-primary flex flex-col space-y-3 w-[14rem]
                     transition-all duration-300 ${
                       hoverMenuIndex === index
