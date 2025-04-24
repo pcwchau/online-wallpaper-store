@@ -6,6 +6,7 @@ import BottomCopyrightBar from "@/components/navigation/bottomCopyrightBar";
 
 const spectral = Spectral({
   weight: "600",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
