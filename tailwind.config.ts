@@ -19,6 +19,7 @@ export default {
       colors: {
         primary: "#ffffff", // white
         "primary-text": "#1f1a17", // black
+        "primary-text-highlight": "#ffc500", // yellow
         "primary-text-hover": "#ffc500", // yellow
         "primary-text-disabled": "#e5e7eb", // gray
         "primary-border": "#e5e7eb", // gray

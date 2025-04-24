@@ -11,25 +11,25 @@ import logoWordImg from "@/assets/images/company-logo-word.png";
 
 const pages = [
   {
-    name: "PRODUCTS",
+    name: "Products",
     href: null,
     subPages: [
       {
-        name: "YARN DYED WALL FABRIC",
+        name: "Yarn Dyed Wall Fabric",
         href: "/products/yarn-dyed-wall-fabric",
       },
-      { name: "CUSTOMIZED WALL FABRIC", href: "/products/customized-printing" },
-      { name: "EMBROIDERED", href: "/products/embroidered" },
+      { name: "Customized Wall Fabric", href: "/products/customized-printing" },
+      { name: "Embroidered Wall Fabric", href: "/products/embroidered" },
       {
-        name: "VINYL BANNER AND SIGNS",
+        name: "Vinyl Banners & Signs",
         href: "/products/vinyl-banner-and-signs",
       },
     ],
   },
   // { name: "PROJECTS", href: "/projects" },
-  { name: "INSPIRATION", href: "/inspiration" },
-  { name: "ABOUT US", href: "/company" },
-  { name: "PARTNERSHIP", href: "/partnership" },
+  { name: "Inspiration", href: "/inspiration" },
+  { name: "About Us", href: "/company" },
+  { name: "Partnership", href: "/partnership" },
   // { name: "CONTACT", href: "/contact" },
 ];
 
@@ -66,10 +66,8 @@ const TopBar: React.FC = () => {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 ${
-        isMouseOnTopBar && !isScrolled
+        isMouseOnTopBar || isScrolled
           ? "bg-primary text-primary-text"
-          : isScrolled
-          ? "bg-primary text-primary-text text-sm"
           : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
       }`}
       onMouseEnter={() => setIsMouseOnTopBar(true)}
@@ -97,7 +95,7 @@ const TopBar: React.FC = () => {
             />
           )}
         </Link>
-        {/* Sub menu - screen width >= 1024px */}
+        {/* Sub pages menu - screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">
           {pages.map((item, index) => (
             <div
@@ -106,19 +104,27 @@ const TopBar: React.FC = () => {
               onMouseEnter={() => setHoverMenuIndex(index)}
               onMouseLeave={() => setHoverMenuIndex(null)}
             >
-              {/* Main item */}
+              {/* Sub pages */}
               {item.href ? (
                 <Link href={item.href}>{item.name}</Link>
               ) : (
-                <div className="flex cursor-default items-center gap-1 text-primary-text-hover">
+                <div className="flex cursor-default items-center gap-1 text-primary-text-highlight">
                   <div>{item.name}</div>
                   <ArrowDownIcon />
                 </div>
               )}
 
               {/* Hover drop down menu */}
-              {hoverMenuIndex === index && item.subPages && (
-                <div className="absolute left-[-1rem] pt-12 px-4 pb-4 bg-primary/80 flex flex-col space-y-3 w-[16rem]">
+              {item.subPages && (
+                <div
+                  className={`absolute left-[-1rem] top-10 px-4 py-4 
+                    bg-primary flex flex-col space-y-3 w-[14rem]
+                    transition-all ${
+                      hoverMenuIndex === index
+                        ? "opacity-100"
+                        : "opacity-0 translate-y-4"
+                    }`}
+                >
                   {item.subPages.map((subItem, subIndex) => (
                     <Link
                       href={subItem.href}
@@ -134,7 +140,7 @@ const TopBar: React.FC = () => {
             </div>
           ))}
         </div>
-        {/* For screen width < 1024px */}
+        {/* Sub pages menu - screen width < 1024px */}
         <div className="lg:hidden">
           <button
             onClick={() => {
