@@ -1,3 +1,4 @@
+import TopBar from "@/components/navigation/topBar";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
 
 export default function Layout({
@@ -7,7 +8,8 @@ export default function Layout({
 }>) {
   return (
     <div className="container py-4">
-      <div className="bg-secondary" style={{ height: TOP_BAR_HEIGHT }} />
+      <div style={{ height: TOP_BAR_HEIGHT }} />
+      <TopBar isHomePage={false} />
       {children}
     </div>
   );

@@ -33,7 +33,11 @@ const pages = [
   // { name: "CONTACT", href: "/contact" },
 ];
 
-const TopBar: React.FC = () => {
+interface TopBarProps {
+  isHomePage: boolean;
+}
+
+const TopBar = (props: TopBarProps) => {
   const [isMouseOnTopBar, setIsMouseOnTopBar] = useState<boolean>(false);
   const [hoverMenuIndex, setHoverMenuIndex] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -66,36 +70,47 @@ const TopBar: React.FC = () => {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 ${
-        isMouseOnTopBar || isScrolled
+        isScrolled
           ? "bg-primary text-primary-text"
-          : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
+          : props.isHomePage
+          ? isMouseOnTopBar
+            ? "bg-primary text-primary-text"
+            : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
+          : "bg-primary text-primary-text"
       }`}
       onMouseEnter={() => setIsMouseOnTopBar(true)}
       onMouseLeave={() => setIsMouseOnTopBar(false)}
     >
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
       <div className="container py-4 flex justify-between items-center">
+        {/* Logo */}
         <Link href="/" onClick={() => resetMobileMenu()}>
-          {/* Logo */}
-          {isScrolled ? (
-            <Image
-              src={logoWordImg}
-              alt="Be Shine Logo"
-              priority
-              sizes="(max-width: 768px) 50vw, 25vw"
-              className="h-6 w-auto"
-            />
-          ) : (
-            <Image
-              src={isMouseOnTopBar ? logoBlackImg : logoWhiteImg}
-              alt="Be Shine Logo"
-              priority
-              sizes="(max-width: 768px) 50vw, 25vw"
-              className="h-20 w-auto"
-            />
-          )}
+          <Image
+            src={
+              isScrolled
+                ? logoWordImg
+                : props.isHomePage
+                ? isMouseOnTopBar
+                  ? logoBlackImg
+                  : logoWhiteImg
+                : logoBlackImg
+            }
+            alt="Be Shine Logo"
+            priority
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className={`${
+              isScrolled
+                ? "h-6"
+                : props.isHomePage
+                ? isMouseOnTopBar
+                  ? "h-20"
+                  : "h-20"
+                : "h-20"
+            } w-auto`}
+          />
         </Link>
-        {/* Sub pages menu - screen width >= 1024px */}
+
+        {/* Pages menu - screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">
           {pages.map((item, index) => (
             <div
@@ -104,7 +119,7 @@ const TopBar: React.FC = () => {
               onMouseEnter={() => setHoverMenuIndex(index)}
               onMouseLeave={() => setHoverMenuIndex(null)}
             >
-              {/* Sub pages */}
+              {/* Link to different pages */}
               {item.href ? (
                 <Link href={item.href}>{item.name}</Link>
               ) : (
@@ -114,15 +129,17 @@ const TopBar: React.FC = () => {
                 </div>
               )}
 
-              {/* Hover drop down menu */}
+              {/* If hover and there are sub pages, show drop-down menu
+               *  pointer-events-none: When the dropdown has opacity-0, it's still present in the DOM and can receive mouse events.
+               */}
               {item.subPages && (
                 <div
-                  className={`absolute left-[-1rem] top-10 px-4 py-4 
+                  className={`absolute left-[-1rem] px-4 pt-10 pb-4 
                     bg-primary flex flex-col space-y-3 w-[14rem]
-                    transition-all ${
+                    transition-all duration-300 ${
                       hoverMenuIndex === index
-                        ? "opacity-100"
-                        : "opacity-0 translate-y-4"
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none translate-y-8"
                     }`}
                 >
                   {item.subPages.map((subItem, subIndex) => (
@@ -140,7 +157,8 @@ const TopBar: React.FC = () => {
             </div>
           ))}
         </div>
-        {/* Sub pages menu - screen width < 1024px */}
+
+        {/* Pages menu - screen width < 1024px */}
         <div className="lg:hidden">
           <button
             onClick={() => {

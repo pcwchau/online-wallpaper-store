@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
+import TopBar from "@/components/navigation/topBar";
 
 const parallax = [
   {
@@ -61,11 +62,11 @@ const clientsLogoImages = [
 const HomePage = () => {
   return (
     <div>
+      <TopBar isHomePage={true} />
       {/* First picture */}
       <div className="relative h-screen">
         <Image
           src="/image/home/feather.jpg"
-          // src="/image/banner/6.png"
           alt="feather"
           fill
           sizes="100vw"

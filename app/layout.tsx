@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Spectral } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/navigation/topBar";
 import BottomContactBar from "@/components/navigation/bottomContactBar";
 import BottomCopyrightBar from "@/components/navigation/bottomCopyrightBar";
 
@@ -25,7 +24,6 @@ export default function RootLayout({
       <body
         className={`${spectral.className} antialiased bg-primary text-primary-text`}
       >
-        <TopBar />
         <main>{children}</main>
         <BottomContactBar />
         <BottomCopyrightBar />
