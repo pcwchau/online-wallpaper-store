@@ -1,100 +1,166 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HamburgerMenuIcon from "@/assets/icons/hamburgerMenuIcon";
 import ArrowDownIcon from "@/assets/icons/arrowDownIcon";
 import ArrowUpIcon from "@/assets/icons/arrowUpIcon";
-import logoPic from "@/assets/images/company-logo.png";
+import logoBlackImg from "@/assets/images/company-logo.png";
+import logoWhiteImg from "@/assets/images/company-logo-w.png";
+import logoWordImg from "@/assets/images/company-logo-word.png";
 
 const pages = [
   {
-    name: "PRODUCTS",
+    name: "Products",
     href: null,
     subPages: [
       {
-        name: "YARN DYED WALL FABRIC",
+        name: "Yarn Dyed Wall Fabric",
         href: "/products/yarn-dyed-wall-fabric",
       },
-      { name: "CUSTOMIZED WALL FABRIC", href: "/products/customized-printing" },
-      { name: "EMBROIDERED", href: "/products/embroidered" },
+      { name: "Customized Wall Fabric", href: "/products/customized-printing" },
+      { name: "Embroidered Wall Fabric", href: "/products/embroidered" },
       {
-        name: "VINYL BANNER AND SIGNS",
+        name: "Vinyl Banners & Signs",
         href: "/products/vinyl-banner-and-signs",
       },
     ],
   },
   // { name: "PROJECTS", href: "/projects" },
-  { name: "INSPIRATION", href: "/inspiration" },
-  { name: "ABOUT US", href: "/company" },
-  { name: "PARTNERSHIP", href: "/partnership" },
+  { name: "Inspiration", href: "/inspiration" },
+  { name: "About Us", href: "/company" },
+  { name: "Partnership", href: "/partnership" },
   // { name: "CONTACT", href: "/contact" },
 ];
 
-// Please update the constant TOP_BAR_HEIGHT if the height changes
-const TopBar: React.FC = () => {
-  const [hoverMenuIndex, setHoverMenuIndex] = useState(-1);
-  const [isSmallScreenMenuOpen, setIsSmallScreenMenuOpen] = useState(false);
-  const [smallScreenMenuExpandIndex, setSmallScreenMenuExpandIndex] =
-    useState(-1);
+interface TopBarProps {
+  isHomePage: boolean;
+}
 
-  const resetSmallScreenMenu = () => {
-    setIsSmallScreenMenuOpen(false);
-    setSmallScreenMenuExpandIndex(-1);
+const TopBar = (props: TopBarProps) => {
+  const [isMouseOnTopBar, setIsMouseOnTopBar] = useState<boolean>(false);
+  const [hoverMenuIndex, setHoverMenuIndex] = useState<number | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [mobileMenuIndex, setMobileMenuIndex] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const resetMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setMobileMenuIndex(null);
   };
 
-  const toggleSmallScreenMenuExpandIndex = (index: number) => {
-    if (smallScreenMenuExpandIndex === index) {
-      setSmallScreenMenuExpandIndex(-1);
+  const toggleMobileMenuIndex = (index: number) => {
+    if (mobileMenuIndex === index) {
+      setMobileMenuIndex(null);
     } else {
-      setSmallScreenMenuExpandIndex(index);
+      setMobileMenuIndex(index);
     }
   };
 
+  // Minimize the height of the top bar when scrolling down
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-secondary/80 text-secondary-text">
+    <div
+      className={`fixed top-0 left-0 w-full z-50 text-lg ${
+        isScrolled
+          ? "bg-primary text-primary-text"
+          : props.isHomePage
+          ? isMouseOnTopBar
+            ? "bg-primary text-primary-text"
+            : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
+          : "bg-primary text-primary-text"
+      }`}
+      onMouseEnter={() => setIsMouseOnTopBar(true)}
+      onMouseLeave={() => setIsMouseOnTopBar(false)}
+    >
+      {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
       <div className="container py-4 flex justify-between items-center">
-        <Link
-          href="/"
-          onClick={() => resetSmallScreenMenu()}
-          title="Be Shine Textile Home"
-        >
+        {/* Logo */}
+        <Link href="/" onClick={() => resetMobileMenu()}>
           <Image
-            src={logoPic}
-            alt="Be Shine Textile Logo"
-            height={64}
-            width={100}
+            src={
+              isScrolled
+                ? logoWordImg
+                : props.isHomePage
+                ? isMouseOnTopBar
+                  ? logoBlackImg
+                  : logoWhiteImg
+                : logoBlackImg
+            }
+            alt="Be Shine Logo"
             priority
-            className="h-16 w-auto"
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className={`${
+              isScrolled
+                ? "h-6"
+                : props.isHomePage
+                ? isMouseOnTopBar
+                  ? "h-20"
+                  : "h-20"
+                : "h-20"
+            } w-auto`}
           />
         </Link>
-        {/* For screen width >= 1024px */}
+
+        {/* Pages menu - screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">
           {pages.map((item, index) => (
             <div
               key={index}
               className="relative"
               onMouseEnter={() => setHoverMenuIndex(index)}
-              onMouseLeave={() => setHoverMenuIndex(-1)}
+              onMouseLeave={() => setHoverMenuIndex(null)}
             >
-              {/* Main item */}
+              {/* Link to different pages, Products page has unique display */}
               {item.href ? (
                 <Link href={item.href}>{item.name}</Link>
               ) : (
-                <div className="flex cursor-default items-center gap-1">
+                <div
+                  className={`flex cursor-default items-center gap-1 ${
+                    item.name === "Products" && "text-primary-text-highlight"
+                  }`}
+                >
                   <div>{item.name}</div>
                   <ArrowDownIcon />
                 </div>
               )}
+              <div
+                className={`border-b-2 transition-all duration-300 ${
+                  hoverMenuIndex === index
+                    ? item.name === "Products"
+                      ? "border-primary-text-highlight w-full"
+                      : "border-primary-border-selected w-full"
+                    : "border-transparent w-0"
+                }`}
+              />
 
-              {/* Drop down menu */}
-              {hoverMenuIndex === index && item.subPages && (
-                <div className="absolute left-[-1rem] pt-12 px-4 pb-4 bg-secondary/80 flex flex-col space-y-3 w-[16rem]">
+              {/* If hover and there are sub pages, show drop-down menu
+               *  pointer-events-none: When the dropdown has opacity-0, it's still present in the DOM and can receive mouse events.
+               */}
+              {item.subPages && (
+                <div
+                  className={`absolute left-[-1rem] px-4 pt-10 pb-4
+                    bg-primary flex flex-col space-y-3 w-[14rem]
+                    transition-all duration-300 ${
+                      hoverMenuIndex === index
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none translate-y-8"
+                    }`}
+                >
                   {item.subPages.map((subItem, subIndex) => (
                     <Link
                       href={subItem.href}
                       key={subIndex}
-                      onClick={() => setHoverMenuIndex(-1)}
+                      onClick={() => setHoverMenuIndex(null)}
+                      className="text-primary-text hover:text-primary-text-hover"
                     >
                       {subItem.name}
                     </Link>
@@ -104,40 +170,39 @@ const TopBar: React.FC = () => {
             </div>
           ))}
         </div>
-        {/* For screen width < 1024px */}
+
+        {/* Pages menu - screen width < 1024px */}
         <div className="lg:hidden">
           <button
             onClick={() => {
-              setIsSmallScreenMenuOpen(!isSmallScreenMenuOpen);
-              setSmallScreenMenuExpandIndex(-1);
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+              setMobileMenuIndex(null);
             }}
           >
             <HamburgerMenuIcon height="2em" width="2em" />
           </button>
         </div>
       </div>
-      {isSmallScreenMenuOpen && (
+      {isMobileMenuOpen && (
         <div className="lg:hidden container flex flex-col space-y-4 py-4">
           {pages.map((item, index) => (
             <div key={index} className="flex flex-col space-y-4">
               <div className="flex justify-between">
                 {item.href ? (
-                  <Link href={item.href} onClick={() => resetSmallScreenMenu()}>
+                  <Link href={item.href} onClick={() => resetMobileMenu()}>
                     {item.name}
                   </Link>
                 ) : (
                   <button
-                    onClick={() => toggleSmallScreenMenuExpandIndex(index)}
+                    onClick={() => toggleMobileMenuIndex(index)}
                     disabled={!item.subPages}
                   >
                     {item.name}
                   </button>
                 )}
                 {item.subPages && (
-                  <button
-                    onClick={() => toggleSmallScreenMenuExpandIndex(index)}
-                  >
-                    {smallScreenMenuExpandIndex === index ? (
+                  <button onClick={() => toggleMobileMenuIndex(index)}>
+                    {mobileMenuIndex === index ? (
                       <ArrowUpIcon />
                     ) : (
                       <ArrowDownIcon />
@@ -145,13 +210,13 @@ const TopBar: React.FC = () => {
                   </button>
                 )}
               </div>
-              {item.subPages && smallScreenMenuExpandIndex === index && (
+              {item.subPages && mobileMenuIndex === index && (
                 <div className="flex flex-col pl-8 space-y-2">
                   {item.subPages.map((subItem, subIndex) => (
                     <Link
                       href={subItem.href}
                       key={subIndex}
-                      onClick={() => resetSmallScreenMenu()}
+                      onClick={() => resetMobileMenu()}
                     >
                       {subItem.name}
                     </Link>

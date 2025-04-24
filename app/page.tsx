@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
-import { TOP_BAR_HEIGHT } from "@/config/constant";
+import TopBar from "@/components/navigation/topBar";
 
 const parallax = [
   {
@@ -62,13 +62,9 @@ const clientsLogoImages = [
 const HomePage = () => {
   return (
     <div>
+      <TopBar isHomePage={true} />
       {/* First picture */}
-      <div
-        style={{
-          position: "relative",
-          height: `calc(100vh - ${TOP_BAR_HEIGHT})`,
-        }}
-      >
+      <div className="relative h-screen">
         <Image
           src="/image/home/feather.jpg"
           alt="feather"
@@ -81,7 +77,7 @@ const HomePage = () => {
         />
         <div className="absolute inset-0 flex justify-center items-center">
           <div className="max-w-[40rem] px-4 text-4xl text-center text-secondary-text">
-            Transforming Spaces with Artistic Precision and Perfect Wallcovering
+            {/* Transforming Spaces with Artistic Precision and Perfect Wallcovering */}
           </div>
         </div>
       </div>
