@@ -81,6 +81,28 @@ const TopBar = (props: TopBarProps) => {
       onMouseEnter={() => setIsMouseOnTopBar(true)}
       onMouseLeave={() => setIsMouseOnTopBar(false)}
     >
+      {/* Preload images */}
+      <div className="hidden">
+        <Image
+          src={logoWordImg}
+          priority
+          alt="Preload Logo Word"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+        <Image
+          src={logoBlackImg}
+          priority
+          alt="Preload Logo Black"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+        <Image
+          src={logoWhiteImg}
+          priority
+          alt="Preload Logo White"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
       <div className="container py-4 flex justify-between items-center">
         {/* Logo */}
