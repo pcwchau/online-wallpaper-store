@@ -1,6 +1,6 @@
 "use client"; // for image swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -87,12 +87,11 @@ const HomePage = () => {
 
       {/* Image swiper, all images must be 1920 x 900 */}
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Navigation, Pagination]}
         slidesPerView={1}
         loop
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4000 }}
       >
         {swiperImages.map((src, index) => (
           <SwiperSlide key={index}>

@@ -120,7 +120,7 @@ const TopBar = (props: TopBarProps) => {
       </div>
 
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
-      <div className="container py-4 flex justify-between items-center">
+      <div className="container py-3 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" onClick={() => resetMobileMenu()}>
           <Image
