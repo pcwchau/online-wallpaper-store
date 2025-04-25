@@ -47,8 +47,9 @@ Information such as build script and custom domains can be checked on Amplify.
 
 ## Image Size Requirement
 
-| Image                       | Ratio | Min Size  | Exception handling |
-|-----------------------------|-------|-----------|--------------------|
+| Image                       | Ratio | Min Size  | Exception handling | Others                       |
+|-----------------------------|-------|-----------|--------------------|------------------------------|
+| Home - first image          | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
 | Yarn dyed - collection      | 1:1   |           | object-cover       |
 | Customized printing texture | 1:1   | 1200x1200 | object-contain     |
 | Inspiration (thumbnail)     | 1:1   |           | object-cover       |
@@ -72,9 +73,3 @@ Enhancement approach:
 
 1. Try to use optimized URL (Next.js Image) to do both the large image and zoom-in image. File size is optimized, but the loading time is longer.
 2. Try to use direct public URL (source file) to do both the large image and zoom-in image.
-
-## Preload images
-
-In top bar, the logo image will be changed depending on the states, such as after scrolling, on hover. If you don't preload all logo images, it will only start downloading a new logo image after state change, hence making the logo invisible for a short period.
-
-To preload images, use a hidden div to wrap all required images using Next.js `Image`, and add `priority`.
