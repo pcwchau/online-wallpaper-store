@@ -8,6 +8,7 @@ import ArrowUpIcon from "@/assets/icons/arrowUpIcon";
 import logoBlackImg from "@/assets/images/company-logo.png";
 import logoWhiteImg from "@/assets/images/company-logo-w.png";
 import logoWordImg from "@/assets/images/company-logo-word.png";
+import useMediaQuery from "@/hook/useMediaQuery";
 
 const pages = [
   {
@@ -44,6 +45,20 @@ const TopBar = (props: TopBarProps) => {
   const [mobileMenuIndex, setMobileMenuIndex] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
+  const isLargeScreen = useMediaQuery("(min-width: 1024px)");
+
+  const topBarStyle = isScrolled
+    ? "sm"
+    : props.isHomePage
+    ? isLargeScreen
+      ? isMouseOnTopBar
+        ? "lg"
+        : "lg-transparent"
+      : isMobileMenuOpen
+      ? "lg"
+      : "lg-transparent"
+    : "lg";
+
   const resetMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setMobileMenuIndex(null);
@@ -55,6 +70,11 @@ const TopBar = (props: TopBarProps) => {
     } else {
       setMobileMenuIndex(index);
     }
+  };
+
+  const handleMobileMenuClick = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setMobileMenuIndex(null);
   };
 
   // Minimize the height of the top bar when scrolling down
@@ -69,48 +89,56 @@ const TopBar = (props: TopBarProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 text-lg ${
-        isScrolled
+      className={`fixed top-0 left-0 w-full z-50 ${
+        topBarStyle === "lg" || topBarStyle === "sm"
           ? "bg-primary text-primary-text"
-          : props.isHomePage
-          ? isMouseOnTopBar
-            ? "bg-primary text-primary-text"
-            : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
-          : "bg-primary text-primary-text"
+          : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
       }`}
       onMouseEnter={() => setIsMouseOnTopBar(true)}
       onMouseLeave={() => setIsMouseOnTopBar(false)}
     >
+      {/* Preload images */}
+      <div className="hidden">
+        <Image
+          src={logoWordImg}
+          priority
+          alt="Preload Logo Word"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+        <Image
+          src={logoBlackImg}
+          priority
+          alt="Preload Logo Black"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+        <Image
+          src={logoWhiteImg}
+          priority
+          alt="Preload Logo White"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
       <div className="container py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" onClick={() => resetMobileMenu()}>
           <Image
             src={
-              isScrolled
-                ? logoWordImg
-                : props.isHomePage
-                ? isMouseOnTopBar
-                  ? logoBlackImg
-                  : logoWhiteImg
-                : logoBlackImg
+              topBarStyle === "lg"
+                ? logoBlackImg
+                : topBarStyle === "lg-transparent"
+                ? logoWhiteImg
+                : logoWordImg
             }
             alt="Be Shine Logo"
             priority
             sizes="(max-width: 768px) 50vw, 25vw"
-            className={`${
-              isScrolled
-                ? "h-6"
-                : props.isHomePage
-                ? isMouseOnTopBar
-                  ? "h-20"
-                  : "h-20"
-                : "h-20"
-            } w-auto`}
+            className={`${topBarStyle === "sm" ? "h-6" : "h-20"} w-auto`}
           />
         </Link>
 
-        {/* Pages menu - screen width >= 1024px */}
+        {/* Link to different pages - screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">
           {pages.map((item, index) => (
             <div
@@ -119,7 +147,7 @@ const TopBar = (props: TopBarProps) => {
               onMouseEnter={() => setHoverMenuIndex(index)}
               onMouseLeave={() => setHoverMenuIndex(null)}
             >
-              {/* Link to different pages, Products page has unique display */}
+              {/* Products page has unique display */}
               {item.href ? (
                 <Link href={item.href}>{item.name}</Link>
               ) : (
@@ -171,18 +199,15 @@ const TopBar = (props: TopBarProps) => {
           ))}
         </div>
 
-        {/* Pages menu - screen width < 1024px */}
-        <div className="lg:hidden">
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(!isMobileMenuOpen);
-              setMobileMenuIndex(null);
-            }}
-          >
+        {/* Menu icon - screen width < 1024px */}
+        <div className="lg:hidden flex items-center">
+          <button onClick={handleMobileMenuClick}>
             <HamburgerMenuIcon height="2em" width="2em" />
           </button>
         </div>
       </div>
+
+      {/* Links to different pages - screen width < 1024px */}
       {isMobileMenuOpen && (
         <div className="lg:hidden container flex flex-col space-y-4 py-4">
           {pages.map((item, index) => (

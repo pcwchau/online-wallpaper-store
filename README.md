@@ -72,3 +72,9 @@ Enhancement approach:
 
 1. Try to use optimized URL (Next.js Image) to do both the large image and zoom-in image. File size is optimized, but the loading time is longer.
 2. Try to use direct public URL (source file) to do both the large image and zoom-in image.
+
+## Preload images
+
+In top bar, the logo image will be changed depending on the states, such as after scrolling, on hover. If you don't preload all logo images, it will only start downloading a new logo image after state change, hence making the logo invisible for a short period.
+
+To preload images, use a hidden div to wrap all required images using Next.js `Image`, and add `priority`.
