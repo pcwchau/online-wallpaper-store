@@ -2,15 +2,22 @@
 import QuestionCircleIcon from "@/assets/icons/questionCircleIcon";
 import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
-import { QualityType } from "@/types/enum";
+import { ProductType, QualityType } from "@/types/enum";
 import Image from "next/image";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Tooltip } from "react-tooltip";
 
-// optionType: "colour" - ONLY thumbnail images will be shown in the option section
-// optionType: "texture" - ONLY name will be shown in the option section
+// eslint-disable-next-line react/display-name
+const Title = memo((props: { content: string }) => {
+  return (
+    <div className="border-b-2 border-b-primary-border font-bold text-xl">
+      {props.content}
+    </div>
+  );
+});
+
 interface ProductPageProps {
-  optionType: "colour" | "texture";
+  productType: ProductType;
   optionArr: {
     name: string;
     imageUrl: string;
@@ -25,7 +32,7 @@ export default function ProductPage(props: ProductPageProps) {
   const [currentQualityIndex, setCurrentQualityIndex] = useState<number | null>(
     null
   );
-  const [width, setWidth] = useState<number | "">("");
+  const [length, setLength] = useState<number | "">("");
 
   const handleOptionClick = (index: number) => {
     setCurrentOptionIndex(index);
@@ -36,20 +43,20 @@ export default function ProductPage(props: ProductPageProps) {
     setCurrentQualityIndex(index);
   };
 
-  const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleLengthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setWidth(value ? Number(value) : "");
+    setLength(value ? Number(value) : "");
   };
 
   const calculateTotalPrice = () => {
     return currentOptionIndex !== null &&
       currentQualityIndex !== null &&
-      width &&
-      width > 0
+      length &&
+      length > 0
       ? Math.round(
           props.optionArr[currentOptionIndex].priceByQualityArr[
             currentQualityIndex
-          ].price * width
+          ].price * length
         )
       : "-";
   };
@@ -81,12 +88,14 @@ export default function ProductPage(props: ProductPageProps) {
 
       {/* Input and information */}
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
-        <div className="border-b-2 border-b-primary-border font-bold text-xl">
-          Material Selection
-        </div>
-        {/* Options */}
+        <Title content="Material Selection" />
         <div className="space-y-4">
-          <div className="font-bold">Select a {props.optionType}</div>
+          <div className="font-bold">
+            Select a
+            {props.productType === ProductType.Customized
+              ? " texture"
+              : " colour"}
+          </div>
           <div className="flex flex-wrap gap-2">
             {props.optionArr.map((item, index) => (
               <button
@@ -98,7 +107,7 @@ export default function ProductPage(props: ProductPageProps) {
                 } border-2 rounded-lg p-1`}
                 onClick={() => handleOptionClick(index)}
               >
-                {props.optionType === "colour" && (
+                {props.productType === ProductType.YarnDyed && (
                   <Image
                     src={item.imageUrl}
                     height={64}
@@ -107,7 +116,7 @@ export default function ProductPage(props: ProductPageProps) {
                     className="h-8 w-8 object-cover rounded-md"
                   />
                 )}
-                {props.optionType === "texture" && (
+                {props.productType === ProductType.Customized && (
                   <div className="text-sm">{item.name}</div>
                 )}
               </button>
@@ -124,7 +133,11 @@ export default function ProductPage(props: ProductPageProps) {
                 className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled text-sm"
                 disabled
               >
-                You need to select a {props.optionType} first
+                You need to select a
+                {props.productType === ProductType.Customized
+                  ? " texture "
+                  : " colour "}
+                first
               </button>
             ) : (
               props.optionArr[currentOptionIndex].priceByQualityArr.map(
@@ -147,50 +160,46 @@ export default function ProductPage(props: ProductPageProps) {
         </div>
 
         {/* Price */}
-        <div className="font-bold text-lg">
-          {`$${
+        <div className="text-lg">
+          <span className="font-bold">{`$ ${
             currentOptionIndex !== null && currentQualityIndex !== null
               ? props.optionArr[currentOptionIndex].priceByQualityArr[
                   currentQualityIndex
                 ].price
               : "-"
-          } Per Linear Ft`}
+          }`}</span>
+          <span> / Linear Foot</span>
         </div>
 
-        <div className="border-b-2 border-b-primary-border font-bold text-xl pt-4">
-          Cost Estimation
-        </div>
-
-        {/* Input */}
-        <div className="flex gap-2 items-center font-bold">
-          Height: 116 in
-          <a
-            data-tooltip-id="my-tooltip"
-            data-tooltip-content="Please contact us if over 116 in"
-          >
-            <QuestionCircleIcon width="1.5em" height="1.5em" />
-          </a>
-        </div>
-        <div className="flex gap-2 items-center font-bold">
-          Width:
+        <Title content="Cost Estimation" />
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Length: </span>
           <input
             type="number"
-            placeholder="Enter width"
-            value={width}
-            onChange={handleWidthChange}
-            className="w-32 border border-primary-border-selected rounded p-1 font-medium"
+            placeholder="Enter length"
+            value={length}
+            onChange={handleLengthChange}
+            className="w-32 border border-primary-border-selected rounded p-1"
           />
-          ft
+          <span>feet</span>
         </div>
 
         {/* Total price */}
-        <div className="flex gap-2 items-center font-bold">
-          {`Estimated price: $ ${calculateTotalPrice()} CAD`}
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Estimated price:</span>
+          <span>{`$ ${calculateTotalPrice()}`}</span>
         </div>
 
-        {/* Specifications */}
-        <div className="border-b-2 border-b-primary-border font-bold text-xl pt-4">
-          Specifications
+        <Title content="Specifications" />
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Width: </span>
+          <span>116 inches</span>
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content="Please contact us if over 116 inches"
+          >
+            <QuestionCircleIcon width="1.5em" height="1.5em" />
+          </a>
         </div>
       </div>
     </div>

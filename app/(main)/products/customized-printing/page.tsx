@@ -1,5 +1,5 @@
 import ProductPage from "@/components/page/productPage";
-import { QualityType } from "@/types/enum";
+import { ProductType, QualityType } from "@/types/enum";
 
 const optionArr = [
   {
@@ -60,5 +60,7 @@ const optionArr = [
 ];
 
 export default function Page() {
-  return <ProductPage optionType="texture" optionArr={optionArr} />;
+  return (
+    <ProductPage productType={ProductType.Customized} optionArr={optionArr} />
+  );
 }
