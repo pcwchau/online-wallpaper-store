@@ -77,16 +77,8 @@ const HomePage = () => {
         />
       </div>
 
-      {/* Content */}
-      <div className="h-[80vh] flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-4xl text-center">
-          Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
-          Eccentric • Fun
-        </div>
-      </div>
-
       {/* Image swiper, all images must be 1920 x 900 */}
-      <Swiper
+      {/* <Swiper
         modules={[Navigation, Pagination]}
         slidesPerView={1}
         loop
@@ -104,7 +96,7 @@ const HomePage = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
 
       {/* Content */}
       <div className="h-[80vh] flex justify-center items-center px-4">

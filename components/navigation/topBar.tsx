@@ -89,7 +89,7 @@ const TopBar = (props: TopBarProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 ${
+      className={`fixed top-0 left-0 w-full z-50 font-bold ${
         topBarStyle === "lg" || topBarStyle === "sm"
           ? "bg-primary text-primary-text"
           : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"

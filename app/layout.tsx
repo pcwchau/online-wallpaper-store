@@ -5,7 +5,7 @@ import BottomContactBar from "@/components/navigation/bottomContactBar";
 import BottomCopyrightBar from "@/components/navigation/bottomCopyrightBar";
 
 const spectral = Spectral({
-  weight: "600",
+  weight: "400",
   subsets: ["latin"],
 });
 
