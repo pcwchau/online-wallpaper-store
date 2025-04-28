@@ -27,11 +27,25 @@ const pages = [
       },
     ],
   },
-  // { name: "PROJECTS", href: "/projects" },
-  { name: "Inspiration", href: "/inspiration" },
-  { name: "About Us", href: "/company" },
+  {
+    name: "Gallery",
+    href: null,
+    subPages: [
+      { name: "Project", href: "" },
+      { name: "Inspiration", href: "/inspiration" },
+    ],
+  },
+
+  {
+    name: "Company",
+    href: null,
+    subPages: [
+      { name: "About Us", href: "" },
+      { name: "Qualification", href: "" },
+      { name: "FAQ", href: "" },
+    ],
+  },
   { name: "Partnership", href: "/partnership" },
-  // { name: "CONTACT", href: "/contact" },
 ];
 
 interface TopBarProps {
