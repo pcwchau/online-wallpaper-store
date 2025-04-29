@@ -1,3 +1,4 @@
+import GeneralPage from "@/components/page/generalPage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,8 +32,7 @@ const collectionArr = [
 
 export default function Page() {
   return (
-    <div className="space-y-8">
-      <div className="text-center text-3xl">Yarn Dyed Collections</div>
+    <GeneralPage title="Yarn Dyed Collections">
       <div className="text-center text-sm">
         Robert Allen invites you to explore the newest additions to our notable
         and comprehensive fabric library that spans the spectrum of color,
@@ -59,6 +59,6 @@ export default function Page() {
           </div>
         ))}
       </div>
-    </div>
+    </GeneralPage>
   );
 }
