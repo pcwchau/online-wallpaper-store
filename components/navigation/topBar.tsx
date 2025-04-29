@@ -31,18 +31,17 @@ const pages = [
     name: "Gallery",
     href: null,
     subPages: [
-      { name: "Project", href: "" },
+      { name: "Project", href: "/project" },
       { name: "Inspiration", href: "/inspiration" },
     ],
   },
-
   {
     name: "Company",
     href: null,
     subPages: [
-      { name: "About Us", href: "" },
-      { name: "Qualification", href: "" },
-      { name: "FAQ", href: "" },
+      { name: "About Us", href: "/about-us" },
+      { name: "Qualification", href: "/qualification" },
+      { name: "FAQ", href: "/faq" },
     ],
   },
   { name: "Partnership", href: "/partnership" },
