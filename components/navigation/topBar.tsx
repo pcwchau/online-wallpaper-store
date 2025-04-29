@@ -41,7 +41,7 @@ const pages = [
     subPages: [
       { name: "About Us", href: "/about-us" },
       { name: "Qualification", href: "/qualification" },
-      { name: "FAQ", href: "/faq" },
+      { name: "FAQs", href: "/faq" },
     ],
   },
   { name: "Partnership", href: "/partnership" },

@@ -21,7 +21,7 @@ const pdfFiles = [
 export default function Page() {
   return (
     <GeneralPage title="Qualification">
-      <div className="text-center text-sm w-5/6 lg:w-2/3 mx-auto">
+      <div className="text-center text-sm">
         Be Shine Textile Inc. is providing to our growing clientele quality
         service with quality products since 2009, being the go to resource for
         fine and durable wall coverings products for design professionals that
@@ -30,19 +30,18 @@ export default function Page() {
         did not stop there, our expert design studios can create customized wall
         coverings for any type of projects that best suits your needs.
       </div>
-      <div className="space-y-4 w-5/6 lg:w-2/3 mx-auto">
+      <div className="space-y-4">
         {pdfFiles.map((file, index) => (
           <div
             key={index}
-            className="flex justify-between items-center border-primary-border border-b pb-2"
+            className="flex justify-center border-primary-border border-b pb-2"
           >
-            <div>{file.name}</div>
             <Link
               href={`/qualification/${file.fileName}`}
               download
-              className="hover:underline"
+              className="hover:underline hover:text-primary-text-hover"
             >
-              Download
+              {file.name}
             </Link>
           </div>
         ))}
