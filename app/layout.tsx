@@ -5,7 +5,7 @@ import BottomContactBar from "@/components/navigation/bottomContactBar";
 import BottomCopyrightBar from "@/components/navigation/bottomCopyrightBar";
 
 const spectral = Spectral({
-  weight: "400",
+  weight: ["400", "500", "600", "700"], // default is 400 normal
   subsets: ["latin"],
 });
 

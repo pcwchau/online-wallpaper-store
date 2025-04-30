@@ -55,9 +55,14 @@ Information such as build script and custom domains can be checked on Amplify.
 | Inspiration (thumbnail)     | 1:1   |           | object-cover       |
 | Partnership                 | 1:1   |           | object-cover       |
 
-# Challenge
+# Reference & Challenge
 
-- Image optimization (before loading, add blur)
+## Animation
+
+- Top bar (CSS)
+- FAQ page
+  - animate arrow icons (CSS)
+  - open / close answer (lib: framer-motion: handle height more smoothly)
 
 ## File download for zoom-in images
 

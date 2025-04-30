@@ -1,8 +1,8 @@
 "use client";
 import ArrowDownIcon from "@/assets/icons/arrowDownIcon";
-import ArrowUpIcon from "@/assets/icons/arrowUpIcon";
 import GeneralPage from "@/components/page/generalPage";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const faq = [
   {
@@ -80,7 +80,7 @@ export default function Page() {
     <GeneralPage title="Frequently Asked Questions">
       {faq.map((faqSection, sectionIndex) => (
         <div key={sectionIndex}>
-          <div className="text-xl pb-4 text-primary-text-highlight font-bold">
+          <div className="text-xl pb-4 text-primary-text-highlight font-semibold">
             {faqSection.category}
           </div>
           <div>
@@ -94,19 +94,29 @@ export default function Page() {
                       isExpand
                         ? "border-primary-border-selected"
                         : "border-primary-border"
-                    } border-b py-2 text-lg font-bold`}
+                    } border-b py-4 text-lg font-semibold`}
                     onClick={() => handleQuestionClick(index)}
                   >
                     {faq.question}
-                    {isExpand ? <ArrowUpIcon /> : <ArrowDownIcon />}
+                    <div
+                      className={`transition-transform duration-300 ${
+                        isExpand && "transform scale-y-[-1]"
+                      }`}
+                    >
+                      <ArrowDownIcon />
+                    </div>
                   </div>
-                  <div
-                    className={`my-2 transition-all duration-500 overflow-hidden ${
-                      isExpand ? "max-h-28" : "max-h-0"
-                    }`}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isExpand ? "auto" : 0,
+                      marginTop: isExpand ? "1rem" : "0rem",
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className={`overflow-hidden`}
                   >
                     {faq.answer}
-                  </div>
+                  </motion.div>
                 </div>
               );
             })}
