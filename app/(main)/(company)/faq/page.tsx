@@ -94,7 +94,7 @@ export default function Page() {
                       isExpand
                         ? "border-primary-border-selected"
                         : "border-primary-border"
-                    } border-b py-4 text-lg font-semibold`}
+                    } border-b py-4 font-semibold`}
                     onClick={() => handleQuestionClick(index)}
                   >
                     {faq.question}
@@ -113,7 +113,7 @@ export default function Page() {
                       marginTop: isExpand ? "1rem" : "0rem",
                     }}
                     transition={{ duration: 0.3 }}
-                    className={`overflow-hidden`}
+                    className={`overflow-hidden text-sm`}
                   >
                     {faq.answer}
                   </motion.div>
