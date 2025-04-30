@@ -27,11 +27,24 @@ const pages = [
       },
     ],
   },
-  // { name: "PROJECTS", href: "/projects" },
-  { name: "Inspiration", href: "/inspiration" },
-  { name: "About Us", href: "/company" },
+  {
+    name: "Gallery",
+    href: null,
+    subPages: [
+      { name: "Project", href: "/project" },
+      { name: "Inspiration", href: "/inspiration" },
+    ],
+  },
+  {
+    name: "Company",
+    href: null,
+    subPages: [
+      { name: "About Us", href: "/about-us" },
+      { name: "Qualification", href: "/qualification" },
+      { name: "FAQs", href: "/faq" },
+    ],
+  },
   { name: "Partnership", href: "/partnership" },
-  // { name: "CONTACT", href: "/contact" },
 ];
 
 interface TopBarProps {
@@ -89,7 +102,7 @@ const TopBar = (props: TopBarProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 ${
+      className={`fixed top-0 left-0 w-full z-50 font-bold ${
         topBarStyle === "lg" || topBarStyle === "sm"
           ? "bg-primary text-primary-text"
           : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
@@ -120,7 +133,7 @@ const TopBar = (props: TopBarProps) => {
       </div>
 
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
-      <div className="container py-4 flex justify-between items-center">
+      <div className="container py-3 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" onClick={() => resetMobileMenu()}>
           <Image
@@ -175,7 +188,7 @@ const TopBar = (props: TopBarProps) => {
                */}
               {item.subPages && (
                 <div
-                  className={`absolute left-[-1rem] px-4 pt-10 pb-4
+                  className={`absolute left-[-1rem] px-4 pt-4 pb-4
                     bg-primary flex flex-col space-y-3 w-[14rem]
                     transition-all duration-300 ${
                       hoverMenuIndex === index

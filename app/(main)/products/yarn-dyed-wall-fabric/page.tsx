@@ -1,3 +1,4 @@
+import GeneralPage from "@/components/page/generalPage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,15 +32,14 @@ const collectionArr = [
 
 export default function Page() {
   return (
-    <div className="space-y-8">
-      <div className="text-center text-3xl">Yarn Dyed Collections</div>
+    <GeneralPage title="Yarn Dyed Collections">
       <div className="text-center text-sm">
-        Robert Allen invites you to explore the newest additions to our notable
-        and comprehensive fabric library that spans the spectrum of color,
-        pattern, texture and durability for all of your design project needs.
-        From Robert Allen to Beacon Hill, Robert Allen @ Home and Contract,
-        you&apos;ll find coordinated collections of on-trend and timeless
-        upholstery and multi-purpose fabrics.
+        (TO BE MODIFIED) Robert Allen invites you to explore the newest
+        additions to our notable and comprehensive fabric library that spans the
+        spectrum of color, pattern, texture and durability for all of your
+        design project needs. From Robert Allen to Beacon Hill, Robert Allen @
+        Home and Contract, you&apos;ll find coordinated collections of on-trend
+        and timeless upholstery and multi-purpose fabrics.
       </div>
       <div className="grid grid-cols-2 gap-x-16 gap-y-6 md:grid-cols-3 lg:grid-cols-4">
         {collectionArr.map((item, index) => (
@@ -59,6 +59,6 @@ export default function Page() {
           </div>
         ))}
       </div>
-    </div>
+    </GeneralPage>
   );
 }

@@ -1,6 +1,6 @@
-"use client"; // for image swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// "use client"; // for image swiper
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -38,15 +38,15 @@ const parallax = [
   },
 ];
 
-const swiperImages = [
-  "/image/banner/3.png",
-  "/image/banner/4.png",
-  "/image/banner/5.png",
-  "/image/banner/6.png",
-  "/image/banner/9.png",
-  "/image/banner/10.png",
-  "/image/banner/11.png",
-];
+// const swiperImages = [
+//   "/image/banner/3.png",
+//   "/image/banner/4.png",
+//   "/image/banner/5.png",
+//   "/image/banner/6.png",
+//   "/image/banner/9.png",
+//   "/image/banner/10.png",
+//   "/image/banner/11.png",
+// ];
 
 const clientsLogoImages = [
   "/image/clients/1.jpg",
@@ -69,35 +69,21 @@ const HomePage = () => {
           src="/image/home/feather.jpg"
           alt="feather"
           fill
-          sizes="100vw"
+          sizes="(max-width: 1024px) 300vw, 200vw"
           className="object-cover"
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
           // blur image is plain image in black
         />
-        <div className="absolute inset-0 flex justify-center items-center">
-          <div className="max-w-[40rem] px-4 text-4xl text-center text-secondary-text">
-            {/* Transforming Spaces with Artistic Precision and Perfect Wallcovering */}
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="h-[80vh] flex justify-center items-center px-4">
-        <div className="max-w-[40rem] text-4xl text-center">
-          Art • Haute Couture • Hotels • Restaurants • Offices • Home • Condo •
-          Eccentric • Fun
-        </div>
       </div>
 
       {/* Image swiper, all images must be 1920 x 900 */}
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+      {/* <Swiper
+        modules={[Navigation, Pagination]}
         slidesPerView={1}
         loop
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4000 }}
       >
         {swiperImages.map((src, index) => (
           <SwiperSlide key={index}>
@@ -110,7 +96,7 @@ const HomePage = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
 
       {/* Content */}
       <div className="h-[80vh] flex justify-center items-center px-4">

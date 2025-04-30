@@ -1,5 +1,5 @@
 import ProductPage from "@/components/page/productPage";
-import { QualityType } from "@/types/enum";
+import { ProductType, QualityType } from "@/types/enum";
 
 const optionArr = [
   {
@@ -86,7 +86,7 @@ export default async function Page({
   return (
     <div>
       <h1>{collection}</h1>
-      <ProductPage optionType={"colour"} optionArr={optionArr} />;
+      <ProductPage productType={ProductType.YarnDyed} optionArr={optionArr} />;
     </div>
   );
 }
