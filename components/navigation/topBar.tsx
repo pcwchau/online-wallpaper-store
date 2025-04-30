@@ -188,7 +188,7 @@ const TopBar = (props: TopBarProps) => {
                */}
               {item.subPages && (
                 <div
-                  className={`absolute left-[-1rem] px-4 pt-10 pb-4
+                  className={`absolute left-[-1rem] px-4 pt-4 pb-4
                     bg-primary flex flex-col space-y-3 w-[14rem]
                     transition-all duration-300 ${
                       hoverMenuIndex === index

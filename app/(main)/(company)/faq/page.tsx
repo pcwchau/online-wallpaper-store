@@ -1,5 +1,6 @@
 "use client";
 import ArrowDownIcon from "@/assets/icons/arrowDownIcon";
+import ArrowUpIcon from "@/assets/icons/arrowUpIcon";
 import GeneralPage from "@/components/page/generalPage";
 import { useState } from "react";
 
@@ -67,8 +68,7 @@ const faq = [
 export default function Page() {
   const [expandIndex, setExpandIndex] = useState<string[]>([]);
 
-  const handleQuestionClick = (sectionIndex: number, questionIndex: number) => {
-    const index = `${sectionIndex}-${questionIndex}`;
+  const handleQuestionClick = (index: string) => {
     setExpandIndex((prev) =>
       expandIndex.includes(index)
         ? prev.filter((i) => i !== index)
@@ -80,26 +80,36 @@ export default function Page() {
     <GeneralPage title="Frequently Asked Questions">
       {faq.map((faqSection, sectionIndex) => (
         <div key={sectionIndex}>
-          <div className="text-xl text-primary-text-highlight pb-4">
+          <div className="text-xl pb-4 text-primary-text-highlight font-bold">
             {faqSection.category}
           </div>
-          <div className="space-y-2">
-            {faqSection.items.map((faq, questionIndex) => (
-              <div key={questionIndex}>
-                <div
-                  className="flex items-center justify-between w-full border-primary-border border-b pb-2"
-                  onClick={() =>
-                    handleQuestionClick(sectionIndex, questionIndex)
-                  }
-                >
-                  {faq.question}
-                  <ArrowDownIcon />
+          <div>
+            {faqSection.items.map((faq, questionIndex) => {
+              const index = `${sectionIndex}-${questionIndex}`;
+              const isExpand = expandIndex.includes(index);
+              return (
+                <div key={questionIndex}>
+                  <div
+                    className={`flex items-center justify-between w-full ${
+                      isExpand
+                        ? "border-primary-border-selected"
+                        : "border-primary-border"
+                    } border-b py-2 text-lg font-bold`}
+                    onClick={() => handleQuestionClick(index)}
+                  >
+                    {faq.question}
+                    {isExpand ? <ArrowUpIcon /> : <ArrowDownIcon />}
+                  </div>
+                  <div
+                    className={`my-2 transition-all duration-500 overflow-hidden ${
+                      isExpand ? "max-h-28" : "max-h-0"
+                    }`}
+                  >
+                    {faq.answer}
+                  </div>
                 </div>
-                {expandIndex.includes(`${sectionIndex}-${questionIndex}`) && (
-                  <div>{faq.answer}</div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       ))}
