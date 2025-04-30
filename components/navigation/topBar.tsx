@@ -12,18 +12,18 @@ import useMediaQuery from "@/hook/useMediaQuery";
 
 const pages = [
   {
-    name: "Products",
+    name: "Product",
     href: null,
     subPages: [
       {
         name: "Yarn Dyed Wall Fabric",
-        href: "/products/yarn-dyed-wall-fabric",
+        href: "/product/yarn-dyed-wall-fabric",
       },
-      { name: "Customized Wall Fabric", href: "/products/customized-printing" },
-      { name: "Embroidered Wall Fabric", href: "/products/embroidered" },
+      { name: "Customized Wall Fabric", href: "/product/customized-printing" },
+      { name: "Embroidered Wall Fabric", href: "/product/embroidered" },
       {
         name: "Vinyl Banners & Signs",
-        href: "/products/vinyl-banner-and-signs",
+        href: "/product/vinyl-banner-and-signs",
       },
     ],
   },

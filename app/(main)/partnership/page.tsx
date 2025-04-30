@@ -1,3 +1,4 @@
+import GeneralPage from "@/components/page/generalPage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,41 +6,39 @@ const partnerArr = [
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
+    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
+    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
+    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
+    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
+    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
     profileUrl: "https://teddesign.com/",
   },
 ];
 
 export default function Page() {
   return (
-    <div className="space-y-8">
-      <div className="text-center text-2xl">MEET OUR DESIGNER</div>
-      <div className="text-center text-4xl">OUR PROFESSIONAL</div>
-      <div className="grid grid-cols-2 gap-x-16 gap-y-6 md:grid-cols-3 lg:grid-cols-4">
+    <GeneralPage title="Partnership">
+      <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 md:gap-x-16">
         {partnerArr.map((item, index) => (
           <div key={index}>
             <div className="aspect-square relative">
@@ -58,6 +57,6 @@ export default function Page() {
           </div>
         ))}
       </div>
-    </div>
+    </GeneralPage>
   );
 }

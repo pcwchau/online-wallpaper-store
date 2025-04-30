@@ -2,27 +2,23 @@
 import QuestionCircleIcon from "@/assets/icons/questionCircleIcon";
 import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
-import { ProductType, QualityType } from "@/types/enum";
+import { ProductCategoryType, Product } from "@/types/product";
 import Image from "next/image";
 import { memo, useState } from "react";
 import { Tooltip } from "react-tooltip";
 
 // eslint-disable-next-line react/display-name
-const Title = memo((props: { content: string }) => {
+const Title = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <div className="border-b-2 border-b-primary-border font-bold text-xl">
-      {props.content}
+      {children}
     </div>
   );
 });
 
 interface ProductPageProps {
-  productType: ProductType;
-  optionArr: {
-    name: string;
-    imageUrl: string;
-    priceByQualityArr: { quality: QualityType; price: number }[];
-  }[];
+  productCategory: ProductCategoryType;
+  products: Product[];
 }
 
 export default function ProductPage(props: ProductPageProps) {
@@ -54,7 +50,7 @@ export default function ProductPage(props: ProductPageProps) {
       length &&
       length > 0
       ? Math.round(
-          props.optionArr[currentOptionIndex].priceByQualityArr[
+          props.products[currentOptionIndex].priceByQualityArr[
             currentQualityIndex
           ].price * length
         )
@@ -77,7 +73,7 @@ export default function ProductPage(props: ProductPageProps) {
           <ZoomInSquareImage
             src={
               currentOptionIndex !== null
-                ? props.optionArr[currentOptionIndex].imageUrl
+                ? props.products[currentOptionIndex].imageUrl
                 : "/image/products/customized-printing.jpg"
             }
             alt={"Customized printing"}
@@ -88,16 +84,16 @@ export default function ProductPage(props: ProductPageProps) {
 
       {/* Input and information */}
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
-        <Title content="Material Selection" />
+        <Title>Material Selection</Title>
         <div className="space-y-4">
           <div className="font-bold">
             Select a
-            {props.productType === ProductType.Customized
+            {props.productCategory === ProductCategoryType.Customized
               ? " texture"
               : " colour"}
           </div>
           <div className="flex flex-wrap gap-2">
-            {props.optionArr.map((item, index) => (
+            {props.products.map((item, index) => (
               <button
                 key={index}
                 className={`flex gap-x-2 items-center ${
@@ -107,7 +103,7 @@ export default function ProductPage(props: ProductPageProps) {
                 } border-2 rounded-lg p-1`}
                 onClick={() => handleOptionClick(index)}
               >
-                {props.productType === ProductType.YarnDyed && (
+                {props.productCategory === ProductCategoryType.YarnDyed && (
                   <Image
                     src={item.imageUrl}
                     height={64}
@@ -116,7 +112,7 @@ export default function ProductPage(props: ProductPageProps) {
                     className="h-8 w-8 object-cover rounded-md"
                   />
                 )}
-                {props.productType === ProductType.Customized && (
+                {props.productCategory === ProductCategoryType.Customized && (
                   <div className="text-sm">{item.name}</div>
                 )}
               </button>
@@ -134,13 +130,13 @@ export default function ProductPage(props: ProductPageProps) {
                 disabled
               >
                 You need to select a
-                {props.productType === ProductType.Customized
+                {props.productCategory === ProductCategoryType.Customized
                   ? " texture "
                   : " colour "}
                 first
               </button>
             ) : (
-              props.optionArr[currentOptionIndex].priceByQualityArr.map(
+              props.products[currentOptionIndex].priceByQualityArr.map(
                 (item, index) => (
                   <button
                     className={`${
@@ -163,7 +159,7 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="text-lg">
           <span className="font-bold">{`$ ${
             currentOptionIndex !== null && currentQualityIndex !== null
-              ? props.optionArr[currentOptionIndex].priceByQualityArr[
+              ? props.products[currentOptionIndex].priceByQualityArr[
                   currentQualityIndex
                 ].price
               : "-"
@@ -171,7 +167,7 @@ export default function ProductPage(props: ProductPageProps) {
           <span> / Linear Foot</span>
         </div>
 
-        <Title content="Cost Estimation" />
+        <Title>Cost Estimation</Title>
         <div className="flex gap-2 items-center">
           <span className="font-bold">Length: </span>
           <input
@@ -190,16 +186,58 @@ export default function ProductPage(props: ProductPageProps) {
           <span>{`$ ${calculateTotalPrice()}`}</span>
         </div>
 
-        <Title content="Specifications" />
+        {/* <a
+          data-tooltip-id="my-tooltip"
+          data-tooltip-content="Please contact us if over 116 inches"
+        >
+          <QuestionCircleIcon width="1.5em" height="1.5em" />
+        </a> */}
+
+        <Title>Specifications</Title>
         <div className="flex gap-2 items-center">
-          <span className="font-bold">Width: </span>
-          <span>116 inches</span>
-          <a
-            data-tooltip-id="my-tooltip"
-            data-tooltip-content="Please contact us if over 116 inches"
-          >
-            <QuestionCircleIcon width="1.5em" height="1.5em" />
-          </a>
+          <span className="font-bold">Roll length: </span>
+          <span>
+            {currentOptionIndex === null ||
+            props.products[currentOptionIndex].specification.length === null
+              ? "-"
+              : `${props.products[currentOptionIndex].specification.length} inches`}
+          </span>
+        </div>
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Roll width: </span>
+          <span>
+            {currentOptionIndex === null ||
+            props.products[currentOptionIndex].specification.width === null
+              ? "-"
+              : `${props.products[currentOptionIndex].specification.width} inches`}
+          </span>
+        </div>
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Thickness: </span>
+          <span>
+            {currentOptionIndex === null ||
+            props.products[currentOptionIndex].specification.thickness === null
+              ? "-"
+              : `${props.products[currentOptionIndex].specification.thickness} inches`}
+          </span>
+        </div>
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Substrate: </span>
+          <span>
+            {currentOptionIndex === null ||
+            props.products[currentOptionIndex].specification.substrate === null
+              ? "-"
+              : `${props.products[currentOptionIndex].specification.substrate}`}
+          </span>
+        </div>
+        <div className="flex gap-2 items-center">
+          <span className="font-bold">Weight: </span>
+          <span>
+            {currentOptionIndex === null ||
+            props.products[currentOptionIndex].specification.weight === null
+              ? "-"
+              : `${props.products[currentOptionIndex].specification.weight} g/sq.ft.`}
+          </span>
         </div>
       </div>
     </div>
