@@ -6,42 +6,34 @@ const collectionArr = [
   {
     name: "Collection 1",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/products/yarn-dyed-wall-fabric/collection-1",
+    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-1",
   },
   {
     name: "Collection 2",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/products/yarn-dyed-wall-fabric/collection-2",
+    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-2",
   },
   {
     name: "Collection 3",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/products/yarn-dyed-wall-fabric/collection-3",
+    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-3",
   },
   {
     name: "Collection 4",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/products/yarn-dyed-wall-fabric/collection-4",
+    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-4",
   },
   {
     name: "Collection 5",
     imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/products/yarn-dyed-wall-fabric/collection-5",
+    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-5",
   },
 ];
 
 export default function Page() {
   return (
     <GeneralPage title="Yarn Dyed Collections">
-      <div className="text-center text-sm">
-        (TO BE MODIFIED) Robert Allen invites you to explore the newest
-        additions to our notable and comprehensive fabric library that spans the
-        spectrum of color, pattern, texture and durability for all of your
-        design project needs. From Robert Allen to Beacon Hill, Robert Allen @
-        Home and Contract, you&apos;ll find coordinated collections of on-trend
-        and timeless upholstery and multi-purpose fabrics.
-      </div>
-      <div className="grid grid-cols-2 gap-x-16 gap-y-6 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 md:gap-x-16">
         {collectionArr.map((item, index) => (
           <div key={index} className="space-y-2">
             <div className="aspect-square relative">
