@@ -56,7 +56,7 @@ const HomePage = () => {
       </div>
 
       {/* Parallax Section, all images should be 16:9 */}
-      {parallax.map((item, index) => (
+      {/* {parallax.map((item, index) => (
         <div
           key={index}
           className={`h-[80vh] flex ${
@@ -70,26 +70,59 @@ const HomePage = () => {
             <div
               className={`h-full ${
                 item.align === "left" ? "border-l-2" : "border-r-2"
-              } border-primary-text-highlight px-8 space-y-4`}
+              } border-primary-text-highlight px-8 space-y-4 flex flex-col justify-center`}
             >
               <div className="text-4xl">{item.title}</div>
               <div>{item.content}</div>
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
+      {parallax.map((item, index) => {
+        return (
+          <div
+            className="h-[80vh] bg-fixed bg-cover flex text-secondary-text"
+            style={{
+              backgroundImage: "url('" + item.imageUrl + "')",
+              justifyContent: item.align === "left" ? "flex-start" : "flex-end",
+            }}
+            key={index}
+          >
+            <div
+              className="h-full flex flex-col justify-center items-center px-4"
+              style={
+                item.align === "left"
+                  ? {
+                      background:
+                        "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+                    }
+                  : {
+                      background:
+                        "linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+                    }
+              }
+            >
+              <div className="text-4xl lg:text-5xl max-w-[35rem] text-center mb-[2rem]">
+                {item.title}
+              </div>
+              <div className="text-center max-w-[35rem]">{item.content}</div>
+            </div>
+          </div>
+        );
+      })}
 
       {/* Video */}
-      <div className="py-12 flex justify-center items-center">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/dnfP6uEyJ6A?si=gfflCuFc3dy5nmb4"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+      <div className="py-12">
+        <div className="mx-auto relative w-[70%] aspect-video">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/dnfP6uEyJ6A?si=gfflCuFc3dy5nmb4"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       {/* Our Clients */}
