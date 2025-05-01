@@ -16,10 +16,13 @@ const pages = [
     href: null,
     subPages: [
       {
+        name: "Custom Printing Wall Fabric",
+        href: "/product/custom-printing",
+      },
+      {
         name: "Yarn Dyed Wall Fabric",
         href: "/product/yarn-dyed-wall-fabric",
       },
-      { name: "Customized Wall Fabric", href: "/product/customized-printing" },
       { name: "Embroidered Wall Fabric", href: "/product/embroidered" },
       {
         name: "Vinyl Banners & Signs",
@@ -166,7 +169,7 @@ const TopBar = (props: TopBarProps) => {
               ) : (
                 <div
                   className={`flex cursor-default items-center gap-1 ${
-                    item.name === "Products" && "text-primary-text-highlight"
+                    item.name === "Product" && "text-primary-text-highlight"
                   }`}
                 >
                   <div>{item.name}</div>
