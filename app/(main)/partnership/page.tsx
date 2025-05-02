@@ -6,31 +6,37 @@ const partnerArr = [
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
+    imageUrl: "/temp-image/1900x1900_profile_pic.jpg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
+    imageUrl: "/temp-image/1900x1900_profile_pic.jpg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
+    imageUrl: "/temp-image/1900x1900_profile_pic.jpg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
+    imageUrl: "/temp-image/1900x1900_profile_pic.jpg",
     profileUrl: "https://teddesign.com/",
   },
   {
     name: "David",
     role: "Designer",
-    imageUrl: "/temp-image/225x225_profile-pic.jpeg",
+    imageUrl: "/temp-image/1900x1900_profile_pic.jpg",
+    profileUrl: "https://teddesign.com/",
+  },
+  {
+    name: "David",
+    role: "Designer",
+    imageUrl: "/temp-image/1900x1900_profile_pic.jpg",
     profileUrl: "https://teddesign.com/",
   },
 ];

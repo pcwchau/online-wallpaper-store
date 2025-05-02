@@ -112,7 +112,9 @@ export default function ProductPage(props: ProductPageProps) {
                     className="h-8 w-8 object-cover rounded-md"
                   />
                 )}
-                {props.productCategory === ProductCategoryType.Customized && (
+                {(props.productCategory === ProductCategoryType.Customized ||
+                  props.productCategory ===
+                    ProductCategoryType.Embroidered) && (
                   <div className="text-sm">{item.name}</div>
                 )}
               </button>
@@ -186,19 +188,13 @@ export default function ProductPage(props: ProductPageProps) {
           <span>{`$ ${calculateTotalPrice()}`}</span>
         </div>
 
-        {/* <a
-          data-tooltip-id="my-tooltip"
-          data-tooltip-content="Please contact us if over 116 inches"
-        >
-          <QuestionCircleIcon width="1.5em" height="1.5em" />
-        </a> */}
-
         <Title>Specifications</Title>
         <div className="flex gap-2 items-center">
           <span className="font-bold">Roll length: </span>
           <span>
             {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.length === null
+            props.products[currentOptionIndex].specification.length ===
+              undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.length} inches`}
           </span>
@@ -207,16 +203,27 @@ export default function ProductPage(props: ProductPageProps) {
           <span className="font-bold">Roll width: </span>
           <span>
             {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.width === null
+            props.products[currentOptionIndex].specification.width === undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.width} inches`}
           </span>
+          {currentOptionIndex !== null &&
+            props.products[currentOptionIndex].specification.width !==
+              undefined && (
+              <a
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={`Please contact us if over ${props.products[currentOptionIndex].specification.width} inches`}
+              >
+                <QuestionCircleIcon width="1.5em" height="1.5em" />
+              </a>
+            )}
         </div>
         <div className="flex gap-2 items-center">
           <span className="font-bold">Thickness: </span>
           <span>
             {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.thickness === null
+            props.products[currentOptionIndex].specification.thickness ===
+              undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.thickness} inches`}
           </span>
@@ -225,7 +232,8 @@ export default function ProductPage(props: ProductPageProps) {
           <span className="font-bold">Substrate: </span>
           <span>
             {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.substrate === null
+            props.products[currentOptionIndex].specification.substrate ===
+              undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.substrate}`}
           </span>
@@ -234,7 +242,8 @@ export default function ProductPage(props: ProductPageProps) {
           <span className="font-bold">Weight: </span>
           <span>
             {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.weight === null
+            props.products[currentOptionIndex].specification.weight ===
+              undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.weight} g/sq.ft.`}
           </span>

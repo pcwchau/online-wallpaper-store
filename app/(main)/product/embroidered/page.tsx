@@ -1,9 +1,12 @@
-const ProductPage = () => {
-  return (
-    <div>
-      <h1>Embroidered Product Page</h1>
-    </div>
-  );
-};
+import ProductPage from "@/components/page/productPage";
+import { embroideredProducts } from "@/data/product";
+import { ProductCategoryType } from "@/types/product";
 
-export default ProductPage;
+export default function Page() {
+  return (
+    <ProductPage
+      productCategory={ProductCategoryType.Embroidered}
+      products={embroideredProducts}
+    />
+  );
+}

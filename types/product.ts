@@ -1,11 +1,13 @@
 export enum QualityType {
   FireRetardant = "Fire Retardant",
   FireRetardantAndWaterproof = "Fire Retardant and Waterproof",
+  MachineEmbroidered = "Machine Embroidered",
 }
 
 export enum ProductCategoryType {
   YarnDyed,
   Customized,
+  Embroidered,
 }
 
 export enum SubstrateType {
