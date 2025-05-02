@@ -47,14 +47,14 @@ Information such as build script and custom domains can be checked on Amplify.
 
 ## Image Size Requirement
 
-| Image                       | Ratio | Min Size  | Exception handling | Others                       |
-|-----------------------------|-------|-----------|--------------------|------------------------------|
-| Home - first image          | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
-| Home - product images       | n/a   | n/a       | object-cover       | Focus on the middle (mobile)
-| Yarn dyed - collection      | 1:1   |           | object-cover       |
-| Customized printing texture | 1:1   | 1200x1200 | object-contain     |
-| Inspiration (thumbnail)     | 1:1   |           | object-cover       |
-| Partnership                 | 1:1   |           | object-cover       |
+| Image                     | Ratio | Min Size  | Exception handling | Others                       |
+|---------------------------|-------|-----------|--------------------|------------------------------|
+| Home - first image        | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
+| Home - product images     | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
+| Yarn dyed - collection    | 1:1   |           | object-cover       |
+| Custom printing - texture | 1:1   | 1200x1200 | object-contain     |
+| Inspiration (thumbnail)   | 1:1   |           | object-cover       |
+| Partnership               | 1:1   |           | object-cover       |
 
 # Reference & Challenge
 

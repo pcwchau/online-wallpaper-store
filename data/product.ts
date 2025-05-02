@@ -251,3 +251,14 @@ export const yarnDyedProducts: Product[] = [
     },
   },
 ];
+
+export const embroideredProducts: Product[] = [
+  {
+    name: "Please Contact Us",
+    imageUrl: "/image/products/embroidered.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.MachineEmbroidered, price: 495 },
+    ],
+    specification: {},
+  },
+];
