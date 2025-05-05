@@ -73,28 +73,23 @@ export const yarnDyedCollectionRoutes = [
 
 export const projectCategoryRoutes = [
   {
-    name: "Collection 1",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-1",
+    name: ProductCategoryType.CustomPrintingWallFabric,
+    imageUrl: "/image/project/custom-printing/cover.jpg",
+    redirectUrl: "/project/" + ProductCategoryType.CustomPrintingWallFabric,
   },
   {
-    name: "Collection 2",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-2",
+    name: ProductCategoryType.YarnDyedWallFabric,
+    imageUrl: "/image/project/yarn-dyed/cover.jpg",
+    redirectUrl: "/project/" + ProductCategoryType.YarnDyedWallFabric,
   },
   {
-    name: "Collection 3",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-3",
+    name: ProductCategoryType.EmbroideredWallFabric,
+    imageUrl: "/image/project/embroidered/cover.jpg",
+    redirectUrl: "/project/" + ProductCategoryType.EmbroideredWallFabric,
   },
   {
-    name: "Collection 4",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-4",
-  },
-  {
-    name: "Collection 5",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-5",
+    name: ProductCategoryType.VinylBanners,
+    imageUrl: "/image/project/vinyl-banners/cover.jpg",
+    redirectUrl: "/project/" + ProductCategoryType.VinylBanners,
   },
 ];

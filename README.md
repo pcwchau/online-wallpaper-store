@@ -52,9 +52,10 @@ Information such as build script and custom domains can be checked on Amplify.
 | Home - first image      | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
 | Home - product image    | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
 | Yarn dyed - collection  | 1:1   |           | object-cover       |
+| Project category        | 1:1   |           | object-cover       |
+| Partnership             | 1:1   |           | object-cover       |
 | Product - option        | 1:1   | 1200x1200 | object-contain     |
 | Inspiration (thumbnail) | 1:1   |           | object-cover       |
-| Partnership             | 1:1   |           | object-cover       |
 
 # Reference & Challenge
 
