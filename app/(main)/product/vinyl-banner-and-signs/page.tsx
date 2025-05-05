@@ -1,9 +1,12 @@
-const ProductPage = () => {
-  return (
-    <div>
-      <h1>Vinyl Banner Page</h1>
-    </div>
-  );
-};
+import ProductPage from "@/components/page/productPage";
+import { vinylProducts } from "@/data/product";
+import { ProductCategoryType } from "@/types/product";
 
-export default ProductPage;
+export default function Page() {
+  return (
+    <ProductPage
+      productCategory={ProductCategoryType.Vinyl}
+      products={vinylProducts}
+    />
+  );
+}

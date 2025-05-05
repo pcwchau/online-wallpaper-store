@@ -1,13 +1,14 @@
 export enum QualityType {
   FireRetardant = "Fire Retardant",
   FireRetardantAndWaterproof = "Fire Retardant and Waterproof",
-  MachineEmbroidered = "Machine Embroidered",
+  PleaseContactUs = "Please Contact Us",
 }
 
 export enum ProductCategoryType {
   YarnDyed,
   Customized,
   Embroidered,
+  Vinyl,
 }
 
 export enum SubstrateType {
@@ -25,6 +26,6 @@ export interface Specification {
 export interface Product {
   name: string;
   imageUrl: string;
-  priceByQualityArr: { quality: QualityType; price: number }[];
+  priceByQualityArr: { quality: QualityType; price: number | null }[];
   specification: Specification;
 }

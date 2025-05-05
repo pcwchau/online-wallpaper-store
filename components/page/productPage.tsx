@@ -30,6 +30,15 @@ export default function ProductPage(props: ProductPageProps) {
   );
   const [length, setLength] = useState<number | "">("");
 
+  const defaultMainImageUrl =
+    props.productCategory === ProductCategoryType.Customized
+      ? "/image/product/customized-printing.jpg"
+      : props.productCategory === ProductCategoryType.YarnDyed
+      ? "/image/product/customized-printing.jpg"
+      : props.productCategory === ProductCategoryType.Embroidered
+      ? "/image/product/embroidered.jpg"
+      : "/image/product/vinyl.jpg";
+
   const handleOptionClick = (index: number) => {
     setCurrentOptionIndex(index);
     setCurrentQualityIndex(0);
@@ -47,6 +56,8 @@ export default function ProductPage(props: ProductPageProps) {
   const calculateTotalPrice = () => {
     return currentOptionIndex !== null &&
       currentQualityIndex !== null &&
+      props.products[currentOptionIndex].priceByQualityArr[currentQualityIndex]
+        .price !== null &&
       length &&
       length > 0
       ? Math.round(
@@ -74,7 +85,7 @@ export default function ProductPage(props: ProductPageProps) {
             src={
               currentOptionIndex !== null
                 ? props.products[currentOptionIndex].imageUrl
-                : "/image/products/customized-printing.jpg"
+                : defaultMainImageUrl
             }
             alt={"Customized printing"}
             unoptimized
@@ -103,6 +114,7 @@ export default function ProductPage(props: ProductPageProps) {
                 } border-2 rounded-lg p-1`}
                 onClick={() => handleOptionClick(index)}
               >
+                {/* Options with image only */}
                 {props.productCategory === ProductCategoryType.YarnDyed && (
                   <Image
                     src={item.imageUrl}
@@ -112,9 +124,10 @@ export default function ProductPage(props: ProductPageProps) {
                     className="h-8 w-8 object-cover rounded-md"
                   />
                 )}
+                {/* Options with name only */}
                 {(props.productCategory === ProductCategoryType.Customized ||
-                  props.productCategory ===
-                    ProductCategoryType.Embroidered) && (
+                  props.productCategory === ProductCategoryType.Embroidered ||
+                  props.productCategory === ProductCategoryType.Vinyl) && (
                   <div className="text-sm">{item.name}</div>
                 )}
               </button>
@@ -160,7 +173,11 @@ export default function ProductPage(props: ProductPageProps) {
         {/* Price */}
         <div className="text-lg">
           <span className="font-bold">{`$ ${
-            currentOptionIndex !== null && currentQualityIndex !== null
+            currentOptionIndex !== null &&
+            currentQualityIndex !== null &&
+            props.products[currentOptionIndex].priceByQualityArr[
+              currentQualityIndex
+            ].price !== null
               ? props.products[currentOptionIndex].priceByQualityArr[
                   currentQualityIndex
                 ].price
