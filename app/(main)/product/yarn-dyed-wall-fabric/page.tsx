@@ -1,40 +1,13 @@
 import GeneralPage from "@/components/page/generalPage";
+import { yarnDyedCollectionRoutes } from "@/data/route";
 import Image from "next/image";
 import Link from "next/link";
-
-const collectionArr = [
-  {
-    name: "Collection 1",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-1",
-  },
-  {
-    name: "Collection 2",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-2",
-  },
-  {
-    name: "Collection 3",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-3",
-  },
-  {
-    name: "Collection 4",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-4",
-  },
-  {
-    name: "Collection 5",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-5",
-  },
-];
 
 export default function Page() {
   return (
     <GeneralPage title="Yarn Dyed Collections">
       <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 md:gap-x-16">
-        {collectionArr.map((item, index) => (
+        {yarnDyedCollectionRoutes.map((item, index) => (
           <div key={index} className="space-y-2">
             <div className="aspect-square relative">
               <Link href={item.redirectUrl}>

@@ -31,11 +31,11 @@ export default function ProductPage(props: ProductPageProps) {
   const [length, setLength] = useState<number | "">("");
 
   const defaultMainImageUrl =
-    props.productCategory === ProductCategoryType.Customized
+    props.productCategory === ProductCategoryType.CustomPrintingWallFabric
       ? "/image/product/customized-printing.jpg"
-      : props.productCategory === ProductCategoryType.YarnDyed
+      : props.productCategory === ProductCategoryType.YarnDyedWallFabric
       ? "/image/product/customized-printing.jpg"
-      : props.productCategory === ProductCategoryType.Embroidered
+      : props.productCategory === ProductCategoryType.EmbroideredWallFabric
       ? "/image/product/embroidered.jpg"
       : "/image/product/vinyl.jpg";
 
@@ -99,7 +99,8 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="space-y-4">
           <div className="font-bold">
             Select a
-            {props.productCategory === ProductCategoryType.Customized
+            {props.productCategory ===
+            ProductCategoryType.CustomPrintingWallFabric
               ? " texture"
               : " colour"}
           </div>
@@ -115,7 +116,8 @@ export default function ProductPage(props: ProductPageProps) {
                 onClick={() => handleOptionClick(index)}
               >
                 {/* Options with image only */}
-                {props.productCategory === ProductCategoryType.YarnDyed && (
+                {props.productCategory ===
+                  ProductCategoryType.YarnDyedWallFabric && (
                   <Image
                     src={item.imageUrl}
                     height={64}
@@ -125,9 +127,12 @@ export default function ProductPage(props: ProductPageProps) {
                   />
                 )}
                 {/* Options with name only */}
-                {(props.productCategory === ProductCategoryType.Customized ||
-                  props.productCategory === ProductCategoryType.Embroidered ||
-                  props.productCategory === ProductCategoryType.Vinyl) && (
+                {(props.productCategory ===
+                  ProductCategoryType.CustomPrintingWallFabric ||
+                  props.productCategory ===
+                    ProductCategoryType.EmbroideredWallFabric ||
+                  props.productCategory ===
+                    ProductCategoryType.VinylBanners) && (
                   <div className="text-sm">{item.name}</div>
                 )}
               </button>
@@ -145,7 +150,8 @@ export default function ProductPage(props: ProductPageProps) {
                 disabled
               >
                 You need to select a
-                {props.productCategory === ProductCategoryType.Customized
+                {props.productCategory ===
+                ProductCategoryType.CustomPrintingWallFabric
                   ? " texture "
                   : " colour "}
                 first

@@ -9,46 +9,7 @@ import logoBlackImg from "@/assets/images/company-logo.png";
 import logoWhiteImg from "@/assets/images/company-logo-w.png";
 import logoWordImg from "@/assets/images/company-logo-word.png";
 import useMediaQuery from "@/hook/useMediaQuery";
-
-const pages = [
-  {
-    name: "Product",
-    href: null,
-    subPages: [
-      {
-        name: "Custom Printing Wall Fabric",
-        href: "/product/custom-printing",
-      },
-      {
-        name: "Yarn Dyed Wall Fabric",
-        href: "/product/yarn-dyed-wall-fabric",
-      },
-      { name: "Embroidered Wall Fabric", href: "/product/embroidered" },
-      {
-        name: "Vinyl Banners & Signs",
-        href: "/product/vinyl-banner-and-signs",
-      },
-    ],
-  },
-  {
-    name: "Gallery",
-    href: null,
-    subPages: [
-      { name: "Project", href: "/project" },
-      { name: "Inspiration", href: "/inspiration" },
-    ],
-  },
-  {
-    name: "Company",
-    href: null,
-    subPages: [
-      { name: "About Us", href: "/about-us" },
-      { name: "Qualification", href: "/qualification" },
-      { name: "FAQs", href: "/faq" },
-    ],
-  },
-  { name: "Partnership", href: "/partnership" },
-];
+import { topBarRoutes } from "@/data/route";
 
 interface TopBarProps {
   isHomePage: boolean;
@@ -156,7 +117,7 @@ const TopBar = (props: TopBarProps) => {
 
         {/* Link to different pages - screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">
-          {pages.map((item, index) => (
+          {topBarRoutes.map((item, index) => (
             <div
               key={index}
               className="relative"
@@ -226,7 +187,7 @@ const TopBar = (props: TopBarProps) => {
       {/* Links to different pages - screen width < 1024px */}
       {isMobileMenuOpen && (
         <div className="lg:hidden container flex flex-col space-y-4 py-4">
-          {pages.map((item, index) => (
+          {topBarRoutes.map((item, index) => (
             <div key={index} className="flex flex-col space-y-4">
               <div className="flex justify-between">
                 {item.href ? (

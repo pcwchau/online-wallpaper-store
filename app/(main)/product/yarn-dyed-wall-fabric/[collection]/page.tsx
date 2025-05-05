@@ -13,7 +13,7 @@ export default async function Page({
     <div>
       <h1>{collection}</h1>
       <ProductPage
-        productCategory={ProductCategoryType.YarnDyed}
+        productCategory={ProductCategoryType.YarnDyedWallFabric}
         products={yarnDyedProducts}
       />
     </div>

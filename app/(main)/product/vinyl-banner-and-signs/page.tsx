@@ -5,7 +5,7 @@ import { ProductCategoryType } from "@/types/product";
 export default function Page() {
   return (
     <ProductPage
-      productCategory={ProductCategoryType.Vinyl}
+      productCategory={ProductCategoryType.VinylBanners}
       products={vinylProducts}
     />
   );

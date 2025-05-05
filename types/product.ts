@@ -5,10 +5,10 @@ export enum QualityType {
 }
 
 export enum ProductCategoryType {
-  YarnDyed,
-  Customized,
-  Embroidered,
-  Vinyl,
+  CustomPrintingWallFabric = "Custom Printing Wall Fabric",
+  YarnDyedWallFabric = "Yarn Dyed Wall Fabric",
+  EmbroideredWallFabric = "Embroidered Wall Fabric",
+  VinylBanners = "Vinyl Banners",
 }
 
 export enum SubstrateType {
