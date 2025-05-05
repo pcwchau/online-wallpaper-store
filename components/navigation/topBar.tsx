@@ -36,7 +36,12 @@ const TopBar = (props: TopBarProps) => {
       : "lg-transparent"
     : "lg";
 
-  const resetMobileMenu = () => {
+  const handleMobileMenuClick = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setMobileMenuIndex(null);
+  };
+
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setMobileMenuIndex(null);
   };
@@ -47,11 +52,6 @@ const TopBar = (props: TopBarProps) => {
     } else {
       setMobileMenuIndex(index);
     }
-  };
-
-  const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    setMobileMenuIndex(null);
   };
 
   // Minimize the height of the top bar when scrolling down
@@ -71,7 +71,7 @@ const TopBar = (props: TopBarProps) => {
           ? "bg-primary text-primary-text"
           : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
       }`}
-      onMouseEnter={() => setIsMouseOnTopBar(true)}
+      onMouseOver={() => setIsMouseOnTopBar(true)}
       onMouseLeave={() => setIsMouseOnTopBar(false)}
     >
       {/* Preload images */}
@@ -99,7 +99,12 @@ const TopBar = (props: TopBarProps) => {
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
       <div className="container py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" onClick={() => resetMobileMenu()}>
+        <Link
+          href="/"
+          onClick={() => {
+            closeMobileMenu(); // for mobile screen
+          }}
+        >
           <Image
             src={
               topBarStyle === "lg"
@@ -191,7 +196,7 @@ const TopBar = (props: TopBarProps) => {
             <div key={index} className="flex flex-col space-y-4">
               <div className="flex justify-between">
                 {item.href ? (
-                  <Link href={item.href} onClick={() => resetMobileMenu()}>
+                  <Link href={item.href} onClick={() => closeMobileMenu()}>
                     {item.name}
                   </Link>
                 ) : (
@@ -218,7 +223,7 @@ const TopBar = (props: TopBarProps) => {
                     <Link
                       href={subItem.href}
                       key={subIndex}
-                      onClick={() => resetMobileMenu()}
+                      onClick={() => closeMobileMenu()}
                     >
                       {subItem.name}
                     </Link>
