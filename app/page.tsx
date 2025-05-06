@@ -1,51 +1,50 @@
-// "use client"; // for image swiper
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination } from "swiper/modules";
+"use client"; // for image swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import TopBar from "@/components/navigation/topBar";
 import { clientsLogoImages, parallax } from "@/data/homePage";
+import swiperImg1 from "@/assets/images/home/1.jpg";
+import swiperImg2 from "@/assets/images/home/2.jpg";
 
 const HomePage = () => {
   return (
     <div>
       <TopBar isHomePage={true} />
-      {/* First picture */}
-      <div className="relative h-screen">
-        <Image
-          src="/image/home/feather.jpg"
-          alt="feather"
-          fill
-          sizes="(max-width: 1024px) 300vw, 200vw"
-          className="object-cover"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
-          // blur image is plain image in black
-        />
-      </div>
 
-      {/* Image swiper, all images must be 1920 x 900 */}
-      {/* <Swiper
-        modules={[Navigation, Pagination]}
-        slidesPerView={1}
-        loop
-        navigation
-        pagination={{ clickable: true }}
-      >
-        {swiperImages.map((src, index) => (
-          <SwiperSlide key={index}>
-            <Image
-              src={src}
-              alt={`Slide ${index + 1}`}
-              width={1920}
-              height={900}
-              // className="animate-enlarge-small-in-4s"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper> */}
+      {/* Main picture */}
+      <div className="relative">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={1}
+          loop
+          navigation
+          pagination={{ clickable: true }}
+          className="relative h-screen"
+          style={
+            {
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
+            } as React.CSSProperties
+          }
+        >
+          {[swiperImg1, swiperImg2].map((imgSrc, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={imgSrc}
+                alt="Be Shine Fabric Wallpaper"
+                fill
+                sizes="(max-width: 1024px) 300vw, 200vw" // to ensure clear images
+                className="object-cover"
+                placeholder="blur"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       {/* Content */}
       <div className="h-[80vh] flex justify-center items-center px-4">
@@ -56,28 +55,6 @@ const HomePage = () => {
       </div>
 
       {/* Parallax Section, all images should be 16:9 */}
-      {/* {parallax.map((item, index) => (
-        <div
-          key={index}
-          className={`h-[80vh] flex ${
-            item.align === "left" ? "flex-row" : "flex-row-reverse"
-          }`}
-        >
-          <div className="relative w-1/2">
-            <Image src={item.imageUrl} alt={""} fill className="object-cover" />
-          </div>
-          <div className="w-1/2 p-8">
-            <div
-              className={`h-full ${
-                item.align === "left" ? "border-l-2" : "border-r-2"
-              } border-primary-text-highlight px-8 space-y-4 flex flex-col justify-center`}
-            >
-              <div className="text-4xl">{item.title}</div>
-              <div>{item.content}</div>
-            </div>
-          </div>
-        </div>
-      ))} */}
       {parallax.map((item, index) => {
         return (
           <div

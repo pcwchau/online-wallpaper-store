@@ -49,7 +49,7 @@ Information such as build script and custom domains can be checked on Amplify.
 
 | Image                   | Ratio | Min Size  | Exception handling | Others                       |
 |-------------------------|-------|-----------|--------------------|------------------------------|
-| Home - first image      | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
+| Home - Main image       | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
 | Home - product image    | n/a   | n/a       | object-cover       | Focus on the middle (mobile) |
 | Yarn dyed - collection  | 1:1   |           | object-cover       |
 | Project category        | 1:1   |           | object-cover       |
