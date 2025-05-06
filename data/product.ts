@@ -255,10 +255,17 @@ export const yarnDyedProducts: Product[] = [
 export const embroideredProducts: Product[] = [
   {
     name: "Please Contact Us",
-    imageUrl: "/image/products/embroidered.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.MachineEmbroidered, price: 495 },
-    ],
+    imageUrl: "/image/product/embroidered.jpg",
+    priceByQualityArr: [{ quality: QualityType.PleaseContactUs, price: null }],
+    specification: {},
+  },
+];
+
+export const vinylProducts: Product[] = [
+  {
+    name: "Please Contact Us",
+    imageUrl: "/image/product/vinyl.jpg",
+    priceByQualityArr: [{ quality: QualityType.PleaseContactUs, price: null }],
     specification: {},
   },
 ];

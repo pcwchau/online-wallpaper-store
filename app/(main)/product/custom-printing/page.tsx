@@ -5,7 +5,7 @@ import { ProductCategoryType } from "@/types/product";
 export default function Page() {
   return (
     <ProductPage
-      productCategory={ProductCategoryType.Customized}
+      productCategory={ProductCategoryType.CustomPrintingWallFabric}
       products={customizedProducts}
     />
   );

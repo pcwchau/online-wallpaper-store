@@ -30,6 +30,15 @@ export default function ProductPage(props: ProductPageProps) {
   );
   const [length, setLength] = useState<number | "">("");
 
+  const defaultMainImageUrl =
+    props.productCategory === ProductCategoryType.CustomPrintingWallFabric
+      ? "/image/product/customized-printing.jpg"
+      : props.productCategory === ProductCategoryType.YarnDyedWallFabric
+      ? "/image/product/customized-printing.jpg"
+      : props.productCategory === ProductCategoryType.EmbroideredWallFabric
+      ? "/image/product/embroidered.jpg"
+      : "/image/product/vinyl.jpg";
+
   const handleOptionClick = (index: number) => {
     setCurrentOptionIndex(index);
     setCurrentQualityIndex(0);
@@ -47,6 +56,8 @@ export default function ProductPage(props: ProductPageProps) {
   const calculateTotalPrice = () => {
     return currentOptionIndex !== null &&
       currentQualityIndex !== null &&
+      props.products[currentOptionIndex].priceByQualityArr[currentQualityIndex]
+        .price !== null &&
       length &&
       length > 0
       ? Math.round(
@@ -74,7 +85,7 @@ export default function ProductPage(props: ProductPageProps) {
             src={
               currentOptionIndex !== null
                 ? props.products[currentOptionIndex].imageUrl
-                : "/image/products/customized-printing.jpg"
+                : defaultMainImageUrl
             }
             alt={"Customized printing"}
             unoptimized
@@ -88,7 +99,8 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="space-y-4">
           <div className="font-bold">
             Select a
-            {props.productCategory === ProductCategoryType.Customized
+            {props.productCategory ===
+            ProductCategoryType.CustomPrintingWallFabric
               ? " texture"
               : " colour"}
           </div>
@@ -103,7 +115,9 @@ export default function ProductPage(props: ProductPageProps) {
                 } border-2 rounded-lg p-1`}
                 onClick={() => handleOptionClick(index)}
               >
-                {props.productCategory === ProductCategoryType.YarnDyed && (
+                {/* Options with image only */}
+                {props.productCategory ===
+                  ProductCategoryType.YarnDyedWallFabric && (
                   <Image
                     src={item.imageUrl}
                     height={64}
@@ -112,9 +126,13 @@ export default function ProductPage(props: ProductPageProps) {
                     className="h-8 w-8 object-cover rounded-md"
                   />
                 )}
-                {(props.productCategory === ProductCategoryType.Customized ||
+                {/* Options with name only */}
+                {(props.productCategory ===
+                  ProductCategoryType.CustomPrintingWallFabric ||
                   props.productCategory ===
-                    ProductCategoryType.Embroidered) && (
+                    ProductCategoryType.EmbroideredWallFabric ||
+                  props.productCategory ===
+                    ProductCategoryType.VinylBanners) && (
                   <div className="text-sm">{item.name}</div>
                 )}
               </button>
@@ -132,7 +150,8 @@ export default function ProductPage(props: ProductPageProps) {
                 disabled
               >
                 You need to select a
-                {props.productCategory === ProductCategoryType.Customized
+                {props.productCategory ===
+                ProductCategoryType.CustomPrintingWallFabric
                   ? " texture "
                   : " colour "}
                 first
@@ -160,7 +179,11 @@ export default function ProductPage(props: ProductPageProps) {
         {/* Price */}
         <div className="text-lg">
           <span className="font-bold">{`$ ${
-            currentOptionIndex !== null && currentQualityIndex !== null
+            currentOptionIndex !== null &&
+            currentQualityIndex !== null &&
+            props.products[currentOptionIndex].priceByQualityArr[
+              currentQualityIndex
+            ].price !== null
               ? props.products[currentOptionIndex].priceByQualityArr[
                   currentQualityIndex
                 ].price

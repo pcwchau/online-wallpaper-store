@@ -9,46 +9,7 @@ import logoBlackImg from "@/assets/images/company-logo.png";
 import logoWhiteImg from "@/assets/images/company-logo-w.png";
 import logoWordImg from "@/assets/images/company-logo-word.png";
 import useMediaQuery from "@/hook/useMediaQuery";
-
-const pages = [
-  {
-    name: "Product",
-    href: null,
-    subPages: [
-      {
-        name: "Custom Printing Wall Fabric",
-        href: "/product/custom-printing",
-      },
-      {
-        name: "Yarn Dyed Wall Fabric",
-        href: "/product/yarn-dyed-wall-fabric",
-      },
-      { name: "Embroidered Wall Fabric", href: "/product/embroidered" },
-      {
-        name: "Vinyl Banners & Signs",
-        href: "/product/vinyl-banner-and-signs",
-      },
-    ],
-  },
-  {
-    name: "Gallery",
-    href: null,
-    subPages: [
-      { name: "Project", href: "/project" },
-      { name: "Inspiration", href: "/inspiration" },
-    ],
-  },
-  {
-    name: "Company",
-    href: null,
-    subPages: [
-      { name: "About Us", href: "/about-us" },
-      { name: "Qualification", href: "/qualification" },
-      { name: "FAQs", href: "/faq" },
-    ],
-  },
-  { name: "Partnership", href: "/partnership" },
-];
+import { topBarRoutes } from "@/data/route";
 
 interface TopBarProps {
   isHomePage: boolean;
@@ -75,7 +36,12 @@ const TopBar = (props: TopBarProps) => {
       : "lg-transparent"
     : "lg";
 
-  const resetMobileMenu = () => {
+  const handleMobileMenuClick = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setMobileMenuIndex(null);
+  };
+
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setMobileMenuIndex(null);
   };
@@ -86,11 +52,6 @@ const TopBar = (props: TopBarProps) => {
     } else {
       setMobileMenuIndex(index);
     }
-  };
-
-  const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    setMobileMenuIndex(null);
   };
 
   // Minimize the height of the top bar when scrolling down
@@ -110,7 +71,7 @@ const TopBar = (props: TopBarProps) => {
           ? "bg-primary text-primary-text"
           : "bg-gradient-to-b from-secondary to-transparent text-secondary-text"
       }`}
-      onMouseEnter={() => setIsMouseOnTopBar(true)}
+      onMouseOver={() => setIsMouseOnTopBar(true)}
       onMouseLeave={() => setIsMouseOnTopBar(false)}
     >
       {/* Preload images */}
@@ -138,7 +99,12 @@ const TopBar = (props: TopBarProps) => {
       {/* Please update the constant TOP_BAR_HEIGHT if the height changes */}
       <div className="container py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" onClick={() => resetMobileMenu()}>
+        <Link
+          href="/"
+          onClick={() => {
+            closeMobileMenu(); // for mobile screen
+          }}
+        >
           <Image
             src={
               topBarStyle === "lg"
@@ -156,7 +122,7 @@ const TopBar = (props: TopBarProps) => {
 
         {/* Link to different pages - screen width >= 1024px */}
         <div className="hidden lg:flex space-x-6">
-          {pages.map((item, index) => (
+          {topBarRoutes.map((item, index) => (
             <div
               key={index}
               className="relative"
@@ -226,11 +192,11 @@ const TopBar = (props: TopBarProps) => {
       {/* Links to different pages - screen width < 1024px */}
       {isMobileMenuOpen && (
         <div className="lg:hidden container flex flex-col space-y-4 py-4">
-          {pages.map((item, index) => (
+          {topBarRoutes.map((item, index) => (
             <div key={index} className="flex flex-col space-y-4">
               <div className="flex justify-between">
                 {item.href ? (
-                  <Link href={item.href} onClick={() => resetMobileMenu()}>
+                  <Link href={item.href} onClick={() => closeMobileMenu()}>
                     {item.name}
                   </Link>
                 ) : (
@@ -257,7 +223,7 @@ const TopBar = (props: TopBarProps) => {
                     <Link
                       href={subItem.href}
                       key={subIndex}
-                      onClick={() => resetMobileMenu()}
+                      onClick={() => closeMobileMenu()}
                     >
                       {subItem.name}
                     </Link>
