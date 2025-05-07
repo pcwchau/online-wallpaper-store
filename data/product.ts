@@ -2,21 +2,6 @@ import { Product, QualityType, SubstrateType } from "@/types/product";
 
 export const customizedProducts: Product[] = [
   {
-    name: "無紡布",
-    imageUrl: "/temp-image/1200x1200.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardant, price: 165 },
-      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
     name: "紗線",
     imageUrl: "/temp-image/1200x1200_3.jpg",
     priceByQualityArr: [
@@ -61,7 +46,21 @@ export const customizedProducts: Product[] = [
     },
   },
   {
-    name: "金銀",
+    name: "亮銀",
+    imageUrl: "/temp-image/1200x1200_5.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "亮金",
     imageUrl: "/temp-image/1200x1200_5.jpg",
     priceByQualityArr: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
