@@ -48,7 +48,7 @@ const HomePage = () => {
       </div>
 
       {/* Content */}
-      <div className="h-[80vh] flex justify-center items-center px-4">
+      <div className="py-20 lg:py-40 flex justify-center items-center px-4">
         <div className="max-w-[40rem] text-4xl text-center">
           Be Shine Textile Inc. – Canada’s premier leader of customized
           wallcoverings, offering ideas and inspiration to transform your space.
