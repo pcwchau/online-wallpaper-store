@@ -9,6 +9,7 @@ import TopBar from "@/components/navigation/topBar";
 import { clientsLogoImages, parallax } from "@/data/homePage";
 import swiperImg1 from "@/assets/images/home/1.jpg";
 import swiperImg2 from "@/assets/images/home/2.jpg";
+import swiperImg3 from "@/assets/images/home/3.jpg";
 
 const HomePage = () => {
   return (
@@ -31,7 +32,7 @@ const HomePage = () => {
             } as React.CSSProperties
           }
         >
-          {[swiperImg1, swiperImg2].map((imgSrc, index) => (
+          {[swiperImg1, swiperImg2, swiperImg3].map((imgSrc, index) => (
             <SwiperSlide key={index}>
               <Image
                 src={imgSrc}
