@@ -10,7 +10,7 @@ const spectral = Spectral({
 });
 
 export const metadata: Metadata = {
-  title: "Wall Fabric | Be Shine Textile Inc.",
+  title: "Fabric Wallcoverings | Be Shine Textile Inc.",
   keywords: ["Wallcovering", "wallpaper", "wall fabric"],
   description: "Be Shine Textile Inc.",
 };
