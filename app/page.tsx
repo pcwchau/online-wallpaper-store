@@ -80,8 +80,9 @@ const HomePage = () => {
                     }
               }
             >
-              <div className="text-4xl lg:text-5xl max-w-[35rem] text-center mb-[2rem]">
-                {item.title}
+              <div className="text-4xl lg:text-6xl max-w-[35rem] text-center mb-[2rem] space-y-2">
+                <div>{item.titleRow1}</div>
+                <div>{item.titleRow2}</div>
               </div>
               <div className="text-center max-w-[35rem]">{item.content}</div>
             </div>
