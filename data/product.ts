@@ -18,7 +18,7 @@ export const customizedProducts: Product[] = [
   },
   {
     name: "科技皮",
-    imageUrl: "/temp-image/1200x1200_4.jpg",
+    imageUrl: "/image/product/custom-printing/vinyl.jpg",
     priceByQualityArr: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
     ],
@@ -201,6 +201,121 @@ export const yarnDyedCaiMaProducts: Product[] = [
   {
     name: "Cai Ma | BYM18 | Morning Haze",
     imageUrl: "/image/product/cai-ma/BYM18.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+];
+
+export const yarnDyedMediumLinenProducts: Product[] = [
+  {
+    name: "無紡布 English Name",
+    imageUrl: "/image/product/medium-linen/A08.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "豎條 English Name",
+    imageUrl: "/image/product/medium-linen/A15.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "紗線 English Name",
+    imageUrl: "/image/product/medium-linen/A16.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "科技皮 English Name",
+    imageUrl: "/image/product/medium-linen/A21.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "亮銀 English Name",
+    imageUrl: "/image/product/medium-linen/A26.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "亮銀2 English Name",
+    imageUrl: "/image/product/medium-linen/A88.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "亮金 English Name",
+    imageUrl: "/image/product/medium-linen/W08.jpg",
+    priceByQualityArr: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    ],
+    specification: {
+      length: 1968,
+      width: 116,
+      thickness: 0.043,
+      substrate: SubstrateType.NonWovenPolyester,
+      weight: 21.57,
+    },
+  },
+  {
+    name: "冠銀 English Name",
+    imageUrl: "/image/product/medium-linen/Y11.jpg",
     priceByQualityArr: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
     ],
