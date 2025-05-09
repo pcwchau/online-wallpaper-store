@@ -13,6 +13,10 @@ export enum ProductCategoryType {
 
 export enum YarnDyedCollectionType {
   CaiMa = "Cai Ma",
+  MediumLinen = "Medium Linen",
+  QC121 = "QC-121",
+  ZhuMa = "Zhu Ma",
+  ZR = "ZR",
 }
 
 export enum SubstrateType {

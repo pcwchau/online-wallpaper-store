@@ -1,5 +1,9 @@
 import ProductPage from "@/components/page/productPage";
-import { yarnDyedCaiMaProducts, yarnDyedProducts } from "@/data/product";
+import {
+  yarnDyedCaiMaProducts,
+  yarnDyedMediumLinenProducts,
+  yarnDyedProducts,
+} from "@/data/product";
 import { ProductCategoryType, YarnDyedCollectionType } from "@/types/product";
 
 export default async function Page({
@@ -17,6 +21,8 @@ export default async function Page({
         products={
           decodedCollection === YarnDyedCollectionType.CaiMa
             ? yarnDyedCaiMaProducts
+            : decodedCollection === YarnDyedCollectionType.MediumLinen
+            ? yarnDyedMediumLinenProducts
             : yarnDyedProducts
         }
       />

@@ -46,29 +46,32 @@ export const topBarRoutes = [
 export const yarnDyedCollectionRoutes = [
   {
     name: YarnDyedCollectionType.CaiMa,
-    imageUrl: "/image/product/cai-ma/IMG_0334.jpg",
+    imageUrl: "/image/product/cai-ma/caima-cover.jpg",
     redirectUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.CaiMa,
   },
   {
-    name: "Collection 2",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-2",
+    name: YarnDyedCollectionType.MediumLinen,
+    imageUrl: "/image/product/medium-linen/A08.jpg",
+    redirectUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.MediumLinen,
   },
   {
-    name: "Collection 3",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-3",
+    name: YarnDyedCollectionType.QC121,
+    imageUrl: "/image/product/qc-121/02.jpg",
+    redirectUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.QC121,
   },
   {
-    name: "Collection 4",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-4",
+    name: YarnDyedCollectionType.ZhuMa,
+    imageUrl: "/image/product/zhu-ma/2088-01.jpg",
+    redirectUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZhuMa,
   },
   {
-    name: "Collection 5",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-5",
+    name: YarnDyedCollectionType.ZR,
+    imageUrl: "/image/product/zr/ZR02.jpg",
+    redirectUrl: "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZR,
   },
 ];
 
