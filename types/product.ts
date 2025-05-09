@@ -11,6 +11,10 @@ export enum ProductCategoryType {
   VinylBanners = "Vinyl Banners",
 }
 
+export enum YarnDyedCollectionType {
+  CaiMa = "Cai Ma",
+}
+
 export enum SubstrateType {
   NonWovenPolyester = "Non-woven polyester fabric",
 }
