@@ -1,6 +1,6 @@
 import ProductPage from "@/components/page/productPage";
-import { yarnDyedProducts } from "@/data/product";
-import { ProductCategoryType } from "@/types/product";
+import { yarnDyedCaiMaProducts, yarnDyedProducts } from "@/data/product";
+import { ProductCategoryType, YarnDyedCollectionType } from "@/types/product";
 
 export default async function Page({
   params,
@@ -8,13 +8,17 @@ export default async function Page({
   params: Promise<{ collection: string }>;
 }) {
   const { collection } = await params;
+  const decodedCollection = decodeURIComponent(collection);
 
   return (
     <div>
-      <h1>{collection}</h1>
       <ProductPage
         productCategory={ProductCategoryType.YarnDyedWallFabric}
-        products={yarnDyedProducts}
+        products={
+          decodedCollection === YarnDyedCollectionType.CaiMa
+            ? yarnDyedCaiMaProducts
+            : yarnDyedProducts
+        }
       />
     </div>
   );

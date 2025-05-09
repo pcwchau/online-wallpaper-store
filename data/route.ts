@@ -1,4 +1,4 @@
-import { ProductCategoryType } from "@/types/product";
+import { ProductCategoryType, YarnDyedCollectionType } from "@/types/product";
 
 export const topBarRoutes = [
   {
@@ -45,9 +45,10 @@ export const topBarRoutes = [
 
 export const yarnDyedCollectionRoutes = [
   {
-    name: "Collection 1",
-    imageUrl: "/temp-image/1200x1200_1.jpg",
-    redirectUrl: "/product/yarn-dyed-wall-fabric/collection-1",
+    name: YarnDyedCollectionType.CaiMa,
+    imageUrl: "/image/product/cai-ma/IMG_0334.jpg",
+    redirectUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.CaiMa,
   },
   {
     name: "Collection 2",

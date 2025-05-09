@@ -22,22 +22,11 @@ interface ProductPageProps {
 }
 
 export default function ProductPage(props: ProductPageProps) {
-  const [currentOptionIndex, setCurrentOptionIndex] = useState<number | null>(
-    null
-  );
+  const [currentOptionIndex, setCurrentOptionIndex] = useState<number>(0);
   const [currentQualityIndex, setCurrentQualityIndex] = useState<number | null>(
     null
   );
   const [length, setLength] = useState<number | "">("");
-
-  const defaultMainImageUrl =
-    props.productCategory === ProductCategoryType.CustomPrintingWallFabric
-      ? "/image/product/customized-printing.jpg"
-      : props.productCategory === ProductCategoryType.YarnDyedWallFabric
-      ? "/image/product/customized-printing.jpg"
-      : props.productCategory === ProductCategoryType.EmbroideredWallFabric
-      ? "/image/product/embroidered.jpg"
-      : "/image/product/vinyl.jpg";
 
   const handleOptionClick = (index: number) => {
     setCurrentOptionIndex(index);
@@ -54,8 +43,7 @@ export default function ProductPage(props: ProductPageProps) {
   };
 
   const calculateTotalPrice = () => {
-    return currentOptionIndex !== null &&
-      currentQualityIndex !== null &&
+    return currentQualityIndex !== null &&
       props.products[currentOptionIndex].priceByQualityArr[currentQualityIndex]
         .price !== null &&
       length &&
@@ -82,11 +70,7 @@ export default function ProductPage(props: ProductPageProps) {
           }}
         >
           <ZoomInSquareImage
-            src={
-              currentOptionIndex !== null
-                ? props.products[currentOptionIndex].imageUrl
-                : defaultMainImageUrl
-            }
+            src={props.products[currentOptionIndex].imageUrl}
             alt={"Customized printing"}
             unoptimized
           />
@@ -95,15 +79,8 @@ export default function ProductPage(props: ProductPageProps) {
 
       {/* Input and information */}
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
-        <Title>Material Selection</Title>
+        <Title>{props.products[currentOptionIndex].name}</Title>
         <div className="space-y-4">
-          <div className="font-bold">
-            Select a
-            {props.productCategory ===
-            ProductCategoryType.CustomPrintingWallFabric
-              ? " texture"
-              : " colour"}
-          </div>
           <div className="flex flex-wrap gap-2">
             {props.products.map((item, index) => (
               <button
@@ -144,33 +121,19 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="space-y-4">
           <div className="font-bold">Select a quality</div>
           <div className="flex flex-wrap gap-2">
-            {currentOptionIndex === null ? (
-              <button
-                className="border-primary-border-disabled border-2 rounded-lg p-1 text-primary-text-disabled text-sm"
-                disabled
-              >
-                You need to select a
-                {props.productCategory ===
-                ProductCategoryType.CustomPrintingWallFabric
-                  ? " texture "
-                  : " colour "}
-                first
-              </button>
-            ) : (
-              props.products[currentOptionIndex].priceByQualityArr.map(
-                (item, index) => (
-                  <button
-                    className={`${
-                      currentQualityIndex === index
-                        ? "border-primary-border-selected"
-                        : "border-primary-border"
-                    }  border-2 rounded-lg p-1 text-sm`}
-                    onClick={() => handleQualityClick(index)}
-                    key={index}
-                  >
-                    {item.quality}
-                  </button>
-                )
+            {props.products[currentOptionIndex].priceByQualityArr.map(
+              (item, index) => (
+                <button
+                  className={`${
+                    currentQualityIndex === index
+                      ? "border-primary-border-selected"
+                      : "border-primary-border"
+                  }  border-2 rounded-lg p-1 text-sm`}
+                  onClick={() => handleQualityClick(index)}
+                  key={index}
+                >
+                  {item.quality}
+                </button>
               )
             )}
           </div>
@@ -179,7 +142,6 @@ export default function ProductPage(props: ProductPageProps) {
         {/* Price */}
         <div className="text-lg">
           <span className="font-bold">{`$ ${
-            currentOptionIndex !== null &&
             currentQualityIndex !== null &&
             props.products[currentOptionIndex].priceByQualityArr[
               currentQualityIndex
@@ -215,9 +177,8 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="flex gap-2 items-center">
           <span className="font-bold">Roll length: </span>
           <span>
-            {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.length ===
-              undefined
+            {props.products[currentOptionIndex].specification.length ===
+            undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.length} inches`}
           </span>
@@ -225,28 +186,26 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="flex gap-2 items-center">
           <span className="font-bold">Roll width: </span>
           <span>
-            {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.width === undefined
+            {props.products[currentOptionIndex].specification.width ===
+            undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.width} inches`}
           </span>
-          {currentOptionIndex !== null &&
-            props.products[currentOptionIndex].specification.width !==
-              undefined && (
-              <a
-                data-tooltip-id="my-tooltip"
-                data-tooltip-content={`Please contact us if over ${props.products[currentOptionIndex].specification.width} inches`}
-              >
-                <QuestionCircleIcon width="1.5em" height="1.5em" />
-              </a>
-            )}
+          {props.products[currentOptionIndex].specification.width !==
+            undefined && (
+            <a
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={`Please contact us if over ${props.products[currentOptionIndex].specification.width} inches`}
+            >
+              <QuestionCircleIcon width="1.5em" height="1.5em" />
+            </a>
+          )}
         </div>
         <div className="flex gap-2 items-center">
           <span className="font-bold">Thickness: </span>
           <span>
-            {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.thickness ===
-              undefined
+            {props.products[currentOptionIndex].specification.thickness ===
+            undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.thickness} inches`}
           </span>
@@ -254,9 +213,8 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="flex gap-2 items-center">
           <span className="font-bold">Substrate: </span>
           <span>
-            {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.substrate ===
-              undefined
+            {props.products[currentOptionIndex].specification.substrate ===
+            undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.substrate}`}
           </span>
@@ -264,9 +222,8 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="flex gap-2 items-center">
           <span className="font-bold">Weight: </span>
           <span>
-            {currentOptionIndex === null ||
-            props.products[currentOptionIndex].specification.weight ===
-              undefined
+            {props.products[currentOptionIndex].specification.weight ===
+            undefined
               ? "-"
               : `${props.products[currentOptionIndex].specification.weight} g/sq.ft.`}
           </span>
