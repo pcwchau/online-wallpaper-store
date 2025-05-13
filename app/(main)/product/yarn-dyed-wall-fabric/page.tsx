@@ -1,5 +1,5 @@
 import GeneralPage from "@/components/page/generalPage";
-import { yarnDyedCollectionRoutes } from "@/data/route";
+import { yarnDyedProductCollections } from "@/data/product";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,10 +7,10 @@ export default function Page() {
   return (
     <GeneralPage title="Yarn Dyed Collections">
       <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 md:gap-x-16">
-        {yarnDyedCollectionRoutes.map((item, index) => (
+        {yarnDyedProductCollections.map((item, index) => (
           <div key={index} className="space-y-2">
             <div className="aspect-square relative">
-              <Link href={item.redirectUrl}>
+              <Link href={item.productPageUrl}>
                 <Image
                   src={item.imageUrl}
                   alt={item.name}

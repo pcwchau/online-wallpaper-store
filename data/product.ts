@@ -1,4 +1,10 @@
-import { Product, QualityType, SubstrateType } from "@/types/product";
+import {
+  Product,
+  ProductCollection,
+  QualityType,
+  SubstrateType,
+  YarnDyedCollectionType,
+} from "@/types/product";
 
 export const customizedProducts: Product[] = [
   {
@@ -113,348 +119,340 @@ export const customizedProducts: Product[] = [
   },
 ];
 
-export const yarnDyedCaiMaProducts: Product[] = [
+export const yarnDyedProductCollections: ProductCollection[] = [
   {
-    name: "Cai Ma | A01 | Oat Mist",
-    imageUrl: "/image/product/cai-ma/A01.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    name: YarnDyedCollectionType.CaiMa,
+    imageUrl: "/image/product/cai-ma/caima-cover.jpg",
+    productPageUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.CaiMa,
+    products: [
+      {
+        name: "Cai Ma | A01 | Oat Mist",
+        imageUrl: "/image/product/cai-ma/A01.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "Cai Ma | A10 | Ash Grey",
+        imageUrl: "/image/product/cai-ma/A10.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "Cai Ma | B03 | Soft Birch",
+        imageUrl: "/image/product/cai-ma/B03.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "Cai Ma | B08 | Icy Blue",
+        imageUrl: "/image/product/cai-ma/B08.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "Cai Ma | BYM03 | Sage Grid",
+        imageUrl: "/image/product/cai-ma/BYM03.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "Cai Ma | BYM10 | Driftwood",
+        imageUrl: "/image/product/cai-ma/BYM10.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "Cai Ma | BYM18 | Morning Haze",
+        imageUrl: "/image/product/cai-ma/BYM18.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
     ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
   },
   {
-    name: "Cai Ma | A10 | Ash Grey",
-    imageUrl: "/image/product/cai-ma/A10.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "Cai Ma | B03 | Soft Birch",
-    imageUrl: "/image/product/cai-ma/B03.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "Cai Ma | B08 | Icy Blue",
-    imageUrl: "/image/product/cai-ma/B08.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "Cai Ma | BYM03 | Sage Grid",
-    imageUrl: "/image/product/cai-ma/BYM03.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "Cai Ma | BYM10 | Driftwood",
-    imageUrl: "/image/product/cai-ma/BYM10.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "Cai Ma | BYM18 | Morning Haze",
-    imageUrl: "/image/product/cai-ma/BYM18.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-];
-
-export const yarnDyedMediumLinenProducts: Product[] = [
-  {
-    name: "無紡布 English Name",
+    name: YarnDyedCollectionType.MediumLinen,
     imageUrl: "/image/product/medium-linen/A08.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    productPageUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.MediumLinen,
+    products: [
+      {
+        name: "無紡布 English Name",
+        imageUrl: "/image/product/medium-linen/A08.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "豎條 English Name",
+        imageUrl: "/image/product/medium-linen/A15.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "紗線 English Name",
+        imageUrl: "/image/product/medium-linen/A16.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "科技皮 English Name",
+        imageUrl: "/image/product/medium-linen/A21.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "亮銀 English Name",
+        imageUrl: "/image/product/medium-linen/A26.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "亮銀2 English Name",
+        imageUrl: "/image/product/medium-linen/A88.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "亮金 English Name",
+        imageUrl: "/image/product/medium-linen/W08.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "冠銀 English Name",
+        imageUrl: "/image/product/medium-linen/Y11.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
     ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
   },
   {
-    name: "豎條 English Name",
-    imageUrl: "/image/product/medium-linen/A15.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    name: YarnDyedCollectionType.QC121,
+    imageUrl: "/image/product/qc-121/02.jpg",
+    productPageUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.QC121,
+    products: [
+      {
+        name: "無紡布 English Name",
+        imageUrl: "/temp-image/1200x1200.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "紗線 English Name",
+        imageUrl: "/temp-image/1200x1200_3.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
     ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
   },
   {
-    name: "紗線 English Name",
-    imageUrl: "/image/product/medium-linen/A16.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    name: YarnDyedCollectionType.ZhuMa,
+    imageUrl: "/image/product/zhu-ma/2088-01.jpg",
+    productPageUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZhuMa,
+    products: [
+      {
+        name: "無紡布 English Name",
+        imageUrl: "/temp-image/1200x1200.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "紗線 English Name",
+        imageUrl: "/temp-image/1200x1200_3.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
     ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
   },
   {
-    name: "科技皮 English Name",
-    imageUrl: "/image/product/medium-linen/A21.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+    name: YarnDyedCollectionType.ZR,
+    imageUrl: "/image/product/zr/ZR02.jpg",
+    productPageUrl:
+      "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZR,
+    products: [
+      {
+        name: "無紡布 English Name",
+        imageUrl: "/temp-image/1200x1200.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
+      {
+        name: "紗線 English Name",
+        imageUrl: "/temp-image/1200x1200_3.jpg",
+        priceByQualityArr: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
+        ],
+        specification: {
+          length: 1968,
+          width: 116,
+          thickness: 0.043,
+          substrate: SubstrateType.NonWovenPolyester,
+          weight: 21.57,
+        },
+      },
     ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "亮銀 English Name",
-    imageUrl: "/image/product/medium-linen/A26.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "亮銀2 English Name",
-    imageUrl: "/image/product/medium-linen/A88.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "亮金 English Name",
-    imageUrl: "/image/product/medium-linen/W08.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "冠銀 English Name",
-    imageUrl: "/image/product/medium-linen/Y11.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-];
-
-export const yarnDyedProducts: Product[] = [
-  {
-    name: "無紡布 English Name",
-    imageUrl: "/temp-image/1200x1200.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "豎條 English Name",
-    imageUrl: "/temp-image/1200x1200_2.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "紗線 English Name",
-    imageUrl: "/temp-image/1200x1200_3.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "科技皮 English Name",
-    imageUrl: "/temp-image/1200x1200_4.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "亮銀 English Name",
-    imageUrl: "/temp-image/1200x1200_5.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "亮銀2 English Name",
-    imageUrl: "/temp-image/1200x1200_6.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "亮金 English Name",
-    imageUrl: "/temp-image/1200x1200_7.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "冠銀 English Name",
-    imageUrl: "/temp-image/1200x1200_8.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
-  },
-  {
-    name: "粗竹節 English Name",
-    imageUrl: "/temp-image/1200x1200_9.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
-    ],
-    specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
-      weight: 21.57,
-    },
   },
 ];
 

@@ -1,10 +1,6 @@
 import ProductPage from "@/components/page/productPage";
-import {
-  yarnDyedCaiMaProducts,
-  yarnDyedMediumLinenProducts,
-  yarnDyedProducts,
-} from "@/data/product";
-import { ProductCategoryType, YarnDyedCollectionType } from "@/types/product";
+import { yarnDyedProductCollections } from "@/data/product";
+import { ProductCategoryType } from "@/types/product";
 
 export default async function Page({
   params,
@@ -12,19 +8,17 @@ export default async function Page({
   params: Promise<{ collection: string }>;
 }) {
   const { collection } = await params;
-  const decodedCollection = decodeURIComponent(collection);
+  const productCollection = yarnDyedProductCollections.find(
+    (col) => col.name === decodeURIComponent(collection)
+  );
 
-  return (
+  return productCollection === undefined ? (
+    <div></div>
+  ) : (
     <div>
       <ProductPage
         productCategory={ProductCategoryType.YarnDyedWallFabric}
-        products={
-          decodedCollection === YarnDyedCollectionType.CaiMa
-            ? yarnDyedCaiMaProducts
-            : decodedCollection === YarnDyedCollectionType.MediumLinen
-            ? yarnDyedMediumLinenProducts
-            : yarnDyedProducts
-        }
+        products={productCollection.products}
       />
     </div>
   );

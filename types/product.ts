@@ -37,3 +37,10 @@ export interface Product {
   priceByQualityArr: { quality: QualityType; price: number | null }[];
   specification: Specification;
 }
+
+export interface ProductCollection {
+  name: string;
+  imageUrl: string;
+  productPageUrl: string;
+  products: Product[];
+}
