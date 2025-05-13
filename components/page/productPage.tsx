@@ -1,6 +1,6 @@
 "use client";
 import QuestionCircleIcon from "@/assets/icons/questionCircleIcon";
-import ZoomInSquareImage from "@/components/image/zoomInSquareImage";
+import ZoomInImage from "@/components/image/zoomInImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
 import {
   ProductCategoryType,
@@ -109,10 +109,10 @@ export default function ProductPage(props: ProductPageProps) {
             maxWidth: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
           }}
         >
-          <ZoomInSquareImage
+          <ZoomInImage
             src={props.products[currentOptionIndex].imageUrl}
-            alt={""}
-            unoptimized
+            alt={"product image"}
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
       </div>
