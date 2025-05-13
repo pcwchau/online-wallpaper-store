@@ -14,7 +14,7 @@ export enum ProductCategoryType {
 export enum YarnDyedCollectionType {
   CaiMa = "Cai Ma",
   MediumLinen = "Medium Linen",
-  QC121 = "QC-121",
+  QC121 = "QC 121",
   ZhuMa = "Zhu Ma",
   ZR = "ZR",
 }
@@ -34,13 +34,17 @@ export interface Specification {
 export interface Product {
   name: string;
   imageUrl: string;
-  priceByQualityArr: { quality: QualityType; price: number | null }[];
-  specification: Specification;
+  priceByQualityArr?: { quality: QualityType; price: number | null }[];
+  specification?: Specification;
 }
 
+// For example, yarn dyed wall fabric has a few collections.
+// All products in one collection have the same price/quality and specification.
 export interface ProductCollection {
   name: string;
   imageUrl: string;
   productPageUrl: string;
+  generalPrice: { quality: QualityType; price: number | null }[];
+  generalSpecification: Specification;
   products: Product[];
 }
