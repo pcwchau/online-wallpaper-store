@@ -2,119 +2,148 @@ import {
   Product,
   ProductCollection,
   QualityType,
-  SubstrateType,
+  BackingType,
   YarnDyedCollectionType,
+  MatchType,
+  MaintenanceType,
+  FireSafetyType,
+  PrintTechnologyType,
+  EnvironmentAndHealthType,
 } from "@/types/product";
 
 export const customizedProducts: Product[] = [
   {
     name: "紗線",
     imageUrl: "/temp-image/1200x1200_3.jpg",
-    priceByQualityArr: [
+    price: [
       { quality: QualityType.FireRetardant, price: 165 },
       { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
     ],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "科技皮",
     imageUrl: "/image/product/custom-printing/vinyl.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
-    ],
+    price: [{ quality: QualityType.FireRetardantAndWaterproof, price: 231 }],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.018,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.045,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "豎紋",
     imageUrl: "/temp-image/1200x1200_2.jpg",
-    priceByQualityArr: [
+    price: [
       { quality: QualityType.FireRetardant, price: 165 },
       { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
     ],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "亮銀",
     imageUrl: "/temp-image/1200x1200_5.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
-    ],
+    price: [{ quality: QualityType.FireRetardantAndWaterproof, price: 330 }],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "亮金",
     imageUrl: "/temp-image/1200x1200_5.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
-    ],
+    price: [{ quality: QualityType.FireRetardantAndWaterproof, price: 330 }],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "粗竹節",
     imageUrl: "/temp-image/1200x1200_9.jpg",
-    priceByQualityArr: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
-    ],
+    price: [{ quality: QualityType.FireRetardantAndWaterproof, price: 330 }],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "草纖維",
     imageUrl: "/temp-image/1200x1200_6.jpg",
-    priceByQualityArr: [{ quality: QualityType.FireRetardant, price: 330 }],
+    price: [{ quality: QualityType.FireRetardant, price: 330 }],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
   {
     name: "軟羊絨",
     imageUrl: "/temp-image/1200x1200_8.jpg",
-    priceByQualityArr: [{ quality: QualityType.FireRetardant, price: 165 }],
+    price: [{ quality: QualityType.FireRetardant, price: 165 }],
     specification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
   },
 ];
@@ -125,15 +154,17 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     imageUrl: "/image/product/cai-ma/cover.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.CaiMa,
-    generalPrice: [
+    defaultPrice: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
     ],
-    generalSpecification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
     products: [
       {
@@ -171,15 +202,17 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     imageUrl: "/image/product/medium-linen/A08.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.MediumLinen,
-    generalPrice: [
+    defaultPrice: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
     ],
-    generalSpecification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
     products: [
       {
@@ -221,15 +254,17 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     imageUrl: "/image/product/qc-121/02.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.QC121,
-    generalPrice: [
+    defaultPrice: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
     ],
-    generalSpecification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
     products: [
       {
@@ -263,15 +298,17 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     imageUrl: "/image/product/zhu-ma/2088-01.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZhuMa,
-    generalPrice: [
+    defaultPrice: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
     ],
-    generalSpecification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
     products: [
       {
@@ -305,15 +342,17 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     imageUrl: "/image/product/zr/ZR02.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZR,
-    generalPrice: [
+    defaultPrice: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 99 },
     ],
-    generalSpecification: {
-      length: 1968,
-      width: 116,
-      thickness: 0.043,
-      substrate: SubstrateType.NonWovenPolyester,
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
       weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
     },
     products: [
       {
@@ -348,7 +387,7 @@ export const embroideredProducts: Product[] = [
   {
     name: "Please Contact Us",
     imageUrl: "/image/product/embroidered.jpg",
-    priceByQualityArr: [{ quality: QualityType.PleaseContactUs, price: null }],
+    price: [{ quality: QualityType.PleaseContactUs, price: null }],
     specification: {},
   },
 ];
@@ -357,7 +396,7 @@ export const vinylProducts: Product[] = [
   {
     name: "Please Contact Us",
     imageUrl: "/image/product/vinyl.jpg",
-    priceByQualityArr: [{ quality: QualityType.PleaseContactUs, price: null }],
+    price: [{ quality: QualityType.PleaseContactUs, price: null }],
     specification: {},
   },
 ];

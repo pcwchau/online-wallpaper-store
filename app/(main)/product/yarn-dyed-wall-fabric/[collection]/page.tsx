@@ -13,12 +13,14 @@ export default async function Page({
   );
 
   return productCollection === undefined ? (
-    <div></div>
+    <div>This page could not be found.</div>
   ) : (
     <div>
       <ProductPage
         productCategory={ProductCategoryType.YarnDyedWallFabric}
         products={productCollection.products}
+        defaultPrice={productCollection.defaultPrice}
+        defaultSpecification={productCollection.defaultSpecification}
       />
     </div>
   );
