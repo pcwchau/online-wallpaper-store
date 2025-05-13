@@ -57,7 +57,7 @@ export enum FireSafetyType {
 
 export interface PriceByQuality {
   quality: QualityType;
-  price: number | null;
+  price: number | null; // null is for please contact us
 }
 
 export interface Specification {
@@ -76,7 +76,7 @@ export interface Specification {
 export interface Product {
   name: string;
   imageUrl: string;
-  price?: PriceByQuality[];
+  priceByQuality?: PriceByQuality[];
   specification?: Specification;
 }
 
@@ -86,7 +86,7 @@ export interface ProductCollection {
   name: string;
   imageUrl: string;
   productPageUrl: string;
-  defaultPrice: PriceByQuality[];
+  defaultPriceByQuality: PriceByQuality[];
   defaultSpecification: Specification;
   products: Product[];
 }

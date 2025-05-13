@@ -19,7 +19,7 @@ export default async function Page({
       <ProductPage
         productCategory={ProductCategoryType.YarnDyedWallFabric}
         products={productCollection.products}
-        defaultPrice={productCollection.defaultPrice}
+        defaultPriceByQuality={productCollection.defaultPriceByQuality}
         defaultSpecification={productCollection.defaultSpecification}
       />
     </div>

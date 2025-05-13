@@ -25,7 +25,7 @@ const Title = memo(({ children }: { children: React.ReactNode }) => {
 interface ProductPageProps {
   productCategory: ProductCategoryType;
   products: Product[];
-  defaultPrice: PriceByQuality[];
+  defaultPriceByQuality: PriceByQuality[];
   defaultSpecification: Specification;
 }
 
@@ -35,9 +35,10 @@ export default function ProductPage(props: ProductPageProps) {
   const [length, setLength] = useState<number | "">("");
 
   const price =
-    props.products[currentOptionIndex].price !== undefined
-      ? props.products[currentOptionIndex].price[currentQualityIndex].price
-      : props.defaultPrice[currentQualityIndex].price;
+    props.products[currentOptionIndex].priceByQuality !== undefined
+      ? props.products[currentOptionIndex].priceByQuality[currentQualityIndex]
+          .price
+      : props.defaultPriceByQuality[currentQualityIndex].price;
 
   const specification =
     props.products[currentOptionIndex].specification !== undefined
@@ -159,9 +160,9 @@ export default function ProductPage(props: ProductPageProps) {
         {/* Quality */}
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {(props.products[currentOptionIndex].price !== undefined
-              ? props.products[currentOptionIndex].price
-              : props.defaultPrice
+            {(props.products[currentOptionIndex].priceByQuality !== undefined
+              ? props.products[currentOptionIndex].priceByQuality
+              : props.defaultPriceByQuality
             ).map((item, index) => (
               <button
                 className={`${
@@ -180,7 +181,7 @@ export default function ProductPage(props: ProductPageProps) {
 
         {/* Price */}
         <div className="text-lg">
-          <span className="font-bold">{`$ ${price}`}</span>
+          <span className="font-bold">{`$ ${price ?? "-"}`}</span>
           <span> / Linear ft</span>
         </div>
 
@@ -199,15 +200,21 @@ export default function ProductPage(props: ProductPageProps) {
 
         {/* Total price */}
         <div className="flex gap-2 items-center">
-          <span className="font-bold">Estimated price:</span>
+          <span className="font-bold">Estimated budget:</span>
           <span>{`$ ${calculateTotalPrice()}`}</span>
+          <a
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={`Please contact us for a quote.`}
+          >
+            <QuestionCircleIcon width="1.5em" height="1.5em" />
+          </a>
         </div>
 
         <Title>Specifications</Title>
         {specificationArr.map(
           (specification, index) =>
             specification.content !== undefined && (
-              <div className="flex gap-2 items-center" key={index}>
+              <div className="flex flex-wrap gap-2 items-center" key={index}>
                 <span className="font-bold">{`${specification.title}: `}</span>
                 <span>{specification.content}</span>
                 <span>
@@ -222,7 +229,7 @@ export default function ProductPage(props: ProductPageProps) {
                 {specification.title === SpecificationTitleType.Height && (
                   <a
                     data-tooltip-id="my-tooltip"
-                    data-tooltip-content={`Please contact us if over ${specification.content} ft`}
+                    data-tooltip-content={`Please contact us if over ${specification.content} ft.`}
                   >
                     <QuestionCircleIcon width="1.5em" height="1.5em" />
                   </a>
