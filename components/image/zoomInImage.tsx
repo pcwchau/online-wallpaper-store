@@ -2,12 +2,6 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-interface ZoomInImageProps {
-  src: string;
-  alt: string;
-  sizes: string;
-}
-
 /*
 IMPORTANT: The parent component must be relative positioned.
 
@@ -25,7 +19,17 @@ To reduce the initial loading time and the extra loading time, both images
 adapts Next.js Image for optimization. Since the images may not have the same 
 dimension (and hence the same src url), we need to ensure the enlarged image is 
 preloaded before the zoom-in box shows up.
+
+Note that the processing time of optimization depends on the server. If the 
+image file size is not very big, it is suggested to turn on `unoptimized`.
 */
+interface ZoomInImageProps {
+  src: string;
+  alt: string;
+  sizes: string;
+  unoptimized: boolean;
+}
+
 export default function ZoomInImage(props: ZoomInImageProps) {
   const [zoomPosition, setZoomPosition] = useState({
     visible: false,
@@ -56,16 +60,18 @@ export default function ZoomInImage(props: ZoomInImageProps) {
 
   return (
     <>
-      {/* Preload images */}
-      <div className="hidden">
-        <Image src={props.src} alt="Preload enlarged image" priority fill />
-      </div>
+      {/* Preload images if `optimized` is on */}
+      {!props.unoptimized && (
+        <div className="hidden">
+          <Image src={props.src} alt="Preload enlarged image" priority fill />
+        </div>
+      )}
       <Image
         src={props.src}
         alt={props.alt}
         className="object-contain"
         fill
-        unoptimized
+        unoptimized={props.unoptimized}
         sizes={props.sizes}
         ref={imageRef}
         onMouseMove={handleMouseMove}
@@ -85,6 +91,7 @@ export default function ZoomInImage(props: ZoomInImageProps) {
             src={props.src}
             alt="Enlarged image"
             fill
+            unoptimized={props.unoptimized}
             style={{
               transform: `translate(-${zoomPosition.bgX * 9}%, -${
                 zoomPosition.bgY * 9

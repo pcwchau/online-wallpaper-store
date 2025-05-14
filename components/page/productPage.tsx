@@ -113,6 +113,7 @@ export default function ProductPage(props: ProductPageProps) {
             src={props.products[currentOptionIndex].imageUrl}
             alt={"product image"}
             sizes="(max-width: 1024px) 100vw, 50vw"
+            unoptimized={true}
           />
         </div>
       </div>
