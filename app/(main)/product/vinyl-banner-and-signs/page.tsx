@@ -5,7 +5,7 @@ import { ProductCategoryType, QualityType } from "@/types/product";
 export default function Page() {
   return (
     <ProductPage
-      productCategory={ProductCategoryType.VinylBanners}
+      productCategory={ProductCategoryType.CommercialVinylAndSigns}
       products={vinylProducts}
       defaultPriceByQuality={[
         { quality: QualityType.PleaseContactUs, price: null },

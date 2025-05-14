@@ -9,25 +9,75 @@ import {
   FireSafetyType,
   PrintTechnologyType,
   EnvironmentAndHealthType,
+  CustomPrintingCollectionType,
+  ProductCategoryType,
 } from "@/types/product";
 
-// For default specification, please refer to \app\(main)\product\custom-printing\page.tsx
-export const customPrintingProducts: Product[] = [
+export const customPrintingProductCollections: ProductCollection[] = [
   {
-    name: "紗線",
-    imageUrl: "/temp-image/1200x1200_3.jpg",
-    priceByQuality: [
-      { quality: QualityType.FireRetardant, price: 165 },
-      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    name: CustomPrintingCollectionType.NonWovenFabric,
+    imageUrl: "/image/product/custom-printing.jpg",
+    productPageUrl:
+      "/product/custom-printing/" + CustomPrintingCollectionType.NonWovenFabric,
+    defaultPriceByQuality: [{ quality: QualityType.FireRetardant, price: 165 }],
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
+      weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
+    },
+    products: [
+      {
+        name: "Soft Cashmere",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
     ],
   },
   {
-    name: "科技皮",
-    imageUrl: "/image/product/custom-printing/vinyl.jpg",
-    priceByQuality: [
+    name: CustomPrintingCollectionType.Yarn,
+    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    productPageUrl:
+      "/product/custom-printing/" + CustomPrintingCollectionType.Yarn,
+    defaultPriceByQuality: [
+      { quality: QualityType.FireRetardant, price: 165 },
       { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
     ],
-    specification: {
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
+      weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
+    },
+    products: [
+      {
+        name: "Yarn Texture",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
+      {
+        name: "Vertical Stripes",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
+    ],
+  },
+  {
+    name: CustomPrintingCollectionType.FauxLeather,
+    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    productPageUrl:
+      "/product/custom-printing/" + CustomPrintingCollectionType.FauxLeather,
+    defaultPriceByQuality: [
+      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    ],
+    defaultSpecification: {
       height: 9.5,
       thickness: 0.045,
       weight: 21.57,
@@ -38,52 +88,122 @@ export const customPrintingProducts: Product[] = [
       maintenance: MaintenanceType.WWMS,
       fireSafety: FireSafetyType.ClassA,
     },
-  },
-  {
-    name: "豎紋",
-    imageUrl: "/temp-image/1200x1200_2.jpg",
-    priceByQuality: [
-      { quality: QualityType.FireRetardant, price: 165 },
-      { quality: QualityType.FireRetardantAndWaterproof, price: 231 },
+    products: [
+      {
+        name: "Faux Leather | A",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-A-min.jpg",
+      },
+      {
+        name: "Faux Leather | B",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-B-min.jpg",
+      },
+      {
+        name: "Faux Leather | C",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-C-min.jpg",
+      },
+      {
+        name: "Faux Leather | D",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-D-min.jpg",
+      },
+      {
+        name: "Faux Leather | E",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-E-min.jpg",
+      },
+      {
+        name: "Faux Leather | F",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-F-min.jpg",
+      },
+      {
+        name: "Faux Leather | G",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-G-min.jpg",
+      },
+      {
+        name: "Faux Leather | H",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-H-min.jpg",
+      },
+      {
+        name: "Faux Leather | I",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-I-min.jpg",
+      },
+      {
+        name: "Faux Leather | J",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-J-min.jpg",
+      },
+      {
+        name: "Faux Leather | K",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-K-min.jpg",
+      },
+      {
+        name: "Faux Leather | L",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-L-min.jpg",
+      },
     ],
   },
   {
-    name: "亮銀",
-    imageUrl: "/temp-image/1200x1200_5.jpg",
-    priceByQuality: [
+    name: CustomPrintingCollectionType.Metallic,
+    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    productPageUrl:
+      "/product/custom-printing/" + CustomPrintingCollectionType.Metallic,
+    defaultPriceByQuality: [
       { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
     ],
-  },
-  {
-    name: "亮金",
-    imageUrl: "/temp-image/1200x1200_5.jpg",
-    priceByQuality: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
+      weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
+    },
+    products: [
+      {
+        name: "Silver",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
+      {
+        name: "Gold",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
+      {
+        name: "Coarse Bamboo Slub",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
     ],
   },
   {
-    name: "粗竹節",
-    imageUrl: "/temp-image/1200x1200_9.jpg",
-    priceByQuality: [
-      { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
+    name: CustomPrintingCollectionType.NaturalGrassclot,
+    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    productPageUrl:
+      "/product/custom-printing/" +
+      CustomPrintingCollectionType.NaturalGrassclot,
+    defaultPriceByQuality: [{ quality: QualityType.FireRetardant, price: 330 }],
+    defaultSpecification: {
+      height: 9.5,
+      thickness: 0.11,
+      weight: 21.57,
+      backing: BackingType.NonWovenPolyester,
+      match: MatchType.Seamless,
+      printTechnology: PrintTechnologyType.EcoUV,
+      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
+      maintenance: MaintenanceType.WWMS,
+      fireSafety: FireSafetyType.ClassA,
+    },
+    products: [
+      {
+        name: "Natural Grassclot",
+        imageUrl: "/image/product/custom-printing.jpg",
+      },
     ],
-  },
-  {
-    name: "草纖維",
-    imageUrl: "/temp-image/1200x1200_6.jpg",
-    priceByQuality: [{ quality: QualityType.FireRetardant, price: 330 }],
-  },
-  {
-    name: "軟羊絨",
-    imageUrl: "/temp-image/1200x1200_8.jpg",
-    priceByQuality: [{ quality: QualityType.FireRetardant, price: 165 }],
   },
 ];
 
 export const yarnDyedProductCollections: ProductCollection[] = [
   {
     name: YarnDyedCollectionType.CaiMa,
-    imageUrl: "/image/product/cai-ma/cover-min.jpg",
+    imageUrl: "/image/yarn-dyed-collection/cai-ma/cover-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.CaiMa,
     defaultPriceByQuality: [
@@ -101,37 +221,37 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Cai Ma | A01 | Oat Mist",
-        imageUrl: "/image/product/cai-ma/A01-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/A01-min.jpg",
       },
       {
         name: "Cai Ma | A10 | Ash Grey",
-        imageUrl: "/image/product/cai-ma/A10-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/A10-min.jpg",
       },
       {
         name: "Cai Ma | B03 | Soft Birch",
-        imageUrl: "/image/product/cai-ma/B03-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/B03-min.jpg",
       },
       {
         name: "Cai Ma | B08 | Icy Blue",
-        imageUrl: "/image/product/cai-ma/B08-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/B08-min.jpg",
       },
       {
         name: "Cai Ma | BYM03 | Sage Grid",
-        imageUrl: "/image/product/cai-ma/BYM03-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/BYM03-min.jpg",
       },
       {
         name: "Cai Ma | BYM10 | Driftwood",
-        imageUrl: "/image/product/cai-ma/BYM10-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/BYM10-min.jpg",
       },
       {
         name: "Cai Ma | BYM18 | Morning Haze",
-        imageUrl: "/image/product/cai-ma/BYM18-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/cai-ma/BYM18-min.jpg",
       },
     ],
   },
   {
     name: YarnDyedCollectionType.MediumLinen,
-    imageUrl: "/image/product/medium-linen/A08.jpg",
+    imageUrl: "/image/yarn-dyed-collection/medium-linen/A08-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.MediumLinen,
     defaultPriceByQuality: [
@@ -149,41 +269,41 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Medium Linen | A08",
-        imageUrl: "/image/product/medium-linen/A08-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/A08-min.jpg",
       },
       {
         name: "Medium Linen | A15",
-        imageUrl: "/image/product/medium-linen/A15-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/A15-min.jpg",
       },
       {
         name: "Medium Linen | A16",
-        imageUrl: "/image/product/medium-linen/A16-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/A16-min.jpg",
       },
       {
         name: "Medium Linen | A21",
-        imageUrl: "/image/product/medium-linen/A21-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/A21-min.jpg",
       },
       {
         name: "Medium Linen | A26",
-        imageUrl: "/image/product/medium-linen/A26-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/A26-min.jpg",
       },
       {
         name: "Medium Linen | A88",
-        imageUrl: "/image/product/medium-linen/A88-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/A88-min.jpg",
       },
       {
         name: "Medium Linen | W08",
-        imageUrl: "/image/product/medium-linen/W08-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/W08-min.jpg",
       },
       {
         name: "Medium Linen | Y11",
-        imageUrl: "/image/product/medium-linen/Y11-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/medium-linen/Y11-min.jpg",
       },
     ],
   },
   {
     name: YarnDyedCollectionType.QC121,
-    imageUrl: "/image/product/qc-121/02.jpg",
+    imageUrl: "/image/yarn-dyed-collection/qc-121/02-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.QC121,
     defaultPriceByQuality: [
@@ -201,33 +321,33 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     products: [
       {
         name: "QC 121 | 02",
-        imageUrl: "/image/product/qc-121/02-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/qc-121/02-min.jpg",
       },
       {
         name: "QC 121 | 09",
-        imageUrl: "/image/product/qc-121/09-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/qc-121/09-min.jpg",
       },
       {
         name: "QC 121 | 18",
-        imageUrl: "/image/product/qc-121/18-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/qc-121/18-min.jpg",
       },
       {
         name: "QC 121 | 22",
-        imageUrl: "/image/product/qc-121/22-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/qc-121/22-min.jpg",
       },
       {
         name: "QC 121 | 24",
-        imageUrl: "/image/product/qc-121/24-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/qc-121/24-min.jpg",
       },
       {
         name: "QC 121 | 31",
-        imageUrl: "/image/product/qc-121/31-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/qc-121/31-min.jpg",
       },
     ],
   },
   {
     name: YarnDyedCollectionType.ZhuMa,
-    imageUrl: "/image/product/zhu-ma/2088-01.jpg",
+    imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-01-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZhuMa,
     defaultPriceByQuality: [
@@ -245,33 +365,33 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Zhu Ma | 2088-01",
-        imageUrl: "/image/product/zhu-ma/2088-01-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-01-min.jpg",
       },
       {
         name: "Zhu Ma | 2088-09",
-        imageUrl: "/image/product/zhu-ma/2088-09-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-09-min.jpg",
       },
       {
         name: "Zhu Ma | 2088-11",
-        imageUrl: "/image/product/zhu-ma/2088-11-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-11-min.jpg",
       },
       {
         name: "Zhu Ma | 2088-14",
-        imageUrl: "/image/product/zhu-ma/2088-14-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-14-min.jpg",
       },
       {
         name: "Zhu Ma | 2088-16",
-        imageUrl: "/image/product/zhu-ma/2088-16-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-16-min.jpg",
       },
       {
         name: "Zhu Ma | 2088-23",
-        imageUrl: "/image/product/zhu-ma/2088-23-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-23-min.jpg",
       },
     ],
   },
   {
     name: YarnDyedCollectionType.ZR,
-    imageUrl: "/image/product/zr/ZR02.jpg",
+    imageUrl: "/image/yarn-dyed-collection/zr/ZR02-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZR,
     defaultPriceByQuality: [
@@ -289,27 +409,27 @@ export const yarnDyedProductCollections: ProductCollection[] = [
     products: [
       {
         name: "ZR | 02",
-        imageUrl: "/image/product/zr/ZR02-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zr/ZR02-min.jpg",
       },
       {
         name: "ZR | 08",
-        imageUrl: "/image/product/zr/ZR08-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zr/ZR08-min.jpg",
       },
       {
         name: "ZR | 14",
-        imageUrl: "/image/product/zr/ZR14-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zr/ZR14-min.jpg",
       },
       {
         name: "ZR | 15",
-        imageUrl: "/image/product/zr/ZR15-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zr/ZR15-min.jpg",
       },
       {
         name: "ZR | 29",
-        imageUrl: "/image/product/zr/ZR29-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zr/ZR29-min.jpg",
       },
       {
         name: "ZR | 34",
-        imageUrl: "/image/product/zr/ZR34-min.jpg",
+        imageUrl: "/image/yarn-dyed-collection/zr/ZR34-min.jpg",
       },
     ],
   },
@@ -317,7 +437,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
 
 export const embroideredProducts: Product[] = [
   {
-    name: "Please Contact Us",
+    name: ProductCategoryType.EmbroideredWallFabric,
     imageUrl: "/image/product/embroidered.jpg",
     priceByQuality: [{ quality: QualityType.PleaseContactUs, price: null }],
     specification: {},
@@ -326,7 +446,7 @@ export const embroideredProducts: Product[] = [
 
 export const vinylProducts: Product[] = [
   {
-    name: "Please Contact Us",
+    name: ProductCategoryType.CommercialVinylAndSigns,
     imageUrl: "/image/product/vinyl.jpg",
     priceByQuality: [{ quality: QualityType.PleaseContactUs, price: null }],
     specification: {},

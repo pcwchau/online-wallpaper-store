@@ -32,16 +32,6 @@ export const parallax = [
   },
 ];
 
-// const swiperImages = [
-//   "/image/banner/3.png",
-//   "/image/banner/4.png",
-//   "/image/banner/5.png",
-//   "/image/banner/6.png",
-//   "/image/banner/9.png",
-//   "/image/banner/10.png",
-//   "/image/banner/11.png",
-// ];
-
 export const clientsLogoImages = [
   "/image/clients/1.jpg",
   "/image/clients/2.png",

@@ -158,7 +158,7 @@ const TopBar = (props: TopBarProps) => {
               {item.subPages && (
                 <div
                   className={`absolute left-[-1rem] px-4 pt-4 pb-4
-                    bg-primary flex flex-col space-y-3 w-[14rem]
+                    bg-primary flex flex-col space-y-3 w-[16rem]
                     transition-all duration-300 ${
                       hoverMenuIndex === index
                         ? "opacity-100 pointer-events-auto"
