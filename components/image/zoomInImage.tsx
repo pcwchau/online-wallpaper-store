@@ -65,6 +65,7 @@ export default function ZoomInImage(props: ZoomInImageProps) {
         alt={props.alt}
         className="object-contain"
         fill
+        unoptimized
         sizes={props.sizes}
         ref={imageRef}
         onMouseMove={handleMouseMove}
