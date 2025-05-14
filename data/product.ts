@@ -131,7 +131,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.MediumLinen,
-    imageUrl: "/image/product/medium-linen/A08.jpg",
+    imageUrl: "/image/product/medium-linen/A08-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.MediumLinen,
     defaultPriceByQuality: [
@@ -183,7 +183,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.QC121,
-    imageUrl: "/image/product/qc-121/02.jpg",
+    imageUrl: "/image/product/qc-121/02-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.QC121,
     defaultPriceByQuality: [
@@ -227,7 +227,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.ZhuMa,
-    imageUrl: "/image/product/zhu-ma/2088-01.jpg",
+    imageUrl: "/image/product/zhu-ma/2088-01-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZhuMa,
     defaultPriceByQuality: [
@@ -271,7 +271,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.ZR,
-    imageUrl: "/image/product/zr/ZR02.jpg",
+    imageUrl: "/image/product/zr/ZR02-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZR,
     defaultPriceByQuality: [
