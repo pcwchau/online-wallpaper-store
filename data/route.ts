@@ -18,7 +18,7 @@ export const topBarRoutes = [
         href: "/product/embroidered",
       },
       {
-        name: ProductCategoryType.VinylBanners,
+        name: ProductCategoryType.CommercialVinylAndSigns,
         href: "/product/vinyl-banner-and-signs",
       },
     ],
@@ -60,8 +60,8 @@ export const projectCategoryRoutes = [
     redirectUrl: "/project/" + ProductCategoryType.EmbroideredWallFabric,
   },
   {
-    name: ProductCategoryType.VinylBanners,
+    name: ProductCategoryType.CommercialVinylAndSigns,
     imageUrl: "/image/project/vinyl-banners/cover.jpg",
-    redirectUrl: "/project/" + ProductCategoryType.VinylBanners,
+    redirectUrl: "/project/" + ProductCategoryType.CommercialVinylAndSigns,
   },
 ];

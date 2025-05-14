@@ -2,7 +2,15 @@ export enum ProductCategoryType {
   CustomPrintingWallFabric = "Custom Printing Wall Fabric",
   YarnDyedWallFabric = "Yarn Dyed Wall Fabric",
   EmbroideredWallFabric = "Embroidered Wall Fabric",
-  VinylBanners = "Vinyl Banners",
+  CommercialVinylAndSigns = "Commercial Vinyl & Signs",
+}
+
+export enum CustomPrintingCollectionType {
+  NonWovenFabric = "Non-woven Fabric",
+  Yarn = "Yarn",
+  FauxLeather = "Faux Leather",
+  Metallic = "Metallic",
+  NaturalGrassclot = "Natural Grassclot",
 }
 
 export enum YarnDyedCollectionType {

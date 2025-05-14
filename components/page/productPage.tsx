@@ -118,24 +118,30 @@ export default function ProductPage(props: ProductPageProps) {
         </div>
       </div>
 
-      {/* Input and information */}
+      {/* Select and Information Panel */}
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
+        {/* Title and Options */}
         <Title>{props.products[currentOptionIndex].name}</Title>
-        <div className="space-y-4">
-          <div className="flex flex-wrap gap-2">
-            {props.products.map((item, index) => (
-              <button
-                key={index}
-                className={`flex gap-x-2 items-center ${
-                  currentOptionIndex === index
-                    ? "border-primary-border-selected"
-                    : "border-primary-border"
-                } border-2 rounded-lg p-1`}
-                onClick={() => handleOptionClick(index)}
-              >
-                {/* Options with image only */}
-                {props.productCategory ===
-                  ProductCategoryType.YarnDyedWallFabric && (
+        {/* Options are not shown */}
+        {(props.productCategory === ProductCategoryType.EmbroideredWallFabric ||
+          props.productCategory ===
+            ProductCategoryType.CommercialVinylAndSigns) && <></>}
+        {/* Options are shown with thumbnail image */}
+        {(props.productCategory === ProductCategoryType.YarnDyedWallFabric ||
+          props.productCategory ===
+            ProductCategoryType.CustomPrintingWallFabric) && (
+          <div className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              {props.products.map((item, index) => (
+                <button
+                  key={index}
+                  className={`flex gap-x-2 items-center ${
+                    currentOptionIndex === index
+                      ? "border-primary-border-selected"
+                      : "border-primary-border"
+                  } border-2 rounded-lg p-1`}
+                  onClick={() => handleOptionClick(index)}
+                >
                   <Image
                     src={item.imageUrl}
                     height={64}
@@ -143,20 +149,11 @@ export default function ProductPage(props: ProductPageProps) {
                     alt="Texture"
                     className="h-8 w-8 object-cover rounded-md"
                   />
-                )}
-                {/* Options with name only */}
-                {(props.productCategory ===
-                  ProductCategoryType.CustomPrintingWallFabric ||
-                  props.productCategory ===
-                    ProductCategoryType.EmbroideredWallFabric ||
-                  props.productCategory ===
-                    ProductCategoryType.VinylBanners) && (
-                  <div className="text-sm">{item.name}</div>
-                )}
-              </button>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Quality */}
         <div className="space-y-4">
@@ -212,32 +209,37 @@ export default function ProductPage(props: ProductPageProps) {
         </div>
 
         <Title>Specifications</Title>
-        {specificationArr.map(
-          (specification, index) =>
-            specification.content !== undefined && (
-              <div className="flex flex-wrap gap-2 items-center" key={index}>
-                <span className="font-bold">{`${specification.title}: `}</span>
-                <span>{specification.content}</span>
-                <span>
-                  {specification.title === SpecificationTitleType.Height
-                    ? "ft"
-                    : specification.title === SpecificationTitleType.Thickness
-                    ? "cm"
-                    : specification.title === SpecificationTitleType.Weight
-                    ? "g/sq. ft"
-                    : ""}
-                </span>
-                {specification.title === SpecificationTitleType.Height && (
-                  <a
-                    data-tooltip-id="my-tooltip"
-                    data-tooltip-content={`Please contact us if over ${specification.content} ft.`}
-                  >
-                    <QuestionCircleIcon width="1.5em" height="1.5em" />
-                  </a>
-                )}
-              </div>
-            )
-        )}
+        <div className="flex flex-col gap-2">
+          {specificationArr.map(
+            (specification, index) =>
+              specification.content !== undefined && (
+                <div
+                  className="flex flex-wrap items-center space-x-1"
+                  key={index}
+                >
+                  <div className="font-bold">{`${specification.title}: `}</div>
+                  <div className="text-wrap">{specification.content}</div>
+                  <div>
+                    {specification.title === SpecificationTitleType.Height
+                      ? "ft"
+                      : specification.title === SpecificationTitleType.Thickness
+                      ? "cm"
+                      : specification.title === SpecificationTitleType.Weight
+                      ? "g/sq. ft"
+                      : ""}
+                  </div>
+                  {specification.title === SpecificationTitleType.Height && (
+                    <a
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={`Please contact us if over ${specification.content} ft.`}
+                    >
+                      <QuestionCircleIcon width="1.5em" height="1.5em" />
+                    </a>
+                  )}
+                </div>
+              )
+          )}
+        </div>
       </div>
     </div>
   );

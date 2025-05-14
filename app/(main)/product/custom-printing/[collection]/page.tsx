@@ -1,5 +1,5 @@
 import ProductPage from "@/components/page/productPage";
-import { yarnDyedProductCollections } from "@/data/product";
+import { customPrintingProductCollections } from "@/data/product";
 import { ProductCategoryType } from "@/types/product";
 
 export default async function Page({
@@ -8,7 +8,7 @@ export default async function Page({
   params: Promise<{ collection: string }>;
 }) {
   const { collection } = await params;
-  const productCollection = yarnDyedProductCollections.find(
+  const productCollection = customPrintingProductCollections.find(
     (col) => col.name === decodeURIComponent(collection)
   );
 
@@ -18,7 +18,7 @@ export default async function Page({
   ) : (
     <div>
       <ProductPage
-        productCategory={ProductCategoryType.YarnDyedWallFabric}
+        productCategory={ProductCategoryType.CustomPrintingWallFabric}
         products={productCollection.products}
         defaultPriceByQuality={productCollection.defaultPriceByQuality}
         defaultSpecification={productCollection.defaultSpecification}
