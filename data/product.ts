@@ -127,6 +127,34 @@ export const yarnDyedProductCollections: ProductCollection[] = [
         name: "Cai Ma | BYM18 | Morning Haze",
         imageUrl: "/image/product/cai-ma/BYM18.jpg",
       },
+      {
+        name: "Cai Ma | A01 | Oat Mist",
+        imageUrl: "/image/product/cai-ma/A01-min.jpg",
+      },
+      {
+        name: "Cai Ma | A10 | Ash Grey",
+        imageUrl: "/image/product/cai-ma/A10-min.jpg",
+      },
+      {
+        name: "Cai Ma | B03 | Soft Birch",
+        imageUrl: "/image/product/cai-ma/B03-min.jpg",
+      },
+      {
+        name: "Cai Ma | B08 | Icy Blue",
+        imageUrl: "/image/product/cai-ma/B08-min.jpg",
+      },
+      {
+        name: "Cai Ma | BYM03 | Sage Grid",
+        imageUrl: "/image/product/cai-ma/BYM03-min.jpg",
+      },
+      {
+        name: "Cai Ma | BYM10 | Driftwood",
+        imageUrl: "/image/product/cai-ma/BYM10-min.jpg",
+      },
+      {
+        name: "Cai Ma | BYM18 | Morning Haze",
+        imageUrl: "/image/product/cai-ma/BYM18-min.jpg",
+      },
     ],
   },
   {
