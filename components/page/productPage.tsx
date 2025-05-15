@@ -88,8 +88,18 @@ export default function ProductPage(props: ProductPageProps) {
   };
 
   const handleLengthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setLength(value ? Number(value) : "");
+    const value = e.target.value; // It must be a number or empty string
+    if (value) {
+      if (
+        props.productCategory === ProductCategoryType.CustomPrintingWallFabric
+      ) {
+        setLength(Number(value) >= 2 ? Number(value) : 2);
+      } else {
+        setLength(Number(value) >= 1 ? Number(value) : 1);
+      }
+    } else {
+      setLength("");
+    }
   };
 
   const calculateTotalPrice = () => {
@@ -103,7 +113,7 @@ export default function ProductPage(props: ProductPageProps) {
       {/* Main Image */}
       <div className="w-full lg:w-[50%] flex justify-center">
         <div
-          className="w-full aspect-square relative"
+          className="w-full aspect-square relative border-primary-border border-2"
           style={{
             maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
             maxWidth: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
@@ -120,18 +130,14 @@ export default function ProductPage(props: ProductPageProps) {
 
       {/* Select and Information Panel */}
       <div className="flex flex-col w-full lg:w-[50%] space-y-4">
-        {/* Title and Options */}
         <Title>{props.products[currentOptionIndex].name}</Title>
-        {/* Options are not shown */}
-        {(props.productCategory === ProductCategoryType.EmbroideredWallFabric ||
-          props.productCategory ===
-            ProductCategoryType.CommercialVinylAndSigns) && <></>}
+
         {/* Options are shown with thumbnail image */}
         {(props.productCategory === ProductCategoryType.YarnDyedWallFabric ||
           props.productCategory ===
             ProductCategoryType.CustomPrintingWallFabric) && (
           <div className="space-y-4">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 items-center">
               {props.products.map((item, index) => (
                 <button
                   key={index}
@@ -151,6 +157,16 @@ export default function ProductPage(props: ProductPageProps) {
                   />
                 </button>
               ))}
+              {props.productCategory ===
+                ProductCategoryType.YarnDyedWallFabric && (
+                <a
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={`Please contact us to get more colours.`}
+                  className="px-2"
+                >
+                  <QuestionCircleIcon width="1.5em" height="1.5em" />
+                </a>
+              )}
             </div>
           </div>
         )}
@@ -180,7 +196,11 @@ export default function ProductPage(props: ProductPageProps) {
         {/* Price */}
         <div className="text-lg">
           <span className="font-bold">{`$ ${price ?? "-"}`}</span>
-          <span> / Linear ft</span>
+          <span className="text-sm"> / Linear ft</span>
+          {props.productCategory ===
+            ProductCategoryType.CustomPrintingWallFabric && (
+            <span className="font-bold text-sm"> | Minumum order of 2 ft</span>
+          )}
         </div>
 
         <Title>Cost Estimation</Title>
@@ -202,7 +222,8 @@ export default function ProductPage(props: ProductPageProps) {
           <span>{`$ ${calculateTotalPrice()}`}</span>
           <a
             data-tooltip-id="my-tooltip"
-            data-tooltip-content={`Please contact us for a quote.`}
+            data-tooltip-content={`Please contact us to get a quote.`}
+            className="px-2"
           >
             <QuestionCircleIcon width="1.5em" height="1.5em" />
           </a>
@@ -232,6 +253,7 @@ export default function ProductPage(props: ProductPageProps) {
                     <a
                       data-tooltip-id="my-tooltip"
                       data-tooltip-content={`Please contact us if over ${specification.content} ft.`}
+                      className="px-2"
                     >
                       <QuestionCircleIcon width="1.5em" height="1.5em" />
                     </a>

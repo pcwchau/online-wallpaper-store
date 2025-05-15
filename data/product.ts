@@ -16,7 +16,7 @@ import {
 export const customPrintingProductCollections: ProductCollection[] = [
   {
     name: CustomPrintingCollectionType.NonWovenFabric,
-    imageUrl: "/image/product/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/non-woven-fabric/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.NonWovenFabric,
     defaultPriceByQuality: [{ quality: QualityType.FireRetardant, price: 165 }],
@@ -34,13 +34,22 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Soft Cashmere",
-        imageUrl: "/image/product/custom-printing.jpg",
+        imageUrl:
+          "/image/custom-printing-collection/non-woven-fabric/soft-cashmere.jpg",
+      },
+      {
+        name: "Natural Grassclot",
+        imageUrl:
+          "/image/custom-printing-collection/non-woven-fabric/natural-grassclot.jpg",
+        priceByQuality: [
+          { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
+        ],
       },
     ],
   },
   {
     name: CustomPrintingCollectionType.Yarn,
-    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/yarn/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.Yarn,
     defaultPriceByQuality: [
@@ -61,17 +70,17 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Yarn Texture",
-        imageUrl: "/image/product/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/yarn/yarn-texture.jpg",
       },
       {
         name: "Vertical Stripes",
-        imageUrl: "/image/product/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/yarn/vertical-stripes.jpg",
       },
     ],
   },
   {
     name: CustomPrintingCollectionType.FauxLeather,
-    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/faux-leather/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.FauxLeather,
     defaultPriceByQuality: [
@@ -141,7 +150,7 @@ export const customPrintingProductCollections: ProductCollection[] = [
   },
   {
     name: CustomPrintingCollectionType.Metallic,
-    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/metallic/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.Metallic,
     defaultPriceByQuality: [
@@ -161,40 +170,16 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Silver",
-        imageUrl: "/image/product/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/metallic/silver.jpg",
       },
       {
         name: "Gold",
-        imageUrl: "/image/product/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/metallic/gold.jpg",
       },
       {
         name: "Coarse Bamboo Slub",
-        imageUrl: "/image/product/custom-printing.jpg",
-      },
-    ],
-  },
-  {
-    name: CustomPrintingCollectionType.NaturalGrassclot,
-    imageUrl: "/image/product/custom-printing/custom-printing.jpg",
-    productPageUrl:
-      "/product/custom-printing/" +
-      CustomPrintingCollectionType.NaturalGrassclot,
-    defaultPriceByQuality: [{ quality: QualityType.FireRetardant, price: 330 }],
-    defaultSpecification: {
-      height: 9.5,
-      thickness: 0.11,
-      weight: 21.57,
-      backing: BackingType.NonWovenPolyester,
-      match: MatchType.Seamless,
-      printTechnology: PrintTechnologyType.EcoUV,
-      environmentAndHealth: EnvironmentAndHealthType.WHMIS2015,
-      maintenance: MaintenanceType.WWMS,
-      fireSafety: FireSafetyType.ClassA,
-    },
-    products: [
-      {
-        name: "Natural Grassclot",
-        imageUrl: "/image/product/custom-printing.jpg",
+        imageUrl:
+          "/image/custom-printing-collection/metallic/coarse-bamboo-slub.jpg",
       },
     ],
   },
