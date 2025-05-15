@@ -10,7 +10,6 @@ export enum CustomPrintingCollectionType {
   Yarn = "Yarn",
   FauxLeather = "Faux Leather",
   Metallic = "Metallic",
-  NaturalGrassclot = "Natural Grassclot",
 }
 
 export enum YarnDyedCollectionType {

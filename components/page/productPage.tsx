@@ -103,7 +103,7 @@ export default function ProductPage(props: ProductPageProps) {
       {/* Main Image */}
       <div className="w-full lg:w-[50%] flex justify-center">
         <div
-          className="w-full aspect-square relative"
+          className="w-full aspect-square relative border-primary-border border-2"
           style={{
             maxHeight: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,
             maxWidth: `calc(100vh - ${TOP_BAR_HEIGHT} - 2rem)`,

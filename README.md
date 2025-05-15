@@ -65,3 +65,4 @@ Information such as build script and custom domains can be checked on Amplify.
 - FAQ page
   - animate arrow icons (CSS)
   - open / close answer (lib: framer-motion: handle height more smoothly)
+- Custom printing collection / Project page (CSS)
