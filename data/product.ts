@@ -16,7 +16,7 @@ import {
 export const customPrintingProductCollections: ProductCollection[] = [
   {
     name: CustomPrintingCollectionType.NonWovenFabric,
-    imageUrl: "/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/non-woven-fabric/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.NonWovenFabric,
     defaultPriceByQuality: [{ quality: QualityType.FireRetardant, price: 165 }],
@@ -34,11 +34,13 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Soft Cashmere",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl:
+          "/image/custom-printing-collection/non-woven-fabric/soft-cashmere.jpg",
       },
       {
         name: "Natural Grassclot",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl:
+          "/image/custom-printing-collection/non-woven-fabric/natural-grassclot.jpg",
         priceByQuality: [
           { quality: QualityType.FireRetardantAndWaterproof, price: 330 },
         ],
@@ -47,7 +49,7 @@ export const customPrintingProductCollections: ProductCollection[] = [
   },
   {
     name: CustomPrintingCollectionType.Yarn,
-    imageUrl: "/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/yarn/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.Yarn,
     defaultPriceByQuality: [
@@ -68,17 +70,17 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Yarn Texture",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/yarn/yarn-texture.jpg",
       },
       {
         name: "Vertical Stripes",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/yarn/vertical-stripes.jpg",
       },
     ],
   },
   {
     name: CustomPrintingCollectionType.FauxLeather,
-    imageUrl: "/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/faux-leather/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.FauxLeather,
     defaultPriceByQuality: [
@@ -148,7 +150,7 @@ export const customPrintingProductCollections: ProductCollection[] = [
   },
   {
     name: CustomPrintingCollectionType.Metallic,
-    imageUrl: "/custom-printing.jpg",
+    imageUrl: "/image/custom-printing-collection/metallic/cover.jpg",
     productPageUrl:
       "/product/custom-printing/" + CustomPrintingCollectionType.Metallic,
     defaultPriceByQuality: [
@@ -168,15 +170,16 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Silver",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/metallic/silver.jpg",
       },
       {
         name: "Gold",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl: "/image/custom-printing-collection/metallic/gold.jpg",
       },
       {
         name: "Coarse Bamboo Slub",
-        imageUrl: "/custom-printing.jpg",
+        imageUrl:
+          "/image/custom-printing-collection/metallic/coarse-bamboo-slub.jpg",
       },
     ],
   },
