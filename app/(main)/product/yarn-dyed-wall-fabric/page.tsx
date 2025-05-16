@@ -1,11 +1,12 @@
 import GeneralPage from "@/components/page/generalPage";
 import { yarnDyedProductCollections } from "@/data/product";
+import { ProductCategoryType } from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
   return (
-    <GeneralPage title="Yarn Dyed Collections">
+    <GeneralPage title={ProductCategoryType.YarnDyedWallFabric}>
       <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 md:gap-x-16">
         {yarnDyedProductCollections.map((item, index) => (
           <div key={index} className="space-y-2">
@@ -20,7 +21,7 @@ export default function Page() {
                 />
               </Link>
             </div>
-            <div className="text-center text-lg">{item.name}</div>
+            <div className="text-center font-medium text-sm">{item.name}</div>
           </div>
         ))}
       </div>

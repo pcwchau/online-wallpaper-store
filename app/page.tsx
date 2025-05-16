@@ -41,6 +41,7 @@ const HomePage = () => {
                 sizes="(max-width: 1024px) 300vw, 200vw" // to ensure clear images
                 className="object-cover"
                 placeholder="blur"
+                priority
               />
             </SwiperSlide>
           ))}

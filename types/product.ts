@@ -51,7 +51,7 @@ export enum PrintTechnologyType {
 }
 
 export enum EnvironmentAndHealthType {
-  WHMIS2015 = "Complies with the Hazardous Products Regulations (WHMIS 2015)",
+  WHMIS2015 = "WHMIS 2015",
 }
 
 export enum MaintenanceType {
