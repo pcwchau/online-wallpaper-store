@@ -6,7 +6,7 @@ import { useSwipeable } from "react-swipeable";
 import ArrowLeftCircleIcon from "@/assets/icons/arrowLeftCircleIcon";
 import ArrowRightCircleIcon from "@/assets/icons/arrowRightCircleIcon";
 import CancelCircleIcon from "@/assets/icons/cancelCircleIcon";
-import { getImagesFromS3 } from "@/api/api";
+import { getInspirationImages } from "@/api/api";
 import { getFileNameFromUrl } from "@/utils/commonUtils";
 
 export default function Page() {
@@ -25,7 +25,7 @@ export default function Page() {
 
   useEffect(() => {
     const fetchImageUrls = async () => {
-      setImageUrls(await getImagesFromS3("inspiration/ulipic/"));
+      setImageUrls(await getInspirationImages(1, 10));
     };
 
     fetchImageUrls();
