@@ -1,17 +1,22 @@
 "use client";
-
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import ArrowLeftCircleIcon from "@/assets/icons/arrowLeftCircleIcon";
 import ArrowRightCircleIcon from "@/assets/icons/arrowRightCircleIcon";
 import CancelCircleIcon from "@/assets/icons/cancelCircleIcon";
-import { getImagesFromS3 } from "@/api/api";
+import { getInspirationImageCount, getInspirationImages } from "@/api/api";
 import { getFileNameFromUrl } from "@/utils/commonUtils";
 
+const IMAGES_PER_PAGE = 20;
+
 export default function Page() {
+  const [imageCount, setImageCount] = useState<number>(0);
+  const [page, setPage] = useState<number>(1);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [imageUrls, setImageUrls] = useState<string[]>([]);
+
+  const totalPages = Math.ceil(imageCount / IMAGES_PER_PAGE);
 
   const handleLightboxClose = () => setLightboxIndex(null);
 
@@ -23,13 +28,23 @@ export default function Page() {
   const handleNextClick = () =>
     setLightboxIndex((prev) => (prev! + 1) % imageUrls.length);
 
-  useEffect(() => {
-    const fetchImageUrls = async () => {
-      setImageUrls(await getImagesFromS3("inspiration/ulipic/"));
-    };
+  const fetchImageCount = async () => {
+    setImageCount(await getInspirationImageCount());
+  };
 
-    fetchImageUrls();
+  const fetchImageUrls = async (page: number) => {
+    const res = await getInspirationImages(page, IMAGES_PER_PAGE);
+    setImageUrls(res.map((item) => item.image_url));
+  };
+
+  useEffect(() => {
+    fetchImageCount();
+    fetchImageUrls(1);
   }, []);
+
+  useEffect(() => {
+    fetchImageUrls(page);
+  }, [page]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -69,6 +84,40 @@ export default function Page() {
             </div>
           );
         })}
+      </div>
+      {/* Pagination Controls */}
+      <div className="flex justify-center items-center mt-6 space-x-4">
+        <button
+          disabled={page === 1}
+          onClick={() => setPage((p) => p - 1)}
+          className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+        >
+          Previous
+        </button>
+
+        <div className="flex items-center space-x-2">
+          <span>Page</span>
+          <input
+            type="number"
+            min={1}
+            max={totalPages}
+            value={page}
+            onChange={(e) => {
+              const val = parseInt(e.target.value, 10);
+              if (!isNaN(val)) setPage(Math.min(Math.max(1, val), totalPages));
+            }}
+            className="w-16 px-2 py-1 border rounded text-center"
+          />
+          <span>of {totalPages}</span>
+        </div>
+
+        <button
+          disabled={page === totalPages}
+          onClick={() => setPage((p) => p + 1)}
+          className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+        >
+          Next
+        </button>
       </div>
 
       {lightboxIndex !== null && (

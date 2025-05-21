@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "beshine.s3.us-east-1.amazonaws.com",
+        hostname: "beshinegroup.s3.us-east-1.amazonaws.com",
         port: "",
         pathname: "**", // allow any path
         search: "",
