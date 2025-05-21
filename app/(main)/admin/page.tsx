@@ -39,6 +39,9 @@ export default function Page() {
         <div>Upload Inspiration Images</div>
         <input
           type="file"
+          name="images"
+          webkitdirectory="true"
+          directory=""
           multiple
           accept="image/*"
           onChange={handleFileChange}

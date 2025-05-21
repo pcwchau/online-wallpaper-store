@@ -96,14 +96,26 @@ export const uploadInspirationImages = async (files: File[]) => {
 export const getInspirationImages = async (
   page: number,
   limit: number
-): Promise<string[]> => {
+): Promise<{ title: string; image_url: string }[]> => {
   const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/inspiration/get?page=${page}&limit=${limit}`;
   const response = await GETRequestWithTimeout(url);
 
   if (response !== undefined && response.ok) {
     const data = await response.json();
-    return data;
+    return data.data;
   } else {
     return [];
+  }
+};
+
+export const getInspirationImageCount = async (): Promise<number> => {
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/inspiration/getCount`;
+  const response = await GETRequestWithTimeout(url);
+
+  if (response !== undefined && response.ok) {
+    const data = await response.json();
+    return data.data.count;
+  } else {
+    return 0;
   }
 };
