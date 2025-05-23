@@ -241,17 +241,8 @@ export default function ProductPage(props: ProductPageProps) {
                   className="flex items-center space-x-1 text-sm py-2"
                   key={index}
                 >
-                  <div className="min-w-[10rem] sm:min-w-[33%] whitespace-nowrap">{`${specification.title}: `}</div>
-                  <div className="">{specification.content}</div>
-                  <div>
-                    {specification.title === SpecificationTitleType.Height
-                      ? "ft"
-                      : specification.title === SpecificationTitleType.Thickness
-                      ? "cm"
-                      : specification.title === SpecificationTitleType.Weight
-                      ? "g/sq. ft"
-                      : ""}
-                  </div>
+                  <div className="min-w-[10rem] sm:min-w-[33%] whitespace-nowrap">{`${specification.title} `}</div>
+                  <div>{specification.content}</div>
                   {specification.title === SpecificationTitleType.Height && (
                     <a
                       data-tooltip-id="my-tooltip"
