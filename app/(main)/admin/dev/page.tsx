@@ -37,8 +37,8 @@ export default function Page() {
       <input
         type="file"
         name="images"
-        webkitdirectory="true"
-        directory=""
+        // webkitdirectory="true"
+        // directory=""
         multiple
         accept="image/*"
         onChange={handleFileChange}
