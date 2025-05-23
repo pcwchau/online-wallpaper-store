@@ -6,7 +6,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import TopBar from "@/components/navigation/topBar";
-import { clientsLogoImages } from "@/data/homePage";
 import swiperImg1 from "@/assets/images/home/1.jpg";
 import swiperImg2 from "@/assets/images/home/2.jpg";
 import swiperImg3 from "@/assets/images/home/3.jpg";
@@ -117,7 +116,16 @@ const HomePage = () => {
         <div className="text-4xl mb-4">OUR CLIENTS</div>
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
-            {clientsLogoImages.map((src, index) => (
+            {[
+              "/image/clients/1.jpg",
+              "/image/clients/2.png",
+              "/image/clients/3.png",
+              "/image/clients/4.png",
+              "/image/clients/6.png",
+              "/image/clients/7.png",
+              "/image/clients/8.png",
+              "/image/clients/10.png",
+            ].map((src, index) => (
               <div
                 key={index}
                 className="w-24 h-24 flex items-center justify-center"
