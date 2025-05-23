@@ -68,9 +68,9 @@ export interface PriceByQuality {
 }
 
 export interface Specification {
-  height?: number;
-  thickness?: number;
-  weight?: number;
+  height?: string;
+  thickness?: string;
+  weight?: string;
   backing?: BackingType;
   match?: MatchType;
   printTechnology?: PrintTechnologyType;
