@@ -6,10 +6,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import TopBar from "@/components/navigation/topBar";
-import { clientsLogoImages, parallax } from "@/data/homePage";
+import { clientsLogoImages } from "@/data/homePage";
 import swiperImg1 from "@/assets/images/home/1.jpg";
 import swiperImg2 from "@/assets/images/home/2.jpg";
 import swiperImg3 from "@/assets/images/home/3.jpg";
+import ParallaxImageSections from "@/components/image/parallaxImageSections";
 
 const HomePage = () => {
   return (
@@ -56,40 +57,46 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Parallax Section, all images should be 16:9 */}
-      {parallax.map((item, index) => {
-        return (
-          <div
-            className="h-[80vh] bg-fixed bg-cover flex text-secondary-text"
-            style={{
-              backgroundImage: "url('" + item.imageUrl + "')",
-              justifyContent: item.align === "left" ? "flex-start" : "flex-end",
-            }}
-            key={index}
-          >
-            <div
-              className="h-full flex flex-col justify-center items-center px-4"
-              style={
-                item.align === "left"
-                  ? {
-                      background:
-                        "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
-                    }
-                  : {
-                      background:
-                        "linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
-                    }
-              }
-            >
-              <div className="text-4xl lg:text-6xl max-w-[35rem] text-center mb-[2rem] space-y-2">
-                <div>{item.titleRow1}</div>
-                <div>{item.titleRow2}</div>
-              </div>
-              <div className="text-center max-w-[35rem]">{item.content}</div>
-            </div>
-          </div>
-        );
-      })}
+      <ParallaxImageSections
+        sections={[
+          {
+            titleRow1: "Custom Printing",
+            titleRow2: "Wall Fabric",
+            smallImageUrl: "/image/home/product_1s-min.jpg",
+            largeImageUrl: "/image/home/product_1-min.jpg",
+            content:
+              "Be Shine Textile Inc. is a leading provider of custom wallcoverings, offering seamless solutions that bring style and creativity to any space. We work with both commercial and residential clients to turn their unique ideas into reality through expert design and professional installation.",
+            align: "left",
+          },
+          {
+            titleRow1: "Yarn Dyed",
+            titleRow2: "Wall Fabric",
+            smallImageUrl: "/image/home/product_2s-min.jpg",
+            largeImageUrl: "/image/home/product_2-min.jpg",
+            content:
+              "Be Shine Textile offers a variety of fabric wallcoverings in standard colors and textures. Clients can explore our sample collection at our Markham showroom to find the perfect match, supported by expert craftsmanship and seamless installation.",
+            align: "right",
+          },
+          {
+            titleRow1: "Embroidered",
+            titleRow2: "Wall Fabric",
+            smallImageUrl: "/image/home/product_3s-min.jpg",
+            largeImageUrl: "/image/home/product_3-min.jpg",
+            content:
+              "Add a touch of luxury with our embroidered wall fabrics — perfect for premium settings. Contact us for tailor-made solutions to elevate your space with custom elegance.",
+            align: "left",
+          },
+          {
+            titleRow1: "Commercial Vinyl & Signs",
+            titleRow2: "",
+            smallImageUrl: "/image/home/product_4s-min.jpg",
+            largeImageUrl: "/image/home/product_4-min.jpg",
+            content:
+              "We provide fast, customized solutions for commercial vinyl and signage using a variety of materials, including matte, gloss, and textured finishes. From branding to company signs, your ideal design is produced promptly and installed seamlessly to elevate your commercial space.",
+            align: "right",
+          },
+        ]}
+      />
 
       {/* Video */}
       <div className="py-12">
