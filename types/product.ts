@@ -51,7 +51,7 @@ export enum PrintTechnologyType {
 }
 
 export enum EnvironmentAndHealthType {
-  WHMIS2015 = "WHMIS 2015",
+  WHMIS2015 = "ASTM F963-17, ASTM F925-13",
 }
 
 export enum MaintenanceType {
@@ -59,7 +59,7 @@ export enum MaintenanceType {
 }
 
 export enum FireSafetyType {
-  ClassA = "ASTM F925-13 (Class “A” fire rated)",
+  ClassA = "ASTM E84-19b (Class “A” fire rated)",
 }
 
 export interface PriceByQuality {
