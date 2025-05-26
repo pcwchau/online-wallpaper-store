@@ -100,51 +100,51 @@ export const customPrintingProductCollections: ProductCollection[] = [
     products: [
       {
         name: "Faux Leather | A",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-A-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-A.jpg",
       },
       {
         name: "Faux Leather | B",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-B-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-B.jpg",
       },
       {
         name: "Faux Leather | C",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-C-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-C.jpg",
       },
       {
         name: "Faux Leather | D",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-D-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-D.jpg",
       },
       {
         name: "Faux Leather | E",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-E-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-E.jpg",
       },
       {
         name: "Faux Leather | F",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-F-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-F.jpg",
       },
       {
         name: "Faux Leather | G",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-G-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-G.jpg",
       },
       {
         name: "Faux Leather | H",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-H-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-H.jpg",
       },
       {
         name: "Faux Leather | I",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-I-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-I.jpg",
       },
       {
         name: "Faux Leather | J",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-J-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-J.jpg",
       },
       {
         name: "Faux Leather | K",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-K-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-K.jpg",
       },
       {
         name: "Faux Leather | L",
-        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-L-min.jpg",
+        imageUrl: "/image/custom-printing-collection/faux-leather/KJ-L.jpg",
       },
     ],
   },

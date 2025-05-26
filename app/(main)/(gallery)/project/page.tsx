@@ -1,6 +1,11 @@
-import ImagePage2x2 from "@/components/page/imagePage2x2";
+import TwoByTwoImageSection from "@/components/image/twoByTwoImageSection";
+import GeneralPage from "@/components/page/generalPage";
 import { projectCategoryRoutes } from "@/data/route";
 
 export default function Page() {
-  return <ImagePage2x2 title={"Project"} images={projectCategoryRoutes} />;
+  return (
+    <GeneralPage title={"Project"}>
+      <TwoByTwoImageSection images={projectCategoryRoutes} />;
+    </GeneralPage>
+  );
 }
