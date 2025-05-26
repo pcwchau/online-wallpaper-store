@@ -2,8 +2,14 @@ import GeneralPage from "@/components/page/generalPage";
 import Link from "next/link";
 
 const pdfFiles = [
-  { name: "Flame Retardant Test", fileName: "191230016SHF-001.pdf" },
-  { name: "Flame Retardant Test", fileName: "191230016SHF-002.pdf" },
+  {
+    name: "Flame Retardant Test (ASTM E84-19b)",
+    fileName: "191230016SHF-001.pdf",
+  },
+  {
+    name: "Flame Retardant Test (ASTM F963-17, ASTM F925-13)",
+    fileName: "191230016SHF-002.pdf",
+  },
   {
     name: "Non-Flame Retardant Product (ENG)",
     fileName: "FINAL-Non-Flame-Retardant-Product-CAN-ENG-Rev-May-11-2021.pdf",
@@ -13,7 +19,7 @@ const pdfFiles = [
     fileName: "FINAL-Non-Flame-Retardant-Product-CAN-FRA-Rev-May-11-2021.pdf",
   },
   {
-    name: "Surface Burning Characteristics",
+    name: "Surface Burning Characteristics (UL-SV32110)",
     fileName: "UL-BeShine-Project-4790921866-Letter-Report.pdf",
   },
 ];
