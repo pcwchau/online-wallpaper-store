@@ -15,7 +15,7 @@ export default function TwoByTwoImageSection(props: TwoByTwoImageSectionProps) {
       {props.images.map((item, index) => (
         <Link key={index} href={item.redirectUrl}>
           <div className="relative group">
-            <div className="aspect-square relative overflow-hidden">
+            <div className="aspect-square relative overflow-hidden rounded-md">
               <Image
                 src={item.imageUrl}
                 alt={item.name}
@@ -25,8 +25,8 @@ export default function TwoByTwoImageSection(props: TwoByTwoImageSectionProps) {
               />
             </div>
             {isLargeScreen ? (
-              <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-center font-medium text-sm bg-primary">
-                <div className="px-6 py-2 transition-colors duration-300 hover:bg-secondary hover:text-secondary-text">
+              <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-center font-medium text-sm bg-primary opacity-80 rounded-md">
+                <div className="px-6 py-2 transition-colors duration-300 hover:bg-secondary hover:text-secondary-text rounded-md">
                   {item.name}
                 </div>
               </div>

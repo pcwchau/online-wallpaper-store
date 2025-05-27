@@ -39,7 +39,7 @@ export default function Page() {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="border-2 border-primary-border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
+            className="border-2 border-primary-border rounded-md p-5 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="text-lg font-semibold mb-2">{feature.title}</div>
             <p className="text-sm">{feature.description}</p>
