@@ -188,7 +188,7 @@ export const customPrintingProductCollections: ProductCollection[] = [
 export const yarnDyedProductCollections: ProductCollection[] = [
   {
     name: YarnDyedCollectionType.CaiMa,
-    imageUrl: "/image/yarn-dyed-collection/cai-ma/cover-min.jpg",
+    imageUrl: "/image/yarn-dyed-collection/cai-ma/A10-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.CaiMa,
     defaultPriceByQuality: [
@@ -236,7 +236,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.MediumLinen,
-    imageUrl: "/image/yarn-dyed-collection/medium-linen/A08-min.jpg",
+    imageUrl: "/image/yarn-dyed-collection/medium-linen/A26-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.MediumLinen,
     defaultPriceByQuality: [
@@ -288,7 +288,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.QC121,
-    imageUrl: "/image/yarn-dyed-collection/qc-121/02-min.jpg",
+    imageUrl: "/image/yarn-dyed-collection/qc-121/18-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.QC121,
     defaultPriceByQuality: [
@@ -332,7 +332,7 @@ export const yarnDyedProductCollections: ProductCollection[] = [
   },
   {
     name: YarnDyedCollectionType.ZhuMa,
-    imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-01-min.jpg",
+    imageUrl: "/image/yarn-dyed-collection/zhu-ma/2088-16-min.jpg",
     productPageUrl:
       "/product/yarn-dyed-wall-fabric/" + YarnDyedCollectionType.ZhuMa,
     defaultPriceByQuality: [
