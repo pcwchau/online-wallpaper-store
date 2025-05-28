@@ -59,9 +59,13 @@ Information such as build script and custom domains can be checked on Amplify.
 | Yarn dyed collection       | 1:1   |      | object-cover       |
 | Product page - Options     | 1:1   |      | object-contain     |
 
+| Project Page Image | Ratio | Opt? | Exception handling | Others |
+|--------------------|-------|------|--------------------|--------|
+| Project cover      | 1:1   |      | object-cover       |
+| Project inside     | N/A   |      | full width         |
+
 | Other Page Image        | Ratio | Opt? | Exception handling | Others |
 |-------------------------|-------|------|--------------------|--------|
-| Project category        | 1:1   |      | object-cover       |
 | Partnership             | 1:1   |      | object-cover       |
 | Inspiration (thumbnail) | 1:1   |      | object-cover       |
 
@@ -73,4 +77,5 @@ Information such as build script and custom domains can be checked on Amplify.
 - FAQ page
   - animate arrow icons (CSS)
   - open / close answer (lib: framer-motion: handle height more smoothly)
-- Custom printing collection / Project page (CSS)
+- Custom printing collection
+- Project page (CSS)

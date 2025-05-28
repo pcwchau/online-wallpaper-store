@@ -9,7 +9,50 @@ import logoBlackImg from "@/assets/images/company-logo.png";
 import logoWhiteImg from "@/assets/images/company-logo-w.png";
 import logoWordImg from "@/assets/images/company-logo-word.png";
 import useMediaQuery from "@/hook/useMediaQuery";
-import { topBarRoutes } from "@/data/route";
+import { ProductCategoryType } from "@/types/product.type";
+
+const topBarRoutes = [
+  {
+    name: "Product",
+    href: null,
+    subPages: [
+      {
+        name: ProductCategoryType.CustomPrintingWallFabric,
+        href: "/product/custom-printing",
+      },
+      {
+        name: ProductCategoryType.YarnDyedWallFabric,
+        href: "/product/yarn-dyed-wall-fabric",
+      },
+      {
+        name: ProductCategoryType.EmbroideredWallFabric,
+        href: "/product/embroidered",
+      },
+      {
+        name: ProductCategoryType.CommercialVinylAndSigns,
+        href: "/product/vinyl-banner-and-signs",
+      },
+    ],
+  },
+  {
+    name: "Gallery",
+    href: null,
+    subPages: [
+      { name: "Projects", href: "/projects" },
+      { name: "Inspiration", href: "/inspiration" },
+    ],
+  },
+  {
+    name: "Company",
+    href: null,
+    subPages: [
+      { name: "About Us", href: "/about-us" },
+      { name: "Qualification", href: "/qualification" },
+      { name: "FAQs", href: "/faq" },
+    ],
+  },
+  { name: "Partnership", href: "/partnership" },
+];
 
 interface TopBarProps {
   isHomePage: boolean;

@@ -1,5 +1,5 @@
 import ProductPage from "@/components/page/productPage";
-import { ProductCategoryType, QualityType } from "@/types/product";
+import { ProductCategoryType, QualityType } from "@/types/product.type";
 
 export default function Page() {
   return (

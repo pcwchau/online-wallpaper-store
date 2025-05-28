@@ -1,7 +1,7 @@
-import TwoByTwoImageSection from "@/components/image/twoByTwoImageSection";
+import ImageRowTwo from "@/components/image/imageRowTwo";
 import GeneralPage from "@/components/page/generalPage";
-import { customPrintingProductCollections } from "@/data/product";
-import { ProductCategoryType } from "@/types/product";
+import { customPrintingProductCollections } from "@/data/product.data";
+import { ProductCategoryType } from "@/types/product.type";
 
 const features = [
   {
@@ -46,7 +46,7 @@ export default function Page() {
           </div>
         ))}
       </div>
-      <TwoByTwoImageSection
+      <ImageRowTwo
         images={customPrintingProductCollections.map((col) => ({
           name: col.name,
           imageUrl: col.imageUrl,

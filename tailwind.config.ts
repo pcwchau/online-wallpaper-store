@@ -11,7 +11,7 @@ export default {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        lg: "8rem",
+        lg: "5rem",
       },
     },
     // Add custom styles

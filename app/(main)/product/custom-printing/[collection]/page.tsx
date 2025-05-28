@@ -1,6 +1,6 @@
 import ProductPage from "@/components/page/productPage";
-import { customPrintingProductCollections } from "@/data/product";
-import { ProductCategoryType } from "@/types/product";
+import { customPrintingProductCollections } from "@/data/product.data";
+import { ProductCategoryType } from "@/types/product.type";
 
 export default async function Page({
   params,

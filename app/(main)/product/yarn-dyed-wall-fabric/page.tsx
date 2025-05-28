@@ -1,6 +1,6 @@
 import GeneralPage from "@/components/page/generalPage";
-import { yarnDyedProductCollections } from "@/data/product";
-import { ProductCategoryType } from "@/types/product";
+import { yarnDyedProductCollections } from "@/data/product.data";
+import { ProductCategoryType } from "@/types/product.type";
 import Image from "next/image";
 import Link from "next/link";
 

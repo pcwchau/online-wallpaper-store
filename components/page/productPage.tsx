@@ -10,7 +10,7 @@ import {
   Specification,
   PriceByQuality,
   SpecificationTitleType,
-} from "@/types/product";
+} from "@/types/product.type";
 import Image from "next/image";
 import { memo, useState } from "react";
 import { Tooltip } from "react-tooltip";
