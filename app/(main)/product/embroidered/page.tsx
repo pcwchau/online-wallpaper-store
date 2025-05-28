@@ -1,12 +1,20 @@
 import ProductPage from "@/components/page/productPage";
-import { embroideredProducts } from "@/data/product";
 import { ProductCategoryType, QualityType } from "@/types/product";
 
 export default function Page() {
   return (
     <ProductPage
       productCategory={ProductCategoryType.EmbroideredWallFabric}
-      products={embroideredProducts}
+      products={[
+        {
+          name: ProductCategoryType.EmbroideredWallFabric,
+          imageUrl: "/image/embroidered/embroidered.jpg",
+        },
+        {
+          name: ProductCategoryType.EmbroideredWallFabric,
+          imageUrl: "/image/embroidered/embroidered.jpg",
+        },
+      ]}
       defaultPriceByQuality={[
         { quality: QualityType.PleaseContactUs, price: null },
       ]}

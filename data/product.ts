@@ -1,5 +1,4 @@
 import {
-  Product,
   ProductCollection,
   QualityType,
   BackingType,
@@ -10,7 +9,6 @@ import {
   PrintTechnologyType,
   EnvironmentAndHealthType,
   CustomPrintingCollectionType,
-  ProductCategoryType,
 } from "@/types/product";
 
 export const customPrintingProductCollections: ProductCollection[] = [
@@ -417,23 +415,5 @@ export const yarnDyedProductCollections: ProductCollection[] = [
         imageUrl: "/image/yarn-dyed-collection/zr/ZR34-min.jpg",
       },
     ],
-  },
-];
-
-export const embroideredProducts: Product[] = [
-  {
-    name: ProductCategoryType.EmbroideredWallFabric,
-    imageUrl: "/image/product/embroidered.jpg",
-    priceByQuality: [{ quality: QualityType.PleaseContactUs, price: null }],
-    specification: {},
-  },
-];
-
-export const vinylProducts: Product[] = [
-  {
-    name: ProductCategoryType.CommercialVinylAndSigns,
-    imageUrl: "/image/product/vinyl.jpg",
-    priceByQuality: [{ quality: QualityType.PleaseContactUs, price: null }],
-    specification: {},
   },
 ];

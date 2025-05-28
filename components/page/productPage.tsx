@@ -1,4 +1,5 @@
 "use client";
+
 import QuestionCircleIcon from "@/assets/icons/questionCircleIcon";
 import ZoomInImage from "@/components/image/zoomInImage";
 import { TOP_BAR_HEIGHT } from "@/config/constant";
@@ -32,6 +33,20 @@ export default function ProductPage(props: ProductPageProps) {
   const [length, setLength] = useState<number | "">("");
 
   const isLgScreen = useMediaQuery("(min-width: 1024px)");
+
+  const isMoreColoursShown =
+    props.productCategory === ProductCategoryType.YarnDyedWallFabric;
+
+  const isMinimumOrderOfTwoFt =
+    props.productCategory === ProductCategoryType.CustomPrintingWallFabric;
+
+  const isPriceAndCostEstimationShown =
+    props.productCategory === ProductCategoryType.CustomPrintingWallFabric ||
+    props.productCategory === ProductCategoryType.YarnDyedWallFabric;
+
+  const isSpecificationShown =
+    props.productCategory === ProductCategoryType.CustomPrintingWallFabric ||
+    props.productCategory === ProductCategoryType.YarnDyedWallFabric;
 
   const price =
     props.products[currentOptionIndex].priceByQuality !== undefined
@@ -94,9 +109,7 @@ export default function ProductPage(props: ProductPageProps) {
 
   const calculateTotalPrice = () => {
     if (price && length && length > 0) {
-      if (
-        props.productCategory === ProductCategoryType.CustomPrintingWallFabric
-      ) {
+      if (isMinimumOrderOfTwoFt) {
         return Math.round(price * Math.max(length, 2));
       } else {
         return Math.round(price * length);
@@ -132,12 +145,9 @@ export default function ProductPage(props: ProductPageProps) {
         <div className="flex flex-col w-full lg:w-[50%] space-y-4">
           <Title>{props.products[currentOptionIndex].name}</Title>
           <div className="space-y-4 pb-4">
-            {/* Options are shown with thumbnail image */}
-            {(props.productCategory ===
-              ProductCategoryType.YarnDyedWallFabric ||
-              props.productCategory ===
-                ProductCategoryType.CustomPrintingWallFabric) && (
+            {
               <div className="flex flex-wrap gap-2 items-center max-w-[28rem]">
+                {/* Options are shown with thumbnail image */}
                 {props.products.map((item, index) => (
                   <button
                     key={index}
@@ -158,11 +168,10 @@ export default function ProductPage(props: ProductPageProps) {
                   </button>
                 ))}
               </div>
-            )}
+            }
 
             {/* More colours */}
-            {props.productCategory ===
-              ProductCategoryType.YarnDyedWallFabric && (
+            {isMoreColoursShown && (
               <div className="text-sm">
                 ⦿ Please contact us for more colours.
               </div>
@@ -189,97 +198,109 @@ export default function ProductPage(props: ProductPageProps) {
             </div>
 
             {/* Price */}
+            {isPriceAndCostEstimationShown && (
+              <div>
+                <span className="text-lg font-bold">{`$ ${price ?? "-"}`}</span>
+                <span className="text-sm"> / Linear ft </span>
+                {isMinimumOrderOfTwoFt && (
+                  <span className="text-sm font-bold">
+                    | Minumum order of 2 ft
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+
+          {isPriceAndCostEstimationShown && (
             <div>
-              <span className="text-lg font-bold">{`$ ${price ?? "-"}`}</span>
-              <span className="text-sm"> / Linear ft </span>
-              {props.productCategory ===
-                ProductCategoryType.CustomPrintingWallFabric && (
-                <span className="text-sm font-bold">
-                  | Minumum order of 2 ft
-                </span>
-              )}
-            </div>
-          </div>
+              <Title>Cost Estimation</Title>
+              <div className="space-y-2 pb-4">
+                <div className="flex items-center">
+                  <div className="min-w-[50%] sm:min-w-[33%] whitespace-nowrap font-semibold">
+                    Height
+                  </div>
+                  <div className="pl-1">{specification.height}</div>
+                  <a
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={`Please contact us if over ${specification.height}.`}
+                    className="px-2"
+                  >
+                    <QuestionCircleIcon width="1.5em" height="1.5em" />
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <div className="min-w-[50%] sm:min-w-[33%] whitespace-nowrap font-semibold">
+                    Length
+                  </div>
+                  <input
+                    type="number"
+                    placeholder="Enter length"
+                    value={length}
+                    onChange={handleLengthChange}
+                    className="w-28 border border-primary-border rounded p-1 text-sm"
+                  />
+                  <div className="pl-1">ft</div>
+                </div>
 
-          <Title>Cost Estimation</Title>
-          <div className="space-y-2 pb-4">
-            <div className="flex items-center">
-              <div className="min-w-[50%] sm:min-w-[33%] whitespace-nowrap font-semibold">
-                Height
-              </div>
-              <div className="pl-1">{specification.height}</div>
-              <a
-                data-tooltip-id="my-tooltip"
-                data-tooltip-content={`Please contact us if over ${specification.height}.`}
-                className="px-2"
-              >
-                <QuestionCircleIcon width="1.5em" height="1.5em" />
-              </a>
-            </div>
-            <div className="flex items-center">
-              <div className="min-w-[50%] sm:min-w-[33%] whitespace-nowrap font-semibold">
-                Length
-              </div>
-              <input
-                type="number"
-                placeholder="Enter length"
-                value={length}
-                onChange={handleLengthChange}
-                className="w-28 border border-primary-border rounded p-1 text-sm"
-              />
-              <div className="pl-1">ft</div>
-            </div>
+                <div className="flex items-center font-semibold">
+                  <div className="min-w-[50%] sm:min-w-[33%] whitespace-nowrap">
+                    Estimated budget
+                  </div>
+                  <div className="pl-1">{`$ ${calculateTotalPrice()}`}</div>
+                </div>
 
-            <div className="flex items-center font-semibold">
-              <div className="min-w-[50%] sm:min-w-[33%] whitespace-nowrap">
-                Estimated budget
+                <div className="text-sm">
+                  ⦿ Please contact us to get a quote.
+                </div>
               </div>
-              <div className="pl-1">{`$ ${calculateTotalPrice()}`}</div>
             </div>
-
-            <div className="text-sm">⦿ Please contact us to get a quote.</div>
-          </div>
+          )}
         </div>
       </div>
 
-      <Title>Specification</Title>
-      {isLgScreen ? (
-        <div className="grid grid-cols-2 gap-x-4 pt-4">
-          {specificationArr.map(
-            (specification, index) =>
-              specification.content !== undefined && (
-                <div
-                  className={`flex items-center text-sm py-2 ${
-                    Math.floor(index / 2) !==
-                      Math.floor((specificationArr.length - 1) / 2) &&
-                    "lg:border-primary-border lg:border-b"
-                  }`}
-                  key={index}
-                >
-                  <div className="min-w-[40%] whitespace-nowrap font-semibold">
-                    {`${specification.title} `}
-                  </div>
-                  <div>{specification.content}</div>
-                </div>
-              )
-          )}
-        </div>
-      ) : (
-        <div className="divide-y-[0.05rem] divide-primary-border pt-4">
-          {specificationArr.map(
-            (specification, index) =>
-              specification.content !== undefined && (
-                <div
-                  className="flex items-center space-x-1 text-sm py-2"
-                  key={index}
-                >
-                  <div className="min-w-[50%] whitespace-nowrap font-semibold">{`${specification.title} `}</div>
-                  <div>{specification.content}</div>
-                </div>
-              )
+      {isSpecificationShown && (
+        <div>
+          <Title>Specification</Title>
+          {isLgScreen ? (
+            <div className="grid grid-cols-2 gap-x-4 pt-4">
+              {specificationArr.map(
+                (specification, index) =>
+                  specification.content !== undefined && (
+                    <div
+                      className={`flex items-center text-sm py-2 ${
+                        Math.floor(index / 2) !==
+                          Math.floor((specificationArr.length - 1) / 2) &&
+                        "lg:border-primary-border lg:border-b"
+                      }`}
+                      key={index}
+                    >
+                      <div className="min-w-[40%] whitespace-nowrap font-semibold">
+                        {`${specification.title} `}
+                      </div>
+                      <div>{specification.content}</div>
+                    </div>
+                  )
+              )}
+            </div>
+          ) : (
+            <div className="divide-y-[0.05rem] divide-primary-border pt-4">
+              {specificationArr.map(
+                (specification, index) =>
+                  specification.content !== undefined && (
+                    <div
+                      className="flex items-center space-x-1 text-sm py-2"
+                      key={index}
+                    >
+                      <div className="min-w-[50%] whitespace-nowrap font-semibold">{`${specification.title} `}</div>
+                      <div>{specification.content}</div>
+                    </div>
+                  )
+              )}
+            </div>
           )}
         </div>
       )}
+      {/* END */}
     </div>
   );
 }

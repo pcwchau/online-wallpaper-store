@@ -23,7 +23,7 @@ export enum YarnDyedCollectionType {
 export enum QualityType {
   FireRetardant = "Fire Retardant",
   FireRetardantAndWaterproof = "Fire Retardant and Waterproof",
-  PleaseContactUs = "Please Contact Us",
+  PleaseContactUs = "Please contact us for more details.",
 }
 
 export enum SpecificationTitleType {
