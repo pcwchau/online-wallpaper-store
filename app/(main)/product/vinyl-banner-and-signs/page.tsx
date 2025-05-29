@@ -1,12 +1,20 @@
 import ProductPage from "@/components/page/productPage";
-import { vinylProducts } from "@/data/product";
-import { ProductCategoryType, QualityType } from "@/types/product";
+import { ProductCategoryType, QualityType } from "@/types/product.type";
 
 export default function Page() {
   return (
     <ProductPage
       productCategory={ProductCategoryType.CommercialVinylAndSigns}
-      products={vinylProducts}
+      products={[
+        {
+          name: ProductCategoryType.CommercialVinylAndSigns,
+          imageUrl: "/image/vinyl/vinyl.jpg",
+        },
+        {
+          name: ProductCategoryType.CommercialVinylAndSigns,
+          imageUrl: "/image/vinyl/vinyl.jpg",
+        },
+      ]}
       defaultPriceByQuality={[
         { quality: QualityType.PleaseContactUs, price: null },
       ]}

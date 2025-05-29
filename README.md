@@ -47,17 +47,27 @@ Information such as build script and custom domains can be checked on Amplify.
 
 ## Image Size Requirement
 
-| Image                          | Ratio | Opt? | Exception handling | Others                       |
-|--------------------------------|-------|------|--------------------|------------------------------|
-| Home - Main image              | n/a   |      | object-cover       | Focus on the middle (mobile) |
-| Home - product image (>=640px) | 16:9  | n    | object-cover       | Cropped from center          |
-| Home - product image (<640px)  | 1:2   | n    | object-cover       | Cropped from center          |
-| Yarn dyed - collection         | 1:1   |      | object-cover       |
-| Custom printing collection     | 1:1   |      | object-cover       |
-| Project category               | 1:1   |      | object-cover       |
-| Partnership                    | 1:1   |      | object-cover       |
-| Product - option               | 1:1   |      | object-contain     |
-| Inspiration (thumbnail)        | 1:1   |      | object-cover       |
+| Home Page Image            | Ratio | Opt? | Exception handling | Others                       |
+|----------------------------|-------|------|--------------------|------------------------------|
+| Main image                 | n/a   |      | object-cover       | Focus on the middle (mobile) |
+| 4 product images (>=640px) | 16:9  | n    | object-cover       | Cropped from center          |
+| 4 product images (<640px)  | 1:2   | n    | object-cover       | Cropped from center          |
+
+| Product Page Image         | Ratio | Opt? | Exception handling | Others |
+|----------------------------|-------|------|--------------------|--------|
+| Custom printing collection | 1:1   |      | object-cover       |
+| Yarn dyed collection       | 1:1   |      | object-cover       |
+| Product page - Options     | 1:1   |      | object-contain     |
+
+| Project Page Image | Ratio | Opt? | Exception handling | Others |
+|--------------------|-------|------|--------------------|--------|
+| Project cover      | 1:1   |      | object-cover       |
+| Project inside     | N/A   |      | full width         |
+
+| Other Page Image        | Ratio | Opt? | Exception handling | Others |
+|-------------------------|-------|------|--------------------|--------|
+| Partnership             | 1:1   |      | object-cover       |
+| Inspiration (thumbnail) | 1:1   |      | object-cover       |
 
 # Reference & Challenge
 
@@ -67,4 +77,5 @@ Information such as build script and custom domains can be checked on Amplify.
 - FAQ page
   - animate arrow icons (CSS)
   - open / close answer (lib: framer-motion: handle height more smoothly)
-- Custom printing collection / Project page (CSS)
+- Custom printing collection
+- Project page (CSS)
