@@ -64,6 +64,7 @@ export default function Page() {
 
   return (
     <div>
+      <div className="text-6xl font-medium text-center my-8">Inspiration</div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
         {imageUrls.map((item, index) => {
           return (

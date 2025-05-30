@@ -1,66 +1,36 @@
 import GeneralPage from "@/components/page/generalPage";
+import { partnerships } from "@/data/partnership.data";
 import Image from "next/image";
 import Link from "next/link";
-
-const partnerArr = [
-  {
-    name: "David",
-    role: "Designer",
-    imageUrl: "/image/partnership/temp.jpg",
-    profileUrl: "https://teddesign.com/",
-  },
-  {
-    name: "David",
-    role: "Designer",
-    imageUrl: "/image/partnership/temp.jpg",
-    profileUrl: "https://teddesign.com/",
-  },
-  {
-    name: "David",
-    role: "Designer",
-    imageUrl: "/image/partnership/temp.jpg",
-    profileUrl: "https://teddesign.com/",
-  },
-  {
-    name: "David",
-    role: "Designer",
-    imageUrl: "/image/partnership/temp.jpg",
-    profileUrl: "https://teddesign.com/",
-  },
-  {
-    name: "David",
-    role: "Designer",
-    imageUrl: "/image/partnership/temp.jpg",
-    profileUrl: "https://teddesign.com/",
-  },
-  {
-    name: "David",
-    role: "Designer",
-    imageUrl: "/image/partnership/temp.jpg",
-    profileUrl: "https://teddesign.com/",
-  },
-];
 
 export default function Page() {
   return (
     <GeneralPage title="Partnership">
-      <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 md:gap-x-16">
-        {partnerArr.map((item, index) => (
-          <div key={index}>
-            <div className="aspect-square relative">
-              <Link href={item.profileUrl} target="_blank">
-                <Image
-                  src={item.imageUrl}
-                  alt={item.name}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover"
-                />
-              </Link>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8">
+        {partnerships.map((partnership, index) => (
+          <Link
+            key={index}
+            href={partnership.profileUrl}
+            target="_blank"
+            className="group"
+          >
+            <div
+              className="aspect-square relative overflow-hidden rounded-xl 
+              transition-all duration-700 ease-out 
+              group-hover:scale-[1.03] group-hover:shadow-xl"
+            >
+              <Image
+                src={partnership.imageUrl}
+                alt={partnership.name}
+                fill
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="object-contain"
+              />
             </div>
-            <div className="text-center text-xl">{item.name}</div>
-            <div className="text-center text-sm">{item.role}</div>
-          </div>
+            <div className="min-h-20">
+              <div className="pt-4 text-xl font-bold">{partnership.name}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </GeneralPage>

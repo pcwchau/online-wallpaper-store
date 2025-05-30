@@ -66,7 +66,7 @@ Information such as build script and custom domains can be checked on Amplify.
 
 | Other Page Image        | Ratio | Opt? | Exception handling | Others |
 |-------------------------|-------|------|--------------------|--------|
-| Partnership             | 1:1   |      | object-cover       |
+| Partnership             | 1:1   |      | object-contain     |
 | Inspiration (thumbnail) | 1:1   |      | object-cover       |
 
 # Reference & Challenge

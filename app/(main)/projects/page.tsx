@@ -50,8 +50,8 @@ export default function Page() {
               <div className="group">
                 <div
                   className="aspect-square relative overflow-hidden rounded-xl 
-              transition-all duration-700 ease-out 
-              group-hover:scale-[1.03] group-hover:shadow-xl"
+                  transition-all duration-700 ease-out 
+                  group-hover:scale-[1.03] group-hover:shadow-xl"
                 >
                   <Image
                     src={item.profileImageUrl}
