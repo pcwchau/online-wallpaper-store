@@ -61,8 +61,8 @@ Information such as build script and custom domains can be checked on Amplify.
 
 | Project Page Image | Ratio | Opt? | Exception handling | Others |
 |--------------------|-------|------|--------------------|--------|
-| Project cover      | 1:1   |      | object-cover       |
-| Project inside     | N/A   |      | full width         |
+| Project cover      | 1:1   | y    | object-cover       |
+| Project inside     | N/A   | y    | full width         |
 
 | Other Page Image        | Ratio | Opt? | Exception handling | Others |
 |-------------------------|-------|------|--------------------|--------|

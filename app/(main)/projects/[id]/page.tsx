@@ -17,7 +17,7 @@ export default async function Page({
       </div>
       {[projects[id].profileImageUrl, ...projects[id].imageUrls].map(
         (imageUrl, index) => (
-          <div key={index} className="relative my-12">
+          <div key={index} className="relative my-4 lg:my-12">
             <Image
               src={imageUrl}
               alt={projects[id].name}
