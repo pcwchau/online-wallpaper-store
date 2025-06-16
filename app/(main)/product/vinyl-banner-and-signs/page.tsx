@@ -14,7 +14,7 @@ export default function Page() {
         width={0}
         height={0}
         sizes="100vw"
-        className="w-full h-[80vh] object-cover rounded-xl"
+        className="w-full rounded-xl"
       />
       <div className="text-center max-w-[40rem] mx-auto">
         We offer fast, custom solutions for commercial vinyl and signage using a
@@ -23,7 +23,7 @@ export default function Page() {
         produced quickly and installed seamlessly to enhance your commercial
         environment with a professional touch.
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center pb-4">
         <div className="border-primary-text border-2 p-2 rounded-lg text-center">
           PLEASE CONTACT US
         </div>

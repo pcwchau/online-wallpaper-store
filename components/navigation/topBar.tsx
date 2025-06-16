@@ -48,6 +48,7 @@ const topBarRoutes = [
     subPages: [
       { name: "About Us", href: "/about-us" },
       { name: "Qualification", href: "/qualification" },
+      { name: "Terms of Services", href: "/terms-of-services" },
       { name: "FAQs", href: "/faq" },
     ],
   },

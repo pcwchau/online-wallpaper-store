@@ -1,5 +1,6 @@
 "use client";
 
+import GeneralPage from "@/components/page/generalPage";
 import { projects } from "@/data/projects.data";
 import { ProjectType } from "@/types/projects.type";
 import Image from "next/image";
@@ -16,8 +17,7 @@ export default function Page() {
   };
 
   return (
-    <div>
-      <div className="text-6xl font-medium text-center my-8">Projects</div>
+    <GeneralPage title="Projects" isFullWidth={true}>
       <div className="flex gap-4 flex-wrap my-8">
         {Object.values(ProjectType).map((type) => {
           const isSelected = projectTypeFilter.includes(type);
@@ -69,6 +69,6 @@ export default function Page() {
             </Link>
           ))}
       </div>
-    </div>
+    </GeneralPage>
   );
 }
