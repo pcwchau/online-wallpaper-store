@@ -9,12 +9,12 @@ export default function Page() {
       isFullWidth={true}
     >
       <Image
-        src="/image/embroidered/embroidered.jpg"
+        src="/image/embroidered/embroidered.png"
         alt="embroidered"
         width={0}
         height={0}
         sizes="100vw"
-        className="w-full h-[80vh] object-cover rounded-xl"
+        className="w-full rounded-xl"
       />
       <div className="text-center max-w-[40rem] mx-auto">
         Elevate your space with our custom Embroidered Wall Fabric, featuring a
@@ -24,7 +24,7 @@ export default function Page() {
         nowhere else in the world. Contact us to explore fabric options and
         design your exclusive seamless wall feature with us.
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center pb-4">
         <div className="border-primary-text border-2 p-2 rounded-lg text-center">
           PLEASE CONTACT US
         </div>
