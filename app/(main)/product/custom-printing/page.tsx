@@ -29,7 +29,7 @@ const features = [
 export default function Page() {
   return (
     <GeneralPage title={ProductCategoryType.CustomPrintingWallFabric}>
-      <div className="text-center max-w-[40rem] mx-auto">
+      <div className="text-center">
         Custom printing wall fabric is a wall decoration material that is
         specifically designed and printed based on the customer&apos;s wall
         dimensions, style preferences, and desired patterns. Unlike pre-made
