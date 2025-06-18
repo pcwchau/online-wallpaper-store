@@ -16,7 +16,7 @@ export default function Page() {
         sizes="100vw"
         className="w-full rounded-xl"
       />
-      <div className="text-center max-w-[40rem] mx-auto">
+      <div className="text-center max-w-[60rem] mx-auto">
         Elevate your space with our custom Embroidered Wall Fabric, featuring a
         seamless finish that enhances the elegance and flow of any room. We
         specialize in tailor-made embroidered patterns and graphics on your

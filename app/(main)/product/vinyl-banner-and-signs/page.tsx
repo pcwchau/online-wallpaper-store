@@ -16,7 +16,7 @@ export default function Page() {
         sizes="100vw"
         className="w-full rounded-xl"
       />
-      <div className="text-center max-w-[40rem] mx-auto">
+      <div className="text-center max-w-[60rem] mx-auto">
         We offer fast, custom solutions for commercial vinyl and signage using a
         wide range of materials, including matte, gloss, and textured finishes.
         Whether for branding, logos, or business signage, your ideal design is

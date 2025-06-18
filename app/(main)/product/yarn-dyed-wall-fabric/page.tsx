@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Page() {
   return (
     <GeneralPage title={ProductCategoryType.YarnDyedWallFabric}>
-      <div className="text-center max-w-[40rem] mx-auto">
+      <div className="text-center">
         We offer a variety of standard patterns in solid-colour fabrics, making
         them ideal for contractors and building projects—especially in condo
         corridors and other high-traffic areas. With multiple fabric booklets
