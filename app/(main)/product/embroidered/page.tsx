@@ -1,6 +1,7 @@
 import GeneralPage from "@/components/page/generalPage";
 import { ProductCategoryType } from "@/types/product.type";
 import Image from "next/image";
+import img from "@/assets/images/embroidered.jpg";
 
 export default function Page() {
   return (
@@ -9,10 +10,8 @@ export default function Page() {
       isFullWidth={true}
     >
       <Image
-        src="https://beshinegroup.s3.us-east-1.amazonaws.com/product/embroidered.jpg"
+        src={img}
         alt="embroidered"
-        width={0}
-        height={0}
         sizes="100vw"
         className="w-full rounded-xl"
       />
