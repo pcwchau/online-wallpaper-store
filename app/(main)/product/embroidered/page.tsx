@@ -9,7 +9,7 @@ export default function Page() {
       isFullWidth={true}
     >
       <Image
-        src="/image/embroidered/embroidered.png"
+        src="https://beshinegroup.s3.us-east-1.amazonaws.com/product/embroidered.jpg"
         alt="embroidered"
         width={0}
         height={0}
@@ -21,8 +21,8 @@ export default function Page() {
         seamless finish that enhances the elegance and flow of any room. We
         specialize in tailor-made embroidered patterns and graphics on your
         chosen fabric base, creating a luxurious and unique wallcovering found
-        nowhere else in the world. Contact us to explore fabric options and
-        design your exclusive seamless wall feature with us.
+        nowhere else in the world. Contact us to design your exclusive seamless
+        Embroidered Wall Fabric.
       </div>
       <div className="flex justify-center pb-4">
         <div className="border-primary-text border-2 p-2 rounded-lg text-center">

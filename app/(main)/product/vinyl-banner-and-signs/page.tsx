@@ -9,7 +9,7 @@ export default function Page() {
       isFullWidth={true}
     >
       <Image
-        src="/image/vinyl/vinyl.jpg"
+        src="https://beshinegroup.s3.us-east-1.amazonaws.com/product/vinyl.jpg"
         alt="Vinyl"
         width={0}
         height={0}
