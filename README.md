@@ -58,8 +58,8 @@ Information such as build script and custom domains can be checked on Amplify.
 | Custom printing collection | 1:1   |      | object-cover       |
 | Yarn dyed collection       | 1:1   |      | object-cover       |
 | Product page - Options     | 1:1   |      | object-contain     |
-| Embroidered                | N/A   |      | full width         |
-| Vinyl                      | 16:9  |      | full width         |
+| Embroidered                | N/A   | y    | full width         | s3     |
+| Vinyl                      | N/A   | y    | full width         | s3     |
 
 | Project Page Image | Ratio | Opt? | Exception handling | Others |
 |--------------------|-------|------|--------------------|--------|

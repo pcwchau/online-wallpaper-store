@@ -5,6 +5,7 @@ export enum ProjectType {
 
 export interface Project {
   name: string;
+  address?: string;
   type: ProjectType;
   profileImageUrl: string;
   imageUrls: string[];
