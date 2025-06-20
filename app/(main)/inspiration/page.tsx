@@ -99,7 +99,6 @@ export default function Page() {
         <div className="flex items-center space-x-2">
           <span>Page</span>
           <input
-            type="number"
             min={1}
             max={totalPages}
             value={page}
