@@ -12,12 +12,17 @@ export default async function Page({
     <div>This page could not be found.</div>
   ) : (
     <div>
-      <div className="text-4xl font-semibold text-center my-8">
+      <div className="text-4xl font-semibold text-center py-4">
         {projects[id].name}
       </div>
+      {projects[id].address && (
+        <div className="text-xl font-semibold text-center py-4 whitespace-pre-line">
+          {projects[id].address}
+        </div>
+      )}
       {[projects[id].profileImageUrl, ...projects[id].imageUrls].map(
         (imageUrl, index) => (
-          <div key={index} className="relative my-4 lg:my-12">
+          <div key={index} className="relative my-4">
             <Image
               src={imageUrl}
               alt={projects[id].name}
