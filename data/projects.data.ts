@@ -18,7 +18,6 @@ export const projects: Project[] = [
       "https://beshinegroup.s3.us-east-1.amazonaws.com/project/adagio-menkes/8.jpg",
       "https://beshinegroup.s3.us-east-1.amazonaws.com/project/adagio-menkes/9.jpg",
       "https://beshinegroup.s3.us-east-1.amazonaws.com/project/adagio-menkes/10.jpg",
-      "https://beshinegroup.s3.us-east-1.amazonaws.com/project/adagio-menkes/11.jpg",
     ],
   },
   {
