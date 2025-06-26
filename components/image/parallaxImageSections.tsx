@@ -23,11 +23,12 @@ export default function ParallaxImageSections(
       {props.sections.map((item, index) => {
         return (
           <div
-            className="h-[80vh] bg-fixed bg-cover bg-center flex text-secondary-text"
+            className="h-[80vh] bg-cover bg-center flex text-secondary-text"
             style={
               isLargeScreen
                 ? {
                     backgroundImage: "url('" + item.largeImageUrl + "')",
+                    backgroundAttachment: "fixed",
                     justifyContent:
                       item.align === "left" ? "flex-start" : "flex-end",
                   }
