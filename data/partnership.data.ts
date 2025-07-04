@@ -31,4 +31,9 @@ export const partnerships: Partnership[] = [
     imageUrl: "/image/partnership/Torun Studio Inc.png",
     profileUrl: "https://torunstudio.com/",
   },
+  {
+    name: "U-Chain",
+    imageUrl: "/image/partnership/U-Chain.jpg",
+    profileUrl: "https://www.uchain.ca/",
+  },
 ];
